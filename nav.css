@@ -1,0 +1,32 @@
+nav {
+    width: 60%;
+    margin: auto;
+}
+
+nav a {
+    padding-top: 20px;
+    padding-bottom: 11px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+}
+
+nav .menu-button,
+nav .menu-logo {
+    display: inline-block;
+}
+
+nav .menu-logo {
+    vertical-align: middle;
+}
+
+nav .menu-items {
+    display: inline;
+}
