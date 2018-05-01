@@ -1,0 +1,1 @@
+This is just some random website I made for GCSE ICT. It is pretty terrible, but I keep it here because memories :)
