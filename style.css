@@ -10,7 +10,7 @@ header {
     background-color: rgba(25, 25, 25, 0.95);
     color: rgb(255, 255, 255);
     font-family: "Arial", sans-serif;
-   
+    font-size: 150%;
     z-index: 9;
     padding-left: 5px;
     padding-top: 5px;
@@ -22,11 +22,16 @@ main {
     
 }
 
+
 footer {
-    width: 60%;
-    margin: auto;
+    padding-top: 10px;
+    width: 100%;
+    background-color: rgb(200, 200, 200)
 }
 
+footer ul li {
+    display: inline;
+}
 
 .small-image-container {
     width: 32px;
@@ -40,4 +45,10 @@ footer {
 
 .round-img {
     border-radius: 50%;
+}
+
+.center {
+    text-align:center;
+    width: 50%;
+    margin: auto;
 }

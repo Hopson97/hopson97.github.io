@@ -1,5 +1,5 @@
 nav {
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 
@@ -13,7 +13,6 @@ nav a {
 }
 
 nav ul li {
-    text-decoration: none;
     display: inline-block;
     color: white;
 }
@@ -21,6 +20,10 @@ nav ul li {
 nav .menu-button,
 nav .menu-logo {
     display: inline-block;
+}
+
+nav .menu-button:hover {
+    text-decoration: slategrey;
 }
 
 nav .menu-logo {
