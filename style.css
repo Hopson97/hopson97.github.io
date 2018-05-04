@@ -16,16 +16,10 @@ header {
     padding-top: 5px;
 }
 
-main {
-    width: 60%;
-    margin: auto;
-    
-}
-
-
 footer {
     padding-top: 10px;
     width: 100%;
+    height: 100%;
     background-color: rgb(200, 200, 200)
 }
 
@@ -47,8 +41,17 @@ footer ul li {
     border-radius: 50%;
 }
 
+.table {
+    display: table;
+    margin: 0 auto;
+}
+
 .center {
-    text-align:center;
     width: 50%;
+    margin: auto;
+}
+
+.wide-center {
+    width: 60%;
     margin: auto;
 }

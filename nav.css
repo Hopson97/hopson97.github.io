@@ -1,15 +1,12 @@
-nav {
-    width: 50%;
-    margin: auto;
-}
-
 nav a {
-    padding-top: 20px;
-    padding-bottom: 11px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 20px 5px 10px 5px;
     color: white;
     text-decoration: none;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
 }
 
 nav ul li {
