@@ -25,13 +25,15 @@ header {
 }
 
 /* Links for navbar and footer */
-nav a, footer a {
+nav     a, 
+footer  a {
     padding: 20px 5px 10px 5px;
     color: white;
     text-decoration: none;
 }
 
-nav a:hover, footer a:hover {
+nav     a:hover, 
+footer  a:hover {
     color: rgb(128, 128, 128);
 }
 
@@ -92,23 +94,40 @@ footer ul li {
  * = = = = = = = = = = = = = = = = = = = */
 
  /* Contents */
-.contents a {
+.project-container a
+{
     text-decoration: none;
     color: rgb(50, 50, 50);
     font-weight: bold;
 }
 
-.contents a:visited {
+.project-container a:visited {
     text-decoration: none;
 }
 
-.contents a:hover {
+.project-container a:hover {
     color: rgb(100, 100, 100);
 }
  
-.contents .contents-col {
+.project-container .contents-col, 
+.inline-list li {
     display: inline-block;
 }
+
+/* Project */
+.project-title {
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-image {
+    width: 640px;
+    height: 360px;
+}
+
+.project-container {
+    padding-bottom: 10px;
+}
+
 /* Misc classes */
 .small-image-container {
     width: 32px;
@@ -144,10 +163,7 @@ footer ul li {
     color: rgb(100, 100, 100);
 }
 
-.project-title {
-    font-family: 'Poppins', sans-serif;
-}
-
 .centre-text {
     text-align: center;
 }
+
