@@ -72,6 +72,7 @@ nav .menu-items {
  * = = = = = = = = = = = = = = = = = = = */
 footer {
     padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     height: 100%;
     background-color: rgb(200, 200, 200);
@@ -124,11 +125,20 @@ footer ul li {
 }
 
 .wide-center {
-    width: 60%;
+    width: 55%;
     margin: auto;
 }
 
-.topline {
+.topline, .project-container {
     border-top-style: groove;
     padding-top: 10px;
+}
+
+.minor {
+    font-size: 80%;
+    color: rgb(100, 100, 100);
+}
+
+.project-title {
+    padding: 0px;
 }
