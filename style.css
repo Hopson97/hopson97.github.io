@@ -93,12 +93,14 @@ footer ul li {
  *
  * = = = = = = = = = = = = = = = = = = = */
 
- /* Contents */
+/* 
+ *  Contents/ Project
+ */
  .contents-col      a,
  .project-container a
 {
     text-decoration: none;
-    color: rgb(50, 50, 50);
+    color: rgb(75, 75, 75);
     font-weight: bold;
 }
 
@@ -109,7 +111,7 @@ footer ul li {
 
 .contents-col       a:hover,
 .project-container  a:hover {
-    color: rgb(100, 100, 100);
+    color: rgb(125, 125, 200);
 }
  
 .contents-col, 
@@ -117,7 +119,10 @@ footer ul li {
     display: inline-block;
 }
 
-/* Project */
+.contents-col {
+    vertical-align: top;
+}
+
 .project-title {
     font-family: 'Poppins', sans-serif;
 }
