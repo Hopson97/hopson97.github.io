@@ -22,12 +22,17 @@ header {
     border-bottom: 2px solid grey;
 }
 
-
+/* Links for navbar and footer */
 nav a, footer a {
     padding: 20px 5px 10px 5px;
     color: white;
     text-decoration: none;
 }
+
+nav a:hover, footer a:hover {
+    color: rgb(128, 128, 128);
+}
+
 
 footer a {
     color: black;
@@ -83,7 +88,7 @@ footer ul li {
  *
  * = = = = = = = = = = = = = = = = = = = */
 
- /*Contents*/
+ /* Contents */
 .contents a {
     text-decoration: none;
     color: rgb(50, 50, 50);
@@ -94,7 +99,11 @@ footer ul li {
     text-decoration: none;
 }
 
-/*Misc*/
+.contents a:hover {
+    color: rgb(100, 100, 100);
+}
+ 
+/* Misc classes */
 .small-image-container {
     width: 32px;
     height: 32px;
