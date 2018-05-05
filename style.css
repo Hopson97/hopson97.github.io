@@ -82,6 +82,19 @@ footer ul li {
  *   General classes
  *
  * = = = = = = = = = = = = = = = = = = = */
+
+ /*Contents*/
+.contents a {
+    text-decoration: none;
+    color: rgb(50, 50, 50);
+    font-weight: bold;
+}
+
+.contents a:visited {
+    text-decoration: none;
+}
+
+/*Misc*/
 .small-image-container {
     width: 32px;
     height: 32px;
@@ -104,4 +117,9 @@ footer ul li {
 .wide-center {
     width: 60%;
     margin: auto;
+}
+
+.topline {
+    border-top-style: groove;
+    padding-top: 10px;
 }
