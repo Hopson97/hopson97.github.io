@@ -96,7 +96,20 @@ projectList.push(new Project("Minecraft In A Week", "mc-one-week", "August 2017"
 );
 
 projectList.push(new Project("Hopson Bot", "hop-bot", "December 2017")
-    .addParagraph("This is a community project, initally created for a custom bot on my Discord Community Servrr."))
+    .addParagraph("This is a community project, initally created for a custom bot on my Discord Community Server.")
+);
+
+projectList.push(new Project("Game of Life", "game-of-life", "September 2017")
+    .addParagraph("Conway's Game of Life cellular automaton created in C++/SFML")
+);
+
+projectList.push(new Project("Langton's Ant", "langtons-ant", "August 2017")
+    .addParagraph("Langton's Ant cellular automaton created in C++/SFML.")
+);
+
+projectList.push(new Project("Hopson Arcade", "hop-arcade", "April 2018")
+    .addParagraph("A bunch of arcade games created using C++/SFML.")
+);
 
 let projects = document.getElementById("projects");
 for (proj of projectList) {
@@ -107,6 +120,7 @@ for (proj of projectList) {
     let titleEle = findChild(obj.container, "project-title");
     let title = document.createTextNode(proj.title);
     titleEle.appendChild(title);
+    titleEle.id = proj.id;
 
     //Set date
     let dateEle = findChild(obj.container, "minor");
@@ -167,6 +181,9 @@ for (proj of projectList) {
         image.src = proj.image.link;
         image.alt = proj.image.alt;
         imageParent.appendChild(image);
+    }
+    else {
+        obj.container.removeChild(findChild(obj.container, "project-image"));
     }
 
 
