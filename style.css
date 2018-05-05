@@ -94,23 +94,26 @@ footer ul li {
  * = = = = = = = = = = = = = = = = = = = */
 
  /* Contents */
-.project-container a
+ .contents-col      a,
+ .project-container a
 {
     text-decoration: none;
     color: rgb(50, 50, 50);
     font-weight: bold;
 }
 
-.project-container a:visited {
+.contents-col       a:visited,
+.project-container  a:visited {
     text-decoration: none;
 }
 
-.project-container a:hover {
+.contents-col       a:hover,
+.project-container  a:hover {
     color: rgb(100, 100, 100);
 }
  
-.project-container .contents-col, 
-.inline-list li {
+.contents-col, 
+.inline-list    li {
     display: inline-block;
 }
 
