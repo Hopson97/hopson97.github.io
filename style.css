@@ -104,6 +104,9 @@ footer ul li {
     color: rgb(100, 100, 100);
 }
  
+.contents .contents-col {
+    display: inline-block;
+}
 /* Misc classes */
 .small-image-container {
     width: 32px;
@@ -141,4 +144,8 @@ footer ul li {
 
 .project-title {
     padding: 0px;
+}
+
+.centre-text {
+    text-align: center;
 }
