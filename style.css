@@ -132,6 +132,10 @@ footer ul li {
     height: 360px;
 }
 
+.project-links ul li {
+    padding-right: 10px;
+}
+
 .project-container {
     padding-bottom: 10px;
 }

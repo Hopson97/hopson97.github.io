@@ -28,50 +28,18 @@
                     <li><a href = "#game-of-life">Game of Life</a></li>
                 </ul>
             </div>
-            <!-- 
-                ##################
-                MINECRAFT IN ONE WEEK
-                ##################
-            -->
-            <div class = "project-container" id = "mc-one-week">
-                <h2 class = "project-title">Minecraft In One Week</h2>
-                <p class = "minor">August 2017</p>
-                <p>
-                    This was a project created for a challenge in the summer of 2017. 
-                </p>
-                <p>
-                    The challenge was to try and implement as much of the Minecraft game as I could in a week, and I recorded my proccess throughout. 
-                    People continued to develop the project after I finished it, adding features such as a day/night cycle.
-                </p>
-                <h3>Features</h3>
-                <ul>
-                    <li>Procederal World Generation</li>
-                    <li>Biomes</li>
-                    <li>'Infinite' World</li>
-                    <li>Break Blocks</li>
-                    <li>Place Blocks</li>
-                    <li>Collision Detection</li>
-                    <li>Simple Inventory System</li>
-                </ul>
-                <h3>Links</h3>
-                <ul class = "inline-list">
-                    <li><a href = "https://www.youtube.com/watch?v=Xq3isov6mZ8" target="_blank">YouTube</a></li> &bullet;
-                    <li><a href = "https://github.com/Hopson97/MineCraft-One-Week-Challenge" target="_blank">GitHub</a></li> &bullet;
-                    <li><a href = "https://drive.google.com/uc?authuser=0&id=1t7P-1dQc799ZmZXmUpejum2zk2Ue-scH&export=download" target="_blank">Download</a></li>
-                </ul>
-                <div class = "project-image">
-                    <img class = "contained-img" src = "img/mc_week1.jpg" alt = "Minecraft Week Pic"/>
+            <div id = "projects">PROJECTS</div>
+            <template id = "project-template">
+                <div class = "project-container">
+                    <h2 class = "project-title"></h2>
+                    <p class = "minor">August 2017</p>
+                    <div class = "project-paragraphs"></div>
+                    <div class = "project-lists"></div>
+                    <div class = "project-links"></div>
+                    <div class = "project-image"></div>
                 </div>
-            </div>
-            <!-- 
-                ##################
-                HOPSON BOT
-                ##################
-            -->
-            <div class = "project-container" id = "hop-bot">
-                <h2 class = "project-title">Hopson Bot</h2>
-                <p class = "minor">December 2017</p>
-            </div>
+            </template>
+
             <!-- 
                 ##################
                 Game of Life
@@ -99,7 +67,12 @@
                 <h2 class = "project-title">Hopson Arcade</h2>
                 <p class = "minor">April 2018</p>
             </div>
+            
+            <script src="js/project_dom_gen.js"></script>
+
         </main>
+
+
         <div id = "footer"></div>
         <script src="js/footer.js"></script>
     </body>
