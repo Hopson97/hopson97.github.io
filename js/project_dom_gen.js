@@ -125,7 +125,7 @@ for (proj of projectList) {
     //Set date
     let dateEle = findChild(obj.container, "minor");
     let date = document.createTextNode(proj.date);
-    titleEle.appendChild(title);
+    dateEle.appendChild(date);
 
     //Add paragraphs
     let paraEleParent = findChild(obj.container, "project-paragraphs");
