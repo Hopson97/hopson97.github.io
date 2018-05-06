@@ -16,19 +16,9 @@
             <h2 class = "topline">Contents</h2>
             <div class = "contents">
                 <p>Click any of these to jump to a project:</p>
-                <ul class = "contents-col">
-                    <li><a href = "#mc-one-week">Minecraft In One Week</a></li>
-                    <li><a href = "#langtons-ant">Langton's Ant</a></li>
-                </ul>
-                <ul class = "contents-col">
-                    <li><a href = "#hop-bot">Hopson Bot</a></li>
-                    <li><a href = "#hop-arcade">Hopson Arcade</a></li>
-                </ul>
-                <ul class = "contents-col">
-                    <li><a href = "#game-of-life">Game of Life</a></li>
-                </ul>
+                <div id = "contents-list" class = "centre-text"></div>
             </div>
-            <div id = "projects">PROJECTS</div>
+            <div id = "projects"></div>
             <template id = "project-template">
                 <div class = "project-container">
                     <h2 class = "project-title"></h2>
@@ -36,7 +26,7 @@
                     <div class = "project-paragraphs"></div>
                     <div class = "project-lists"></div>
                     <div class = "project-links"></div>
-                    <div class = "project-image"></div>
+                    <div class = "project-images"></div>
                 </div>
             </template>
             <script src="js/project_dom_gen.js"></script>

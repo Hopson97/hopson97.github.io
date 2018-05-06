@@ -179,3 +179,22 @@ footer ul li {
     text-align: center;
 }
 
+.centre-text li {
+    text-align: left;
+}
+
+/* 
+    MEDIA
+*/
+@media only screen and (max-width: 1280) 
+{
+    .center {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .wide-center {
+        width: 95%;
+        margin: auto;
+    }
+}
