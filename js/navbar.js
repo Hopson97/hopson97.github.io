@@ -1,7 +1,9 @@
 document.getElementById("navbar").insertAdjacentHTML('afterend',
 `
     <header>
-        <nav class = "center">
+        <nav class = "menu-container centre-text">
+            <a href = "#" class = "menu_button">
+            </a>
             <ul class = "menu-items">
                 <li class = "menu-button"><a href = "index.html">Homepage</a></li> &bullet;
                 <li class = "menu-button"><a href = "projects.html">Projects</a></li> &bullet;

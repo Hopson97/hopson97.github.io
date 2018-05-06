@@ -237,7 +237,7 @@ function createContentsHTML(projectList)
     //Create the contents page
     let i = 0;
     let lists = new Array();
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 4; i++) {
         lists.push(createColumn());
     }
 

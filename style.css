@@ -69,6 +69,18 @@ nav .menu-items {
     display: inline;
 }
 
+/*   MENU   BUTTON    *//*
+nav .menu-button {
+    display: none;
+    width: 32px;
+    height: 24px;
+    background: url(img/3_bars.png) center;
+    background-repeat: no-repeat;
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}*/
+
 /* = = = = = = = = = = = = = = = = = = = =
  *
  *   Footer
@@ -127,17 +139,18 @@ footer ul li {
     font-family: 'Poppins', sans-serif;
 }
 
-.project-image {
-    width: 640px;
-    height: 360px;
-}
-
 .project-links ul li {
     padding-right: 10px;
 }
 
 .project-container {
     padding-bottom: 10px;
+}
+
+.project-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
 /* Misc classes */
@@ -186,13 +199,14 @@ footer ul li {
 /* 
     MEDIA
 */
-@media only screen and (max-width: 1280) 
-{
-    .center {
-        width: 90%;
+@media only screen and (max-width: 1280px) {
+    .wide-center {
+        width: 80%;
         margin: auto;
     }
-    
+}
+
+@media only screen and (max-width: 720px) {
     .wide-center {
         width: 95%;
         margin: auto;
