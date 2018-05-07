@@ -132,6 +132,7 @@ class Project
 
     addImage(imageSource)
     {
+        imageSource = "img/" + imageSource + ".jpg";
         let imageParent = document.createElement("div");
         imageParent.classList.add("project-image");
 
@@ -142,14 +143,10 @@ class Project
 
         imageParent.appendChild(imageElement);
         this.parentElement.appendChild(imageParent);
-        /*
-        this.images.push({
-            alt: "Image of " + this.title,
-            link: link
-        });*/
+
         return this;
     }
-}
+}//end of project class
 
 function getProjectArray()
 {
@@ -168,12 +165,20 @@ function getProjectArray()
         .addLinks([ new ProjectExtLink("YouTube", "https://www.youtube.com/watch?v=Xq3isov6mZ8"),
                     new ProjectExtLink("GitHub",   "https://github.com/Hopson97/MineCraft-One-Week-Challenge"),
                     new ProjectExtLink("Download", "https://drive.google.com/uc?authuser=0&id=1t7P-1dQc799ZmZXmUpejum2zk2Ue-scH&export=download")])
-        .addImage("img/mc_week1.jpg")
+        .addImage("mc_week1")
        // .addImage("img/mc_week2.jpg")
     );
     
     projectList.push(new Project("Hopson Bot", "hop-bot", "December 2017")
         .addParagraph("This is a community project, initally created for a custom bot on my Discord Community Server.")
+        .addParagraph("It was my first project using JS, and uses the Discord.js API to interact with Discord servers.")
+        .addList("Features", [  "Quiz commands",
+                                "Track message edits and deletion for moderation purposes",
+                                "Poll commands",
+                                "Fun commands (eg 8Ball)",
+                                "Role editing commands"])
+        .addLinks([new ProjectExtLink("GitHub", "https://github.com/HopsonCommunity/HopsonBot"),])
+        .addImage("hopbot1")
     );
     
     projectList.push(new Project("Game of Life", "game-of-life", "September 2017")

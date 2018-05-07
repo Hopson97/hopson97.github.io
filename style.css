@@ -154,6 +154,10 @@ footer ul li {
     height: auto;
 }
 
+.project-image img {
+    border-style: groove;
+}
+
 /* Misc classes */
 .small-image-container {
     width: 32px;
