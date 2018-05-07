@@ -10,6 +10,9 @@ class Project
         this.images     = new Array();
         this.paragraphs = new Array();
         this.lists      = new Array();
+
+        this.parentElement = document.createElement("div");
+
     }
 
     addParagraph(text) 
