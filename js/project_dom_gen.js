@@ -53,8 +53,10 @@ class Project
         this.title = title;
         this.id = id;
         this.date = date;
-
         this.parentElement = document.createElement("div");
+
+        this.innerDiv = document.createElement("div");
+        
         this.parentElement.classList.add("project-container");
         this.parentElement.id = id;
 
@@ -62,14 +64,21 @@ class Project
         let dateElement  = createElement("p", date);
         dateElement.classList.add("minor");
 
-        this.parentElement.appendChild(titleElement);
-        this.parentElement.appendChild(dateElement);
+        this.innerDiv.appendChild(titleElement);
+        this.innerDiv.appendChild(dateElement);
+
+        let backToTopLink = createElement("a", "Back to Top");
+        backToTopLink.href = "#";
+        backToTopLink.classList.add("minor");
+
+        this.parentElement.appendChild(this.innerDiv);
+        this.parentElement.appendChild(backToTopLink);
     }
 
     addParagraph(text) 
     {
         let paragraphElement = createElement("p", text);
-        this.parentElement.appendChild(paragraphElement);
+        this.innerDiv.appendChild(paragraphElement);
         //this.paragraphs.push(text);
         return this;
     }
@@ -82,8 +91,8 @@ class Project
             let listItem = createElement("li", item);
             listElementParent.appendChild(listItem);
         }
-        this.parentElement.appendChild(listTitleElement);
-        this.parentElement.appendChild(listElementParent);
+        this.innerDiv.appendChild(listTitleElement);
+        this.innerDiv.appendChild(listElementParent);
 
         //this.lists.push({title: title, content: content});
         return this;
@@ -119,14 +128,8 @@ class Project
             console.add
         }
         
-        this.parentElement.appendChild(linksTitleElement);
-        this.parentElement.appendChild(listElementParent);
-        /*
-        this.links = {
-            yt: yt,
-            github: github,
-            download: download
-        }*/
+        this.innerDiv.appendChild(linksTitleElement);
+        this.innerDiv.appendChild(listElementParent);
         return this;
     }
 
@@ -142,7 +145,7 @@ class Project
         imageElement.alt = "Image of " + this.title;
 
         imageParent.appendChild(imageElement);
-        this.parentElement.appendChild(imageParent);
+        this.innerDiv.appendChild(imageParent);
 
         return this;
     }
@@ -166,7 +169,6 @@ function getProjectArray()
                     new ProjectExtLink("GitHub",   "https://github.com/Hopson97/MineCraft-One-Week-Challenge"),
                     new ProjectExtLink("Download", "https://drive.google.com/uc?authuser=0&id=1t7P-1dQc799ZmZXmUpejum2zk2Ue-scH&export=download")])
         .addImage("mc_week1")
-       // .addImage("img/mc_week2.jpg")
     );
     
     projectList.push(new Project("Hopson Bot", "hop-bot", "December 2017")
