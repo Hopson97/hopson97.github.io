@@ -221,6 +221,11 @@ function getNewProjectsArray()
     
     projectList.push(new Project("Hopson Arcade", "hop-arcade", "April 2018")
         .addParagraph("A bunch of arcade games created using C++/SFML.")
+        .addParagraph("The first game added was Space Invaders, based on the classic 1978 arcade game. I tried to keep it as close to the original one as poosible, including having destructable shields")
+        .addList("Current games", ["Space Inavders"])
+        .addLinks([new ProjectExtLink(  "GitHub", "https://github.com/Hopson97/Hopson-Arcade",
+                                        "Videos", "https://www.youtube.com/playlist?list=PLMZ_9w2XRxiYBAj0jmfTgdYDg2x-cnCgf")])
+        .addImage("sp_invaders")
     );
     return projectList;
 }
@@ -236,7 +241,6 @@ function createContentsHTML(projectList)
         return list;
     }
     
-
     let i = 0;
     let lists = new Array();
     for (let i = 0; i < 3; i++) {
@@ -261,14 +265,10 @@ function createContentsHTML(projectList)
 //Generates the HTML of all the projects
 function generateProjectHTML(projectList) 
 {
-    //let projectList = getNewProjectsArray();
     createContentsHTML(projectList);
 
     let projectParent = document.getElementById("projects");
     for (let project of projectList) {
         projectParent.appendChild(project.parentElement);
     }
-
-
-    //createProjectsHTML(projectList);
 }
