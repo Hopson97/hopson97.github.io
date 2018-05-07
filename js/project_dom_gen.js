@@ -1,26 +1,3 @@
-//Finds a child element based on class name
-function findChild(element, childClassName) 
-{
-    for (let i = 0; i < element.childNodes.length; i++) {
-        if (element.childNodes[i].className === childClassName) {
-            return element.childNodes[i];
-        }        
-    }
-    return null;
-}
-
-//Clones the project HTML Template and returns it
-function getTemplateClone() 
-{
-    let temp = document.getElementById("project-template");
-    let clone = temp.cloneNode(true);
-    let container = clone.content.querySelector("div");
-    return  {
-        temp: clone,
-        container: container
-    };
-}
-
 //Adds text to an element duh
 function addTextToElement(element, text) 
 {
@@ -98,12 +75,12 @@ class Project
         return this;
     }
 
-    /*
-        Takes an array ->
-        {
-            title: title of the link
-            location: location of href of the link
-        }
+    /** 
+     *  Takes an array ->
+     *  {
+     *      title: title of the link
+     *      location: location of href of the link
+     *  }
     */
     addLinks(links/*yt, github, download*/) 
     {
