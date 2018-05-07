@@ -152,11 +152,6 @@ footer ul li {
     max-width: 100%;
     width: auto;
     height: auto;
-    padding: 5px 5px 5px 5px;
-    border: 1px groove black;
-    background-color: white;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    margin-bottom: 10px;
 }
 
 
@@ -201,6 +196,14 @@ footer ul li {
 
 .centre-text li {
     text-align: left;
+}
+
+.polaroid {
+    padding: 5px 5px 5px 5px;
+    border: 1px groove black;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    margin-bottom: 10px;
 }
 
 /* 

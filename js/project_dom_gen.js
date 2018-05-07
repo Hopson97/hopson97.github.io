@@ -1,11 +1,19 @@
-//Adds text to an element duh
+/**
+ * Adds text to a HTML element
+ * @param {Element} element The HTML element type
+ * @param {String} text The text for the element
+ */
 function addTextToElement(element, text) 
 {
     let t = document.createTextNode(text);
     element.appendChild(t);
 }
 
-//Creates an element and adds text to it one go
+/**
+ * Creates a HTML element and adds some text to it
+ * @param {String} element 
+ * @param {String} text 
+ */
 function createElement(element, text) 
 {
     let e = document.createElement(element); 
@@ -13,6 +21,9 @@ function createElement(element, text)
     return e;
 }
 
+/**
+ * Data for a project external link
+ */
 class ProjectExtLink
 {
     constructor(title, location)
@@ -22,9 +33,17 @@ class ProjectExtLink
     }
 }
 
-//Represents a single projects on the Projects page
+/**
+ * Represents a single projects on the Projects page
+ */
 class Project 
 {
+    /**
+     * Creates a Project object
+     * @param {String} title    The title of the project
+     * @param {String} id       The ID for the project, used for linking contents to project
+     * @param {String} date     The date the project was made/started (Month Year)
+     */
     constructor(title, id, date)
     {
         this.title = title;
@@ -52,14 +71,22 @@ class Project
         this.parentElement.appendChild(backToTopLink);
     }
 
+    /**
+     * Creates HTML for a paragraph
+     * @param {String} text The text for the paragraph
+     */
     addParagraph(text) 
     {
         let paragraphElement = createElement("p", text);
         this.innerDiv.appendChild(paragraphElement);
-        //this.paragraphs.push(text);
         return this;
     }
 
+    /**
+     * Creates HTML for a titled list
+     * @param {String} title            The title of the list
+     * @param {Array : String} content  The texts the list will show
+     */
     addList(title, content)
     {
         let listTitleElement = createElement("h3", title);
@@ -71,17 +98,14 @@ class Project
         this.innerDiv.appendChild(listTitleElement);
         this.innerDiv.appendChild(listElementParent);
 
-        //this.lists.push({title: title, content: content});
         return this;
     }
 
-    /** 
-     *  Takes an array ->
-     *  {
-     *      title: title of the link
-     *      location: location of href of the link
-     *  }
-    */
+    
+    /**
+     * 
+     * @param {Array: ProjectExtLink} links 
+     */
     addLinks(links/*yt, github, download*/) 
     {
         let linksTitleElement = createElement("h3", "Links");
@@ -110,11 +134,16 @@ class Project
         return this;
     }
 
+    /**
+     * Creates the HTML for an image
+     * @param {String} imageSource Source of the image
+     */
     addImage(imageSource)
     {
         imageSource = "img/" + imageSource + ".jpg";
         let imageParent = document.createElement("div");
         imageParent.classList.add("project-image");
+        imageParent.classList.add("polaroid")
 
         let imageElement = document.createElement("img");
         imageElement.classList.add("contained-img");
@@ -128,13 +157,14 @@ class Project
     }
 }//end of project class
 
+/**
+ * For the projects page
+ */
 function getNewProjectsArray()
 {
     let projectList = new Array();
 
-    /**
-     * Minecraft Week
-     */
+    //Minecraft in a Week
     projectList.push(new Project("Minecraft In A Week", "mc-one-week", "August 2017")
         .addParagraph("This was a project created for a challenge in the summer of 2017.")
         .addParagraph("The challenge was to try and implement as much of the Minecraft game as I could in a week, and I recorded my proccess throughout. People continued to develop the project after I finished it, adding features such as a day/night cycle.")
@@ -151,9 +181,7 @@ function getNewProjectsArray()
         .addImage("mc_week1")
     );
     
-    /**
-     * Hopson Bot
-     */
+    //Hopson Bot
     projectList.push(new Project("Hopson Bot", "hop-bot", "December 2017")
         .addParagraph("This is a community project, initally created for a custom bot on my Discord Community Server.")
         .addParagraph("It was my first project using JS, and uses the Discord.js API to interact with Discord servers.")
@@ -162,13 +190,11 @@ function getNewProjectsArray()
                                 "Poll commands",
                                 "Fun commands (eg 8Ball)",
                                 "Role editing commands"])
-        .addLinks([new ProjectExtLink("GitHub", "https://github.com/HopsonCommunity/HopsonBot"),])
+        .addLinks([ new ProjectExtLink("GitHub", "https://github.com/HopsonCommunity/HopsonBot")])
         .addImage("hopbot1")
     );
     
-    /**
-     *  Game of Life
-     */
+    //Game of Life
     projectList.push(new Project("Game of Life", "game-of-life", "September 2017")
         .addParagraph("Conway's Game of Life cellular automaton created in C++/SFML")
         .addParagraph("Game of life is one of the most famous cellular automatons, created by mathematiction John Horton Conway in 1970. The rules of GOL can be found on the wikipedia article linked.")
@@ -180,9 +206,8 @@ function getNewProjectsArray()
                     new ProjectExtLink("Download", "https://drive.google.com/uc?authuser=0&id=0B-bhEaACRE65UXhOZHRRR1J1SEU&export=download")])
         .addImage("gol1")
     );
-    /**
-     * Langton's Ant
-     */
+    
+    //Langton's Ant
     projectList.push(new Project("Langton's Ant", "langtons-ant", "August 2017")
         .addParagraph("Langton's Ant cellular automaton created in C++/SFML.")
         .addParagraph("Game of life is one of the most famous cellular automatons, created by mathematiction John Horton Conway in 1970. The rules of GOL can be found on the wikipedia article linked")
@@ -196,18 +221,22 @@ function getNewProjectsArray()
         .addImage("langton_ant")
     );
     
+    //Hopson Arcade
     projectList.push(new Project("Hopson Arcade", "hop-arcade", "April 2018")
         .addParagraph("A bunch of arcade games created using C++/SFML.")
         .addParagraph("The first game added was Space Invaders, based on the classic 1978 arcade game. I tried to keep it as close to the original one as poosible, including having destructable shields")
         .addList("Current games", ["Space Inavders"])
-        .addLinks([new ProjectExtLink(  "GitHub", "https://github.com/Hopson97/Hopson-Arcade",
-                                        "Videos", "https://www.youtube.com/playlist?list=PLMZ_9w2XRxiYBAj0jmfTgdYDg2x-cnCgf")])
+        .addLinks([ new ProjectExtLink( "GitHub", "https://github.com/Hopson97/Hopson-Arcade"),
+                    new ProjectExtLink( "Videos", "https://www.youtube.com/playlist?list=PLMZ_9w2XRxiYBAj0jmfTgdYDg2x-cnCgf")])
         .addImage("sp_invaders")
     );
     return projectList;
 }
 
-//Creates the contents section of the Projects page
+/**
+ * Creates the HTML for the contents section of the page
+ * @param {Array : Projects} projectList List of projects
+ */
 function createContentsHTML(projectList)
 {
     console.log(document.activeElement.id);
@@ -229,9 +258,15 @@ function createContentsHTML(projectList)
     for (proj of projectList) {
         let list = lists[i++ % lists.length];
         let li = document.createElement("li");
+        li.classList.add("polaroid");
+
+        let p = createElement("p", proj.date);
+        p.classList.add("minor");
         let a  = createElement("a", proj.title);
         a.href = "#" + proj.id;
+
         li.appendChild(a);
+        li.appendChild(p);
         list.appendChild(li);
     }
     
@@ -240,7 +275,10 @@ function createContentsHTML(projectList)
     }
 }
 
-//Generates the HTML of all the projects
+/**
+ * Generates the HTML of all the projects
+ * @param {Array : Projects} projectList List of projects
+ */
 function generateProjectHTML(projectList) 
 {
     createContentsHTML(projectList);
