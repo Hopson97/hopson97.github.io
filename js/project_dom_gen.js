@@ -151,7 +151,7 @@ class Project
     }
 }//end of project class
 
-function getProjectArray()
+function getNewProjectsArray()
 {
     let projectList = new Array();
 
@@ -185,6 +185,14 @@ function getProjectArray()
     
     projectList.push(new Project("Game of Life", "game-of-life", "September 2017")
         .addParagraph("Conway's Game of Life cellular automaton created in C++/SFML")
+        .addParagraph("Game of life is one of the most famous cellular automatons, created by mathematiction John Horton Conway in 1970. The rules of GOL are very simple, and can be found on the wikipedia article linked")
+        .addList("Features", [  "The CA itself",
+                                "Edit the cells"])
+        .addLinks([ new ProjectExtLink("Rules (Wikipedia)", "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules"),
+                    new ProjectExtLink("YouTube", "https://www.youtube.com/watch?v=WVCM3Rv4VV8"),
+                    new ProjectExtLink("GitHub", "https://github.com/Hopson97/Conway-s-Game-Of-Life"),
+                    new ProjectExtLink("Download", "https://drive.google.com/uc?authuser=0&id=0B-bhEaACRE65UXhOZHRRR1J1SEU&export=download")])
+        .addImage("gol1")
     );
     
     projectList.push(new Project("Langton's Ant", "langtons-ant", "August 2017")
@@ -230,9 +238,9 @@ function createContentsHTML(projectList)
 }
 
 //Generates the HTML of all the projects
-function generateProjectHTML() 
+function generateProjectHTML(projectList) 
 {
-    let projectList = getProjectArray();
+    //let projectList = getNewProjectsArray();
     createContentsHTML(projectList);
 
     let projectParent = document.getElementById("projects");
