@@ -155,6 +155,9 @@ function getNewProjectsArray()
 {
     let projectList = new Array();
 
+    /**
+     * Minecraft Week
+     */
     projectList.push(new Project("Minecraft In A Week", "mc-one-week", "August 2017")
         .addParagraph("This was a project created for a challenge in the summer of 2017.")
         .addParagraph("The challenge was to try and implement as much of the Minecraft game as I could in a week, and I recorded my proccess throughout. People continued to develop the project after I finished it, adding features such as a day/night cycle.")
@@ -171,6 +174,9 @@ function getNewProjectsArray()
         .addImage("mc_week1")
     );
     
+    /**
+     * Hopson Bot
+     */
     projectList.push(new Project("Hopson Bot", "hop-bot", "December 2017")
         .addParagraph("This is a community project, initally created for a custom bot on my Discord Community Server.")
         .addParagraph("It was my first project using JS, and uses the Discord.js API to interact with Discord servers.")
@@ -183,9 +189,12 @@ function getNewProjectsArray()
         .addImage("hopbot1")
     );
     
+    /**
+     *  Game of Life
+     */
     projectList.push(new Project("Game of Life", "game-of-life", "September 2017")
         .addParagraph("Conway's Game of Life cellular automaton created in C++/SFML")
-        .addParagraph("Game of life is one of the most famous cellular automatons, created by mathematiction John Horton Conway in 1970. The rules of GOL are very simple, and can be found on the wikipedia article linked")
+        .addParagraph("Game of life is one of the most famous cellular automatons, created by mathematiction John Horton Conway in 1970. The rules of GOL can be found on the wikipedia article linked.")
         .addList("Features", [  "The CA itself",
                                 "Edit the cells"])
         .addLinks([ new ProjectExtLink("Rules (Wikipedia)", "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules"),
@@ -194,9 +203,20 @@ function getNewProjectsArray()
                     new ProjectExtLink("Download", "https://drive.google.com/uc?authuser=0&id=0B-bhEaACRE65UXhOZHRRR1J1SEU&export=download")])
         .addImage("gol1")
     );
-    
+    /**
+     * Langton's Ant
+     */
     projectList.push(new Project("Langton's Ant", "langtons-ant", "August 2017")
         .addParagraph("Langton's Ant cellular automaton created in C++/SFML.")
+        .addParagraph("Game of life is one of the most famous cellular automatons, created by mathematiction John Horton Conway in 1970. The rules of GOL can be found on the wikipedia article linked")
+        .addList("Features", [  "Able to choose number of ants",
+                                "Add more ants during runtimes",
+                                "Multi-Coloured Ants"])
+        .addLinks([ new ProjectExtLink("Rules (Wikipedia)", "https://en.wikipedia.org/wiki/Langton%27s_ant#Rules"),
+                    new ProjectExtLink("GitHub", "https://github.com/Hopson97/LangtonsAnt"),
+                    new ProjectExtLink("YouTube", "https://www.youtube.com/watch?v=HGa5u6I-8Qg"),
+                    new ProjectExtLink("Download", "https://drive.google.com/uc?authuser=0&id=1u2Oca1SxS2aUapVqXDnC9xCoGfDbUUvB&export=download")])
+        .addImage("langton_ant")
     );
     
     projectList.push(new Project("Hopson Arcade", "hop-arcade", "April 2018")
@@ -208,6 +228,7 @@ function getNewProjectsArray()
 //Creates the contents section of the Projects page
 function createContentsHTML(projectList)
 {
+    //Creates a "column" of the contents
     function createColumn()
     {
         let list = document.createElement("ul");
@@ -215,10 +236,10 @@ function createContentsHTML(projectList)
         return list;
     }
     
-    //Create the contents page
+
     let i = 0;
     let lists = new Array();
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         lists.push(createColumn());
     }
 
@@ -251,5 +272,3 @@ function generateProjectHTML(projectList)
 
     //createProjectsHTML(projectList);
 }
-
-generateProjectHTML() 

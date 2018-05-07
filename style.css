@@ -141,7 +141,7 @@ footer ul li {
 }
 
 .project-links li {
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .project-container {
@@ -152,11 +152,13 @@ footer ul li {
     max-width: 100%;
     width: auto;
     height: auto;
+    padding: 5px 5px 5px 5px;
+    border: 1px groove black;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    margin-bottom: 10px;
 }
 
-.project-image img {
-    border-style: groove;
-}
 
 /* Misc classes */
 .small-image-container {
