@@ -54,12 +54,6 @@ class Project
         this.id = id;
         this.date = date;
 
-
-        this.links = null;
-        this.images     = new Array();
-        this.paragraphs = new Array();
-        this.lists      = new Array();
-
         this.parentElement = document.createElement("div");
         this.parentElement.classList.add("project-container");
         this.parentElement.id = id;
