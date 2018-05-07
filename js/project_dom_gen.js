@@ -158,11 +158,11 @@ function getProjectArray()
     projectList.push(new Project("Minecraft In A Week", "mc-one-week", "August 2017")
         .addParagraph("This was a project created for a challenge in the summer of 2017.")
         .addParagraph("The challenge was to try and implement as much of the Minecraft game as I could in a week, and I recorded my proccess throughout. People continued to develop the project after I finished it, adding features such as a day/night cycle.")
-        .addList("Features", [  "Procederal World Generation", 
+        .addList("Features", [  "Procederal World Generation (Trees, hills, etc)", 
                                 "Biomes",
                                 "'Infinite World'",
                                 "Break Blocks",
-                                "Remove blocks",
+                                "Place blocks",
                                 "Collision Detection",
                                 "Simple Inventory System"])
         .addLinks([ new ProjectExtLink("YouTube", "https://www.youtube.com/watch?v=Xq3isov6mZ8"),
