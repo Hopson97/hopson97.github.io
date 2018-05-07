@@ -218,4 +218,19 @@ footer ul li {
         width: 95%;
         margin: auto;
     }
+
+    footer ul li {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .wide-center {
+        width: 95%;
+        margin: auto;
+    }
+
+    .project-links li {
+        display: block;
+    }
 }

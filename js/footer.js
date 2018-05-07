@@ -1,7 +1,7 @@
 document.getElementById("footer").insertAdjacentHTML('afterend',
 `
     <footer>
-        <div class = "center">
+        <div class = "centre-text">
             <ul class = "menu-items">
                 <li><a href = "https://github.com/Hopson97" target="_blank">GitHub</a></li> &bullet;
                 <li><a href = "https://www.youtube.com/c/hopsonn" target="_blank">YouTube</a></li> &bullet;

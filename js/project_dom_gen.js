@@ -233,6 +233,7 @@ function getNewProjectsArray()
 //Creates the contents section of the Projects page
 function createContentsHTML(projectList)
 {
+    console.log(document.activeElement.id);
     //Creates a "column" of the contents
     function createColumn()
     {
