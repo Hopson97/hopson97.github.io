@@ -9,16 +9,39 @@
 }
 
 body {
-    background-color: #EEEEEEEE
+    background-color: #EEEEEEEE;
+    font-family: 'Open Sans',serif;
 }
 
 header {
     width: 100%;
     background-color: rgb(80, 80, 80);
     padding: 1%;
-    font-family: 'Open Sans',serif;
-    color: white;
     box-shadow: 0px 5px 15px black;
+}
+
+header h1 {
+    color: white;
+    padding-bottom: 1%;
+}
+
+header nav {
+    width: 75%;
+    margin: auto;
+}
+
+
+nav a {
+    font-size: 120%;
+    text-decoration: none;
+    font-weight: bold;
+    color: white; 
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+nav a:hover {
+    color: rgb(164, 211, 238); 
 }
 
 main {
@@ -39,3 +62,4 @@ main {
 .center {
     text-align: center;
 }
+
