@@ -21,5 +21,6 @@ addLink(common, "https://www.github.com/", "gh");
 addLink(common, "https://www.netflix.com/browse/", "nf");
 
 addLink(mail, "https://mail.google.com/mail/u/3/#inbox", "gm");
+addLink(mail, "https://outlook.live.com/mail/inbox", "ol");
 
 addLink(shopping, "https://www.smile.amazon.co.uk/", "am");

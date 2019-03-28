@@ -62,7 +62,7 @@ main {
 .common-links {
     margin: auto;
     width: 90%;
-    border-bottom: groove 2px black;
+    border-bottom: groove 2px white;
 }
 
 .common-link {
