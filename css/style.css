@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: rgb(107, 119, 122);
+    background-color: #EEEEEEEE
 }
 
 header {
@@ -21,14 +21,15 @@ header {
     box-shadow: 0px 5px 15px black;
 }
 
+main {
+    padding-top: 2%;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.link-sect {
-    padding-top: 2%;
+    padding: 1%;
 }
 
 
