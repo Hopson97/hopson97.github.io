@@ -9,6 +9,7 @@ function addLink(row, link, imageSource) {
     const imageElement  = document.createElement("img");
 
     anchorElement.href = link;
+    anchorElement.classList.add("common-link");
     imageElement.src = `img/logo-${imageSource}.png`;
 
     anchorElement.appendChild(imageElement);

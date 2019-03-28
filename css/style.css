@@ -51,11 +51,11 @@ main {
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly*/;
     padding: 1%;
 }
 
-.link-sect h2 {
+.link-page h2 {
     display: inline-block;
 }
 
@@ -63,6 +63,15 @@ main {
     margin: auto;
     width: 90%;
     border-bottom: groove 2px black;
+}
+
+.common-link {
+    padding-right: 10%;
+}
+
+.link-sect {
+    width: 90%;
+    margin: auto;
 }
 
 /*
