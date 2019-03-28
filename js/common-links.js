@@ -1,6 +1,8 @@
 "use strict"
 
-const firstRow = document.getElementById("link-row-1");
+const common = document.getElementById("links-common");
+const shopping = document.getElementById("links-shopping");
+const mail = document.getElementById("links-mail");
 
 function addLink(row, link, imageSource) {
     const anchorElement = document.createElement("a");
@@ -13,8 +15,10 @@ function addLink(row, link, imageSource) {
     row.appendChild(anchorElement);
 }
 
-addLink(firstRow, "https://www.youtube.com/", "yt");
-addLink(firstRow, "https://www.github.com/", "gh");
-addLink(firstRow, "https://www.netflix.com/browse/", "nf");
-addLink(firstRow, "https://www.smile.amazon.co.uk/", "am");
-addLink(firstRow, "https://mail.google.com/mail/u/3/#inbox", "gm");
+addLink(common, "https://www.youtube.com/", "yt");
+addLink(common, "https://www.github.com/", "gh");
+addLink(common, "https://www.netflix.com/browse/", "nf");
+
+addLink(mail, "https://mail.google.com/mail/u/3/#inbox", "gm");
+
+addLink(shopping, "https://www.smile.amazon.co.uk/", "am");

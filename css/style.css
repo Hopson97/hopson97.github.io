@@ -55,6 +55,15 @@ main {
     padding: 1%;
 }
 
+.link-sect h2 {
+    display: inline-block;
+}
+
+.common-links {
+    margin: auto;
+    width: 90%;
+    border-bottom: groove 2px black;
+}
 
 /*
     General classes
