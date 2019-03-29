@@ -90,3 +90,12 @@ footer {
     text-align: center;
 }
 
+.search-form {
+    text-align: center;
+}
+
+.search-form button {
+    padding: 5px;
+    border-radius: 15%;
+    border: 2px solid black;
+}
