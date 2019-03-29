@@ -25,11 +25,13 @@ addLink(mail, "https://outlook.live.com/mail/inbox", "ol");
 
 addLink(shopping, "https://www.smile.amazon.co.uk/", "am");
 
+
 const form = document.getElementById("search-form");
 form.addEventListener("submit", e => {
     e.preventDefault();
-    const searchQuery = document.getElementById("search").value;
+    const searchQuery = document.getElementById("input-box").value;
     const newString = searchQuery.replace(/ /g,"_");
     const url = `https://www.google.com/search?q=${newString}`;
     window.location.replace(url);
 });
+document.getElementById("input-box").focus();
