@@ -94,7 +94,14 @@ footer {
     text-align: center;
 }
 
+.search-form input[type=text] {
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 5%;
+}
+
 .search-form button {
+    margin-top: 2px;
     padding: 5px;
     border-radius: 15%;
     border: 2px solid black;
