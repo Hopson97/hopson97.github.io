@@ -30,7 +30,7 @@ const form = document.getElementById("search-form");
 form.addEventListener("submit", e => {
     e.preventDefault();
     const searchQuery = document.getElementById("input-box").value;
-    const newString = searchQuery.replace(/ /g,"_");
+    const newString = searchQuery.replace(/ /g,"+");
     const url = `https://www.google.com/search?q=${newString}`;
     window.location.replace(url);
 });
