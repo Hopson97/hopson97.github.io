@@ -29,9 +29,13 @@ addLink(shopping, "https://www.smile.amazon.co.uk/", "am");
 const form = document.getElementById("search-form");
 form.addEventListener("submit", e => {
     e.preventDefault();
+
     const searchQuery = document.getElementById("input-box").value;
     const newString = searchQuery.replace(/ /g,"+");
-    const url = `https://www.google.com/search?q=${newString}`;
-    window.location.replace(url);
+    
+    if (newString.length == 0) {
+        return;
+    }
+    window.location.replace(`https://www.google.com/search?q=${newString}`);
 });
 document.getElementById("input-box").focus();
