@@ -1,69 +1,146 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-* {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    vertical-align:baseline;
+:root {
+    --header-colour: #05668D;
+    --nav-hover-colour: rgb(83, 133, 143);
+    --title-bg-colour: #028090;
+    --background-colour-light: #EEEEEE;
+    --background-colour-dark: #DDDDDD;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    overflow-x: hidden;
+}
+
+/*
+=======================
+   Element Selectors
+=======================
+*/
 
 body {
-    background-color: #EEEEEEEE;
-    font-family: 'Open Sans',serif;
+    background-color: var(--background-colour);
+    color: white;
+    font-family: 'Open Sans', serif;
 }
 
+/*
+=====================================
+    Header selectors and classes
+=====================================
+*/
 header {
     width: 100%;
-    background-color: rgb(80, 80, 80);
-    padding: 1%;
-    box-shadow: 0px 5px 15px black;
+    background-color: var(--header-colour);
+    box-shadow: 0px 10px 10px rgb(34, 51, 54);
+    position: relative;
+    z-index: 1;  
 }
 
-header h1 {
-    color: white;
-    padding-bottom: 1%;
-}
-
-header nav {
-    width: 75%;
+header .header-container {
+    display: flex;
+    justify-content: space-around;
+    
+    width: 95%;
     margin: auto;
 }
 
+header h1{
+    text-align: center;
+    padding-right: 10px;
+}
 
-nav a {
-    font-size: 120%;
+/*
+------------------------------------
+    Navbar selectors and classes
+------------------------------------
+*/
+header nav {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav a {
     text-decoration: none;
     font-weight: bold;
-    color: white; 
-    padding-left: 5%;
-    padding-right: 5%;
+    color: white;
+    flex: 1;
+    padding-bottom: 5px;
 }
 
-nav a:hover {
-    color: rgb(164, 211, 238); 
+header nav a {
+    transition: 1s;
+    border-right: solid white 1px;
+    border-left: solid white 1px;
 }
 
-main {
-    padding-top: 2%;
+header nav a:first-child {
+    border-left: solid white 2px;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 5%;
-
-    background-color: black;
+header nav a:last-child {
+    border-right: solid white 2px;
 }
 
-.flex-container {
+header nav a:hover {
+    background-color: var(--nav-hover-colour);
+}
+
+.nav-button-container {
     display: flex;
-    flex-wrap: wrap;
-    /*justify-content: space-evenly*/;
-    padding: 1%;
+    flex-direction: column;
+    align-items: center;
 }
 
+.nav-button-container img {
+    padding: 5px;
+}
+
+/*
+=====================================
+    Main Content
+=====================================
+*/
+main {
+    background-color: var(--background-colour-light);
+}
+
+main .page-title {
+    border-bottom: solid black;
+    padding: 2vh;
+    background-color: var(--title-bg-colour);
+}
+
+main .page-title h2 {
+    text-align: center;
+}
+
+main .main-content {
+    min-height: 85vh;
+    width: 70%;
+    margin: auto;
+    color: black;
+    background-color: var(--background-colour-dark);
+    box-shadow: inset 0px 0px 5px 0px black;
+}
+
+main .content-container {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+/*
+------------------------------------
+    Common links screen
+------------------------------------
+*/
 .link-page h2 {
     display: inline-block;
 }
@@ -83,13 +160,6 @@ footer {
     margin: auto;
 }
 
-/*
-    General classes
-*/
-.center {
-    text-align: center;
-}
-
 .search-form {
     text-align: center;
 }
@@ -107,3 +177,32 @@ footer {
     border: 1px solid black;
     background-color: #CCCCCCCC
 }
+
+/*
+===================
+  Footer
+===================
+*/
+
+footer {
+    min-height: 10vh;
+    background: var(--title-bg-colour);
+    border-top: solid black;
+}
+
+/*
+===================
+  General classes
+===================
+*/
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-evenly*/;
+    padding: 1%;
+}
+
+.center {
+    text-align: center;
+}
+
