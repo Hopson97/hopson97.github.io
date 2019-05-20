@@ -152,7 +152,7 @@ main .content-container {
 }
 
 .common-link {
-    padding-right: 10%;
+    padding-right: 6%;
 }
 
 .link-sect {
@@ -206,3 +206,78 @@ footer {
     text-align: center;
 }
 
+
+@media only screen and (max-width: 1280px) {
+    /*
+    =====================================
+        Main Content
+    =====================================
+    */
+
+    main .main-content {
+        width: 90%;
+    }
+
+    main .content-container {
+        width: 95%;
+    }
+
+    /*
+    ------------------------------------
+        Common links screen
+    ------------------------------------
+    */
+    .link-logo {
+        width: 96px;
+        height: 96px;
+    }
+
+    .common-links {
+        width: 95%;
+    }
+
+    .common-link {
+        padding-right: 5%;
+    }
+
+    .link-sect {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    /*
+    =====================================
+        Main Content
+    =====================================
+    */
+    main .main-content {
+        width: 98%;
+    }
+
+    main .content-container {
+        width: 98%;
+    }
+    /*
+    ------------------------------------
+        Common links screen
+    ------------------------------------
+    */
+        
+    .link-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .common-links {
+        width: 98%;
+    }
+
+    .common-link {
+        padding-right: 3%;
+    }
+
+    .link-sect {
+        width: 98%;
+    }
+}

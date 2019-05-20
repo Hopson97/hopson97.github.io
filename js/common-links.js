@@ -12,6 +12,7 @@ window.addEventListener("load", () => {
         anchorElement.href = link;
         anchorElement.classList.add("common-link");
         imageElement.src = `img/logo-${imageSource}.png`;
+        imageElement.classList.add("link-logo");
     
         anchorElement.appendChild(imageElement);
         row.appendChild(anchorElement);
