@@ -25,7 +25,8 @@ window.addEventListener("load", () => {
     addLink(mail, "https://mail.google.com/mail/u/3/#inbox", "gm");
     addLink(mail, "https://outlook.live.com/mail/inbox", "ol");
     
-    addLink(shopping, "https://www.smile.amazon.co.uk/", "am");
+    addLink(shopping, "https://smile.amazon.co.uk", "am");
+    addLink(shopping, "https://www.game.co.uk", "gs");
     
     
     const form = document.getElementById("search-form");
