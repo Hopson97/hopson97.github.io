@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 :root {
-    --header-colour: #05668D;
-    --nav-hover-colour: rgb(83, 133, 143);
-    --title-bg-colour: #028090;
-    --background-colour-light: #EEEEEE;
-    --background-colour-dark: #DDDDDD;
+    --header-colour: #247BA0;
+    --nav-hover-colour: #70C1B3;
+    --background-colour-light: #FFE066;
+    --background-colour-dark: #F25F5C;
 }
 
 * {
@@ -37,7 +36,6 @@ body {
 header {
     width: 100%;
     background-color: var(--header-colour);
-    box-shadow: 0px 10px 10px rgb(34, 51, 54);
     position: relative;
     z-index: 1;  
 }
@@ -55,6 +53,13 @@ header h1{
     padding-right: 10px;
 }
 
+.header-logo {
+    border-radius: 50%;
+    height: fill;
+    width: auto;
+    width: 64px;
+    height: 64px;
+}
 /*
 ------------------------------------
     Navbar selectors and classes
@@ -76,16 +81,6 @@ header nav a {
 
 header nav a {
     transition: 1s;
-    border-right: solid white 1px;
-    border-left: solid white 1px;
-}
-
-header nav a:first-child {
-    border-left: solid white 2px;
-}
-
-header nav a:last-child {
-    border-right: solid white 2px;
 }
 
 header nav a:hover {
@@ -112,13 +107,14 @@ main {
 }
 
 main .page-title {
-    border-bottom: solid black;
     padding: 2vh;
-    background-color: var(--title-bg-colour);
+    background-color: var(--header-colour);
 }
 
-main .page-title h2 {
-    text-align: center;
+main .page-title h1 {
+    width: 80%; 
+    margin: auto;
+    font-size: 300%;
 }
 
 main .main-content {
@@ -126,8 +122,6 @@ main .main-content {
     width: 70%;
     margin: auto;
     color: black;
-    background-color: var(--background-colour-dark);
-    box-shadow: inset 0px 0px 5px 0px black;
 }
 
 main .content-container {
@@ -147,8 +141,8 @@ main .content-container {
 
 .common-links {
     margin: auto;
-    width: 90%;
-    border-bottom: groove 2px white;
+    width: 95%;
+    border-bottom: solid 2px black;
 }
 
 .common-link {
@@ -161,21 +155,22 @@ main .content-container {
 }
 
 .search-form {
-    text-align: center;
+    width: 95%;
+    margin: auto;
+    padding-bottom: 5px;
+    border-bottom: solid 2px black;
 }
 
 .search-form input[type=text] {
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 5px;
-    border-radius: 5%;
 }
 
 .search-form button {
     margin-top: 2px;
     padding: 5px;
-    border-radius: 15%;
-    border: 1px solid black;
-    background-color: #CCCCCCCC
+    border: 2px solid black;
+    background-color: var(--background-colour-dark)
 }
 
 /*
