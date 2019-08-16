@@ -10,6 +10,8 @@ target_release() {
     cmake -DCMAKE_BUILD_TYPE=Release ../..
     make
     echo "Built target in bin/release/"
+
+    mv html-templater ../../../build_site
 }
 
 target_debug() {
