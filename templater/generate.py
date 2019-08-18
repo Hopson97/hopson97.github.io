@@ -61,9 +61,9 @@ with open("pages/layout.html") as layoutFile:
         if not re.findall(R'partial|layout', str(filename)):
             newFileName = str(filename)[12:]
             with open(filename) as file:
-                pages.append(makePage(file, None, True))
+                page = makePage(file, None, True)
                 with open (newFileName, 'w') as outFile:
-                    outFile.write(pages[len(pages) - 1].html)
+                    outFile.write(page.html)
 
 #with open('pages/layout.html') as f:
 #    for line in f:
