@@ -9,16 +9,17 @@ _REG_VARS = re.compile(R"\{\{.+\}\}")
 _REG_REPL = re.compile(R"\(\(.+\)\)")
 
 class Page:
-    def __init__(self, variables = {}):
+    def __init__(self, variables = {}, fname = ""):
+        self.fname = fname
         self.variables = variables
         self.html = ""
 
     def addVar(self, name, value):
         self.variables[name] = value
-
+pages = []
 with open("pages/layout.html") as layoutFile:
-    def makePage(file, parentPage = None, loadLayout = False, isLayoutFile = False):
-        page = Page()
+    def makePage(file, parentPage = None, loadLayout = False, isLayoutFile = False, fname = ""):
+        page = Page({}, fname)
         if parentPage:
             page.variables = parentPage.variables
 
@@ -41,7 +42,6 @@ with open("pages/layout.html") as layoutFile:
 
                 subPages = re.findall(_REG_REPL, line)
                 for subPage in subPages:
-                    print("page name", subPage)
                     fileName = re.sub(R"\(\(|\)\)", '', subPage).rstrip()
                     if isLayoutFile and re.findall("main", fileName):
                         line = re.sub(R"\(\(main\)\)", parentPage.html, line)
@@ -49,10 +49,9 @@ with open("pages/layout.html") as layoutFile:
                         with open("pages/" + fileName + ".html") as subFile:
                             subFileContent = makePage(subFile, page)
                             line = re.sub(R"\(\("+ fileName + "\)\)", subFileContent.html, line)
-
-
                 page.html += line
         if loadLayout:
+            print (page.fname)
             layout = makePage(layoutFile, page, False, True)
             return layout
         return page
@@ -61,9 +60,12 @@ with open("pages/layout.html") as layoutFile:
         if not re.findall(R'partial|layout', str(filename)):
             newFileName = str(filename)[12:]
             with open(filename) as file:
-                page = makePage(file, None, True)
-                with open (newFileName, 'w') as outFile:
-                    outFile.write(page.html)
+                pages.append(makePage(file, None, True, False, newFileName))
+
+for page in pages:
+    if len(page.fname) > 0:
+        with open (page.fname, 'w') as outFile:
+            outFile.write(page.html)
 
 #with open('pages/layout.html') as f:
 #    for line in f:
