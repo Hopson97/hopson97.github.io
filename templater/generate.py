@@ -49,7 +49,7 @@ with open("pages/layout.html") as layoutFile:
                 subPages = re.findall(_REG_REPL, line)
                 for subPage in subPages:
                     print("page name", subPage)
-                    fileName = re.sub(R"\(\(|\)\)", '', line).rstrip()
+                    fileName = re.sub(R"\(\(|\)\)", '', subPage).rstrip()
                     if isLayoutFile and re.findall("main", fileName):
                         line = re.sub(R"\(\(main\)\)", parentPage.html, line)
                     else:
@@ -66,13 +66,11 @@ with open("pages/layout.html") as layoutFile:
 
     for filename in Path('pages/views/').glob('**/*.html'):
         if not re.findall(R'partial|layout', str(filename)):
-            print(str(filename)[12:])
+            newFileName = str(filename)[12:]
             with open(filename) as file:
                 pages.append(makePage(file, None, True))
-               # newFileName = 
-
-for p in pages:
-    print ("PAGE:", p.html)
+                with open (newFileName, 'w') as outFile:
+                    outFile.write(pages[len(pages) - 1].html)
 
 #with open('pages/layout.html') as f:
 #    for line in f:
