@@ -51,7 +51,6 @@ with open("pages/layout.html") as layoutFile:
                             line = re.sub(R"\(\("+ fileName + "\)\)", subFileContent.html, line)
                 page.html += line
         if loadLayout:
-            print (page.fname)
             layout = makePage(layoutFile, page, False, True)
             return layout
         return page
@@ -60,12 +59,11 @@ with open("pages/layout.html") as layoutFile:
         if not re.findall(R'partial|layout', str(filename)):
             newFileName = str(filename)[12:]
             with open(filename) as file:
-                pages.append(makePage(file, None, True, False, newFileName))
+                pages.append([newFileName, makePage(file, None, True, False)])
 
 for page in pages:
-    if len(page.fname) > 0:
-        with open (page.fname, 'w') as outFile:
-            outFile.write(page.html)
+    with open(page[0], 'w') as outFile:
+        outFile.write(page[1].html)
 
 #with open('pages/layout.html') as f:
 #    for line in f:
