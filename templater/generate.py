@@ -8,10 +8,6 @@ _RENDER = 2
 _REG_VARS = re.compile(R"\{\{.+\}\}")
 _REG_REPL = re.compile(R"\(\(.+\)\)")
 
-class HtmlLine:
-    def __init__(self):
-        self.vars = {}
-
 class Page:
     def __init__(self, variables = {}):
         self.variables = variables
@@ -20,8 +16,6 @@ class Page:
     def addVar(self, name, value):
         self.variables[name] = value
 
-pages = []
-
 with open("pages/layout.html") as layoutFile:
     def makePage(file, parentPage = None, loadLayout = False, isLayoutFile = False):
         page = Page()
@@ -29,7 +23,6 @@ with open("pages/layout.html") as layoutFile:
             page.variables = parentPage.variables
 
         for line in file:
-            html = HtmlLine()
             line = line.lstrip()
             if line.startswith("-"):
                 line = line[1:]
