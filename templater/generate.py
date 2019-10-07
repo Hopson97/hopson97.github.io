@@ -16,6 +16,7 @@ class Page:
 
     def addVar(self, name, value):
         self.variables[name] = value
+
 pages = []
 with open("pages/layout.html") as layoutFile:
     def makePage(file, parentPage = None, loadLayout = False, isLayoutFile = False, fname = ""):
@@ -48,7 +49,7 @@ with open("pages/layout.html") as layoutFile:
                     else:
                         with open("pages/" + fileName + ".html") as subFile:
                             subFileContent = makePage(subFile, page)
-                            line = re.sub(R"\(\("+ fileName + "\)\)", subFileContent.html, line)
+                            line = re.sub(r"\(\("+ fileName + "\)\)", subFileContent.html, line)
                 page.html += line
         if loadLayout:
             layout = makePage(layoutFile, page, False, True)
@@ -63,6 +64,7 @@ with open("pages/layout.html") as layoutFile:
 
 for page in pages:
     with open(page[0], 'w') as outFile:
+        print ("Writing: ", page[0])
         outFile.write(page[1].html)
 
 #with open('pages/layout.html') as f:
