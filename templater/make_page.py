@@ -44,5 +44,4 @@ def makePage(file, layout, parentPage = None, loadLayout = False, isLayoutFile =
     if loadLayout:
         layout = makePage(layout, layout, page, False, True)
         return layout
-    print (page)
     return page
