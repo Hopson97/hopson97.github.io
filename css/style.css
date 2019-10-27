@@ -3,3 +3,12 @@
     width: 90%;
     margin: auto;
 }
+
+.footer {
+    width: 50%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
