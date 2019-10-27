@@ -13,6 +13,7 @@ def makePage(file, layout, parentPage = None, loadLayout = False, isLayoutFile =
     page = Page({}, fname)
     if parentPage:
         page.variables = parentPage.variables
+
     for line in file:
         line = line.lstrip()
         if line.startswith("-"):
@@ -39,7 +40,9 @@ def makePage(file, layout, parentPage = None, loadLayout = False, isLayoutFile =
                         subFileContent = makePage(subFile, layout, page)
                         line = re.sub(R"\(\("+ fileName + "\)\)", subFileContent.html, line)
             page.html += line
+
     if loadLayout:
         layout = makePage(layout, layout, page, False, True)
         return layout
+    print (page)
     return page
