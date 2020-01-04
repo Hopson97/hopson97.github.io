@@ -22,6 +22,9 @@ def makePage(file, layout, parentPage = None, loadLayout = False, isLayoutFile =
                 variableName = line.split()[1]
                 variableValue = " ".join(line.split()[2:])
                 page.addVar(variableName, variableValue)
+            elif line.startswith("script"):
+                script = line.split()[1]
+                page.addScript(script)
         else:
             vars = re.findall(_REG_VARS, line)
             variableReplacments = []
