@@ -1,5 +1,5 @@
 window.addEventListener("load", _ => {
-    const canvas = document.getElementById("canvas");
+    const canvas = document.getElementById("rle");
     const ctx = canvas.getContext('2d');
 
     const CHUNK_SIZE = 6;
@@ -27,8 +27,8 @@ window.addEventListener("load", _ => {
 
     function renderBounds(x, y) {
         return [
-            Math.floor(BLOCK_SIZE / 4 + x * BLOCK_SIZE + x * 5),
-            Math.floor(BLOCK_SIZE / 4 + y * BLOCK_SIZE + y * 5),
+            Math.floor(BLOCK_SIZE / 4 + x * BLOCK_SIZE + x * 9),
+            Math.floor(BLOCK_SIZE / 4 + y * BLOCK_SIZE + y * 9),
             Math.floor(BLOCK_SIZE),
             Math.floor(BLOCK_SIZE)
         ];
@@ -84,8 +84,8 @@ window.addEventListener("load", _ => {
 
                 this.target = renderBounds(nextX, nextY);
 
-                const dx = this.current[0] - this.target[0];
-                const dy = this.current[1] - this.target[1];
+                let dx = this.current[0] - this.target[0];
+                let dy = this.current[1] - this.target[1];
                 const len = Math.sqrt(dx * dx + dy * dy);
 
                 if (Math.floor(Math.abs(dx)) == 0 && Math.floor(Math.abs(dy)) == 0) {
@@ -105,6 +105,10 @@ window.addEventListener("load", _ => {
                         this.count = 1;
                     }
                 } else {
+                    if (dx > 0) {
+                        dx *= 2;
+                        dy *= 2;
+                    }
                     this.current[0] -= dx / len;
                     this.current[1] -= dy / len;
                 }
@@ -129,7 +133,7 @@ window.addEventListener("load", _ => {
 
 
     function loop() {
-        ctx.fillStyle = "blue"
+        ctx.fillStyle = "black"
         ctx.fillRect(0, 0, 1600, 900);
         
 
@@ -144,17 +148,12 @@ window.addEventListener("load", _ => {
 
             }
         }
-
-        ctx.fillStyle = "white"
-        ctx.font = "28px Monospace";
-        ctx.fillText(`Blocks Counted`, 900, BLOCK_SIZE / 4 + 150);
-
         
-        ctx.lineWidth = 5;
-        ctx.strokeStyle = "black"
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white"
         ctx.fillStyle = "#222"
-        ctx.fillRect(850, BLOCK_SIZE / 4, 350, 800);
-        ctx.strokeRect(850, BLOCK_SIZE / 4, 350, 800);
+        ctx.fillRect(850, BLOCK_SIZE / 4, 350, 813);
+        ctx.strokeRect(850, BLOCK_SIZE / 4, 350, 813);
 
         ctx.fillStyle = "white"
         ctx.font = "37px Monospace";
@@ -187,6 +186,10 @@ window.addEventListener("load", _ => {
                 "Block"
             );
         }
+
+        ctx.fillStyle = "white"
+        ctx.font = "28px Monospace";
+        ctx.fillText(`Blocks Counted`, 900, BLOCK_SIZE / 4 + 150);
 
 
         ctx.strokeStyle = "red"

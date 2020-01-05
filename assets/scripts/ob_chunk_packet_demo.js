@@ -1,5 +1,5 @@
 window.addEventListener("load", _ => {
-    const canvas = document.getElementById("canvas");
+    const canvas = document.getElementById("packets");
     const ctx = canvas.getContext('2d');
 
     const EDGE = 10;
