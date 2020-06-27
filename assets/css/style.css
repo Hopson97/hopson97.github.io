@@ -1,14 +1,45 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 
-.content {
-    width: 90%;
+nav {
+    text-align: center;
+    padding-top: 1%;
+    font-size: large;
+}
+
+
+main {
+    width: 70%;
     margin: auto;
 }
 
-.footer {
+footer {
     width: 50%;
     margin: auto;
 }
 
 a {
     text-decoration: none;
+    color: black;
+    font-size: larger;
 }
+
+a:hover {
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+}
+
+.common_link {
+    padding-left: 3%;
+}
+
+.title {
+    text-align: center;
+}
+
+
+
