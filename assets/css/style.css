@@ -8,7 +8,6 @@ nav {
     font-size: large;
 }
 
-
 main {
     width: 70%;
     margin: auto;
@@ -23,6 +22,10 @@ a {
     text-decoration: none;
     color: black;
     font-size: larger;
+}
+
+.project_links {
+    font-size: smaller;
 }
 
 a:hover {
