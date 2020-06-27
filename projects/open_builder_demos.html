@@ -10,7 +10,7 @@ The pages can be found at: https://github.com/Hopson97/hopson97.github.io/tree/m
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-<title>Home Page</title>
+<title>Chunk RLE Demo</title>
 </head>
 <body>
 <header>
@@ -30,7 +30,18 @@ The pages can be found at: https://github.com/Hopson97/hopson97.github.io/tree/m
 </header>
 <main>
 <div class="content">
-<h1 class="title">Home Page</h1>
+<script src='assets/scripts//ob_chunk_packet_demo.js'></script><script src='assets/scripts//ob_chunk_rle_demo.js'></script><script src='assets/scripts//ob_chunk_input_demo.js'></script><div class="col-12">
+<div class="row" style="background:black">
+<img width="1" height="1" id="grass" src="assets/img/grass.png">
+<img width="1" height="1" id="stone" src="assets/img/stone.png">
+<img width="1" height="1" id="wood" src="assets/img/wood.png">
+<canvas id="packets" width=1600 height=900></canvas>
+<br>
+<canvas id="rle" width=1600 height=900></canvas>
+<br>
+<canvas id="input" width=1600 height=900></canvas>
+</div>
+</div>
 </div>
 </main>
 <footer>
