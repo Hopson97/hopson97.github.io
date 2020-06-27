@@ -28,6 +28,11 @@ a {
     font-size: smaller;
 }
 
+.project_links a {
+    font-size: smaller;
+    padding: 0 1%;
+}
+
 a:hover {
     font-weight: bold;
 }
