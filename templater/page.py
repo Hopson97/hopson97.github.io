@@ -6,7 +6,7 @@ class Page:
 
     def addScript(self, name):
         self.html +=        \
-            "<script src='assets/scripts/" + name + ".js'></script>"
+            "<script src='/assets/scripts/" + name + ".js'></script>"
 
 
     def addVar(self, name, value):
