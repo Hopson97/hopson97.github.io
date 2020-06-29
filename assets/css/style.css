@@ -2,11 +2,12 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-nav {
+header {
     text-align: center;
     padding-top: 1%;
     font-size: large;
 }
+
 
 main {
     width: 70%;
@@ -20,7 +21,7 @@ footer {
 
 a {
     text-decoration: none;
-    color: black;
+    color: rgb(8, 25, 58);
     font-size: larger;
 }
 
