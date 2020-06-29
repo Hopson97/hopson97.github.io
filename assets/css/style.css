@@ -3,18 +3,23 @@ body {
 }
 
 header {
-    text-align: center;
-    padding-top: 1%;
+    padding: 1%;
+    width: 60%;
+    margin: auto;
+    border-bottom: 1px solid rgba(31, 31, 31, 0.082);
+}
+
+nav {
     font-size: large;
 }
 
-main {
-    width: 70%;
-    margin: auto;
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-footer {
-    width: 50%;
+main {
+    width: 60%;
     margin: auto;
 }
 
@@ -33,6 +38,10 @@ nav .project_links {
     padding: 0 1%;
 }
 
+.projects article {
+    border-bottom: 1px solid rgba(31, 31, 31, 0.1);
+}
+
 a:hover {
     font-weight: bold;
 }
@@ -45,11 +54,20 @@ a:hover {
     padding-left: 3%;
 }
 
-.title {
-    text-align: center;
-}
-
 .projects img {
     height: 300px;
     width: 533px
+}
+
+footer {
+    border-top: 1px solid rgba(31, 31, 31, 0.1);
+}
+
+.row-center {
+    display: flex;
+    justify-content: center;
+}
+
+footer a {
+    padding: 2%;
 }
