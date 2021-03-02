@@ -1,0 +1,31 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    padding: 1%;
+    width: 60%;
+    margin: auto;
+    border-bottom: 1px solid rgba(31, 31, 31, 0.082);
+}
+
+nav {
+    font-size: larger;
+}
+
+nav img {
+    border-radius: 50%;
+    max-width: 10%;
+    height: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(8, 25, 58);
+    font-size: larger;
+}
+
+main {
+    width: 60%;
+    margin: auto;
+}
