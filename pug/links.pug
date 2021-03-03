@@ -1,0 +1,27 @@
+html(lang="en")
+  include _partials/common.pug
+  
+  mixin common_link(link, logo)
+     .common_link 
+      a(href=link)
+        img(src=logo)
+
+  main
+    h1 Links 
+    .common_link_section
+      h2 Common 
+      .row 
+        +common_link("https://www.youtube.com/", "img/logo-yt.png")
+        +common_link("https://www.github.com/", "img/logo-gh.png")
+        +common_link("https://www.netflix.com/", "img/logo-nf.png")
+
+    .common_link_section
+      h2 Common 
+      .row 
+        +common_link("https://mail.google.com/mail/u/3/#inbox", "img/logo-gm.png")
+        +common_link("https://outlook.live.com/mail/inbox", "img/logo-ol.png")
+
+    .common_link_section
+      h2 Common 
+      .row 
+        +common_link("https://smile.amazon.co.uk", "img/logo-am.png")

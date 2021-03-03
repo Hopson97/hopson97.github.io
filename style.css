@@ -29,3 +29,9 @@ main {
     width: 60%;
     margin: auto;
 }
+
+/* For the common links page */
+
+.common_link {
+    padding-left: 3%;
+}
