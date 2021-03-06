@@ -1,12 +1,13 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: rgb(20, 20, 20);
+    color: white;
 }
 
 header {
     padding: 1%;
     width: 60%;
     margin: auto;
-    border-bottom: 1px solid rgba(31, 31, 31, 0.082);
 }
 
 nav {
@@ -21,17 +22,86 @@ nav img {
 
 nav a {
     text-decoration: none;
-    color: rgb(8, 25, 58);
+    color: white;
     font-size: larger;
 }
 
 main {
-    width: 60%;
+    width: 55%;
     margin: auto;
 }
 
-/* For the common links page */
+/* 
+    ============================
 
+            LINKS PAGE
+
+    ============================
+*/
 .common_link {
     padding-left: 3%;
+}
+
+
+/* 
+    =================================
+
+            PROJECTS PAGE
+
+    =================================
+*/
+.project {
+    border-bottom: 1px solid rgb(68, 68, 68);
+    padding-bottom: 2%;
+    padding-top: 2%;
+    min-height: 35vh;
+}
+
+.project-articles {
+    list-style: none;
+}
+
+.project-title * {
+    display: inline;
+}
+
+
+.project-title h3::after {
+    content: " | ";
+}
+
+
+.project img {
+    transition: 2s;
+    max-height: 25vh;
+    width: auto;
+    border: 1px solid white;
+}
+
+
+.project img:hover {
+    max-height: 50vh;
+    display:block;
+    z-index:999;
+}
+
+.project-tag {
+    margin: 1%;
+}
+.project-tag:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+/* 
+    =================================
+
+            GENERAL CSS
+
+    =================================
+*/
+.inline * {
+    display: inline;
 }

@@ -2,22 +2,57 @@ html(lang="en")
   include _partials/common.pug
   script(src="assets/Projects.js")
   main
+    mixin project(name, date, tags, p1, p2, p3, imgurl)
+      article.project(tags=kind)
+        .project-title
+          h3= name
+          p= date
+        .row 
+          .col-7
+            p=p1
+            p=p2
+            p=p3 
+          .col-5     
+            img(src=imgurl) 
+        .inline.project-links.pl-2.pt-2
+          h5 Links:
+        .inline.project-tags.pl-2.pt-2
+          h5 Tags:
+
+
+
+
     h1 Projects
     ul#projects-index
-    .project-list.row
-      .col-4
-      .col-4
-      .col-4
-    ul#projects-articles.project-articles
-      li.project.cpp.opengl.game
-        article
-          h3 Hopson Land
-          p What a sick game this one way, eh?
-      li.project.cpp.opengl.game
-        article
-          h3 Hopson Land
-          p What a sick game this one way, eh?
-      li.project.cpp.opengl.game
-        article
-          h3 Hopson Land
-          p What a sick game this one way, eh?
+    .project-list
+    #project-articles.project-articles
+
+          +project(
+        "", // Name
+        "", // Date
+        "", // Tags
+        "", // Paragraph 1
+        "", // Paragraph 2
+        "", // Paragraph 3
+        ""  // Image URL
+        )
+
+      +project(
+        "Pyoro Clone",
+        "December 2015",
+        "cpp sfml game",
+        "A simple clone of the WarioWare game, Pyoro (https://www.mariowiki.com/Pyoro).",
+        "I create this when I racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we go.",
+        "In total, it took ~14 hours to complete.",
+        "assets/img/projects/pyoro.png"
+        )
+
+      +project(
+        "Hopson Land",
+        "August 2015",
+        "cpp game",
+        "This was one of my earliest games, created when I was first learning C++. It was also my first time creating classes correctly, as before this I did not really know what they were for.",
+        "It was just a simple RPG game where you had the ability to roam around a little world, and then encounter enemies in certain parts where it would transision to an RPG turn-based-style battle system.",
+        "",
+        "assets/img/projects/hopsonland.png"
+        )
