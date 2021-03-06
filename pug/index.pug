@@ -3,7 +3,7 @@ html(lang="en")
   script(src="assets/Projects.js")
   main
     mixin project(name, date, tags, p1, p2, p3, imgurl)
-      article.project(tags=kind)
+      article.project(tags=tags)
         .project-title
           h3= name
           p= date
@@ -18,25 +18,10 @@ html(lang="en")
           h5 Links:
         .inline.project-tags.pl-2.pt-2
           h5 Tags:
-
-
-
-
     h1 Projects
     ul#projects-index
     .project-list
     #project-articles.project-articles
-
-      //+project(
-      //  "Name", 
-      //  "Date", 
-      //  "Tags", 
-      //  "Paragraph 1", 
-      //  "Paragraph 2", 
-      //  "Paragraph 3", 
-      //  "Image URL"   
-      //  )
-
       +project(
         "Pyoro Clone",
         "December 2015",
@@ -45,8 +30,7 @@ html(lang="en")
         "I create this when I racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we go.",
         "In total, it took ~14 hours to complete.",
         "assets/img/projects/pyoro.png"
-        )
-
+      )
       +project(
         "Hopson Land",
         "August 2015",
@@ -55,4 +39,13 @@ html(lang="en")
         "It was just a simple RPG game where you had the ability to roam around a little world, and then encounter enemies in certain parts where it would transision to an RPG turn-based-style battle system.",
         "",
         "assets/img/projects/hopsonland.png"
-        )
+      )
+  //+project(
+  //  "Name", 
+  //  "Date", 
+  //  "Tags", 
+  //  "Paragraph 1", 
+  //  "Paragraph 2", 
+  //  "Paragraph 3", 
+  //  "Image URL"   
+  //  )
