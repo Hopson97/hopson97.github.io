@@ -12,12 +12,14 @@ header {
 
 nav {
     font-size: larger;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 nav img {
     border-radius: 50%;
-    max-width: 10%;
+    max-width: 6%;
     height: auto;
+    border: 2px solid white;
 }
 
 nav a {
@@ -93,7 +95,23 @@ main {
     text-decoration: underline;
 }
 
+/* 
+    ============================
 
+            FUN 
+
+    ============================
+*/
+.fun-content {
+    width: 80%;
+    margin: auto;
+}
+
+canvas {
+    border: 1px solid white;
+    width: 1600px;
+    height: ;: 900px;
+}
 
 /* 
     =================================

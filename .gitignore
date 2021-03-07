@@ -1,1 +1,5 @@
 *.pyc
+
+circuit/
+Circuit/
+circuit.html
