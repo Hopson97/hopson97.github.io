@@ -109,8 +109,11 @@ main {
 
 canvas {
     border: 1px solid white;
+}
+
+#circuitcanvas {
     width: 1600px;
-    height: 900px;
+    height: 800px;
 }
 
 /* 

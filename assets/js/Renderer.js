@@ -11,20 +11,7 @@ class DrawRectCommand {
     }
 
     render(ctx) {
-        ctx.strokeStyle = this.outlineColour;
-        ctx.fillStyle = this.fillColour;ctx.lineWidth = 1;
-        ctx.fillRect(
-            Math.floor(this.x),
-            Math.floor(this.y),
-            Math.floor(this.w),
-            Math.floor(this.h)
-        );
-        ctx.strokeRect(
-            Math.floor(this.x + 1),
-            Math.floor(this.y + 1),
-            Math.floor(this.w - 2),
-            Math.floor(this.h - 2)
-        );
+
     }
 }
 
@@ -51,32 +38,11 @@ class DrawLineCommand {
     }
 }
 
-class DrawImageCommand {
-    constructor(image, x, y, width, height) {
-        this.image = image;
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-    }
-
-    render(ctx) {
-        ctx.drawImage(
-            this.image,
-            this.x, 
-            this.y, 
-            this.width,
-            this.height
-        );
-
-    }
-}
 
 class Context {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
-        this.cmds = [];
         new ResizeObserver(() => {
             const width = this.canvas.getBoundingClientRect().width;
             const height = this.canvas.getBoundingClientRect().height;
@@ -115,26 +81,31 @@ class Context {
     }
 
     drawRect(x, y, w, h, fillColour, outlineColour) {
-        this.cmds.push(new DrawRectCommand(
-            x, y, w, h, fillColour, outlineColour
-        ));
+        this.ctx.strokeStyle = outlineColour;
+        this.ctx.fillStyle = fillColour;
+        this.ctx.lineWidth = 1;
+        this.ctx.fillRect(
+            Math.floor(x),
+            Math.floor(y),
+            Math.floor(w),
+            Math.floor(h)
+        );
+        this.ctx.strokeRect(
+            Math.floor(x + 1),
+            Math.floor(y + 1),
+            Math.floor(w - 2),
+            Math.floor(h - 2)
+        );
     }
 
-    drawImage(image, x, y, w, h) {
-        this.cmds.push(new DrawImageCommand(
-            image, x, y, w, h
-        ));
+    drawImage(image, x, y, width, height) {
+        this.ctx.drawImage(
+            image,
+            x, 
+            y, 
+            width,
+            height
+        );
     }
-
-    render() {
-        this.ctx.translate(0.5, 0.5);
-            for (const cmd of this.cmds) {
-                cmd.render(this.ctx);
-        }
-        this.ctx.translate(-0.5, -0.5);
-        this.cmds.length = 0;
-
-    }
-
 }
 
