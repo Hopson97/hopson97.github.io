@@ -3,6 +3,9 @@
 const button = new Image();
 button.src = "assets/img/circuit/button.png";
 
+const led = new Image();
+led.src = "assets/img/circuit/led.png";
+
 class ButtonComponent {
     constructor(mouseX, mouseY) {
         this.x = mouseX;
@@ -13,6 +16,21 @@ class ButtonComponent {
         ctx.drawImage(button,
             HOLE_SIZE * this.x * 2, HOLE_SIZE * this.y * 2,
             HOLE_SIZE * 5, HOLE_SIZE * 5
+        );
+    }
+}
+
+class LEDComponent {
+    constructor(mouseX, mouseY) {
+        this.x = mouseX;
+        this.y = mouseY;
+        this.direction = 1;
+    }
+
+    draw(ctx) {
+        ctx.drawImage(led,
+            HOLE_SIZE * this.x * 2, HOLE_SIZE * this.y * 2 - HOLE_SIZE / 2,
+            HOLE_SIZE * 3, HOLE_SIZE *2
         );
     }
 }
