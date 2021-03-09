@@ -33,6 +33,7 @@ class App {
         const wireToolButton = document.getElementById("wire");
         const eraseToolButton = document.getElementById("erase");
         const buttonToolButton = document.getElementById("button");
+        const resistorToolButton = document.getElementById("resistor");
 
         wireToolButton.addEventListener("click", e => {
             this.currentTool = new WireTool(this.board);
@@ -46,6 +47,10 @@ class App {
         buttonToolButton.addEventListener("click", e => {
             this.currentTool = new ButtonTool(this.board);
             
+        });
+
+        resistorToolButton.addEventListener("click", e => {
+            this.currentTool = new ResistorTool(this.board);
         });
     }
 

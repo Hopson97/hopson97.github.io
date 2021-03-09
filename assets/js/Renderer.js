@@ -11,15 +11,7 @@ class DrawLineCommand {
     }
 
     render(ctx) {
-        ctx.strokeStyle = this.colour;
-        ctx.lineWidth = this.thickness;
 
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.xend, this.yend);
-        ctx.stroke();
-
-        ctx.lineWidth = 1;
     }
 }
 
@@ -60,9 +52,15 @@ class Context {
     }
 
     drawLine(x, y, xend, yend, colour, thickness) {
-        this.cmds.push(new DrawLineCommand(
-            x, y, xend, yend, colour, thickness
-        ));
+        this.ctx.strokeStyle = colour;
+        this.ctx.lineWidth = thickness;
+
+        this.ctx.beginPath();
+        this.ctx.moveTo(x, y);
+        this.ctx.lineTo(xend, yend);
+        this.ctx.stroke();
+
+        this.ctx.lineWidth = 1;
     }
 
     drawRect(x, y, w, h, fillColour, outlineColour) {
