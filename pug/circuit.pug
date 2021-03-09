@@ -6,5 +6,9 @@ html(lang="en")
   main
     h1 Circuit Editor 
     p Simple circuit editor designed to create mini diagrams for the Node MCU microcontroller cause I was unfond of exsiting solutions 
+  
   .fun-content
+    form
+      label(for="colour") Colour
+      input.m-1(type="color" id="colour" name="colour" value="#FFF")
     canvas#circuitcanvas
