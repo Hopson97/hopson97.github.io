@@ -1,20 +1,5 @@
 "use strict"
 
-class DrawRectCommand {
-    constructor(x, y, w, h, fillColour, outlineColour) {
-        this.x = x;
-        this.y = y;
-        this.w = w;
-        this.h = h;
-        this.fillColour = fillColour;
-        this.outlineColour = outlineColour;
-    }
-
-    render(ctx) {
-
-    }
-}
-
 class DrawLineCommand {
     constructor(x, y, xend, yend, colour, thickness) {
         this.x = x;
