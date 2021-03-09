@@ -1,6 +1,23 @@
 "use strict"
 
-class Wire {
+const button = new Image();
+button.src = "assets/img/circuit/button.png";
+
+class ButtonComponent {
+    constructor(mouseX, mouseY) {
+        this.x = mouseX;
+        this.y = mouseY;
+    }
+
+    draw(ctx) {
+        ctx.drawImage(button,
+            HOLE_SIZE * this.x * 2, HOLE_SIZE * this.y * 2,
+            HOLE_SIZE * 5,HOLE_SIZE * 5
+        );
+    }
+}
+
+class WireComponent {
     constructor(mouseX, mouseY) {
         this.startX = mouseX;
         this.startY = mouseY;

@@ -29,6 +29,24 @@ class App {
             updateMousePosition(e);
             this.currentTool.onClick(this.mouseX, this.mouseY);
         });
+
+        const wireToolButton = document.getElementById("wire");
+        const eraseToolButton = document.getElementById("erase");
+        const buttonToolButton = document.getElementById("button");
+
+        wireToolButton.addEventListener("click", e => {
+            this.currentTool = new WireTool(this.board);
+        });
+
+        eraseToolButton.addEventListener("click", e => {
+           // this.currentTool = new WireTool();
+            
+        });
+
+        buttonToolButton.addEventListener("click", e => {
+            this.currentTool = new ButtonTool(this.board);
+            
+        });
     }
 
     run() {
@@ -52,10 +70,12 @@ class App {
 
     _drawSelected() {
         const colour = this.currentTool.isValidSpot(this.mouseX, this.mouseY) ? "green" : "red";
+        const width = this.currentTool.componentSize().w * HOLE_SIZE;
+        const height = this.currentTool.componentSize().h * HOLE_SIZE;
         this.ctx.drawRect(
             this.mouseX * HOLE_SIZE * 2, 
             this.mouseY * HOLE_SIZE * 2, 
-            HOLE_SIZE, HOLE_SIZE, 
+            width, height, 
             colour, "#FFF");
 
     }
