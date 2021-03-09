@@ -152,3 +152,56 @@ class EraseTool extends Tool {
         }
     }
 }
+
+class ResistorTool extends Tool {
+    constructor(board) {
+        super(board);
+
+        this.virtualEndX = 0;
+        this.virtualEndY = 0;
+    }
+
+    onMouseMove(x, y) {
+        this.virtualEndX = x;
+        this.virtualEndY = y;
+        if (this.activeComponent) {
+            if (Math.abs(this.activeComponent.startX - this.virtualEndX) > Math.abs(this.activeComponent.startY - this.virtualEndY)) {
+                this.activeComponent.endX = this.virtualEndX;
+                this.activeComponent.endY = this.activeComponent.startY;
+            } else {
+                console.log("ueet");
+                this.activeComponent.endX = this.activeComponent.startX;
+                this.activeComponent.endY = this.virtualEndY;
+            }
+        }
+    }
+
+    onClick(x, y) {
+        if (!this.isValidSpot(x, y)) {
+            return;
+        }
+        if (this.activeComponent) {
+            this.board.addWire(this.activeComponent);
+            this.activeComponent = null;
+        } else {
+            this.activeComponent = new ResistorComponent(x, y);
+            this.board.getHole(x - 2, y - 6).active = true;
+        }
+    }
+
+    isValidSpot(x, y) {
+        const hole = this.board.getHole(x - 2, y - 6);
+        if (hole) {
+            return !hole.active && hole.valid;
+        } else {
+            return false;
+        }
+    }
+
+    componentSize() {
+        return {
+            w: 1,
+            h: 1
+        }
+    }
+}
