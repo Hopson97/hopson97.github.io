@@ -20,11 +20,12 @@ class Board {
         for (let y = 0; y < BOARD_HEIGHT; y++) {
             for (let x = 0; x < BOARD_WIDTH; x++) {
                 const hole = {
-                    active: false
+                    active: false,
+                    valid: true
                 };
                 this.map.push(hole);
-                if (layout[idx(x, y)] == 1) {
-                    hole.active = false;
+                if (layout[idx(x, y)] == 0) {
+                    hole.valid = false;
                 }
             }
         }
@@ -133,7 +134,12 @@ class App {
     }
 
     _drawSelected() {
-        this.ctx.drawRect(this.mouseX * HOLE_SIZE * 2, this.mouseY * HOLE_SIZE * 2, HOLE_SIZE, HOLE_SIZE, "rgba(200, 0, 0, 100)", "#FFF");
+        const colour = this.currentTool.isValidSpot(this.mouseX, this.mouseY) ? "green" : "red";
+        this.ctx.drawRect(
+            this.mouseX * HOLE_SIZE * 2, 
+            this.mouseY * HOLE_SIZE * 2, 
+            HOLE_SIZE, HOLE_SIZE, 
+            colour, "#FFF");
 
     }
 }

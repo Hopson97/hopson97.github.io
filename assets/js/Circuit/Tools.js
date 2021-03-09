@@ -28,6 +28,9 @@ class WireTool extends Tool {
     }
 
     onClick(x, y) {
+        if (!this.isValidSpot(x, y)) {
+            return;
+        }
         if (this.activeWire) {
             this.board.addWire(this.activeWire);
             this.activeWire = null;
@@ -43,5 +46,14 @@ class WireTool extends Tool {
         }
     }
 
-    isValidSpot(x, y) {}
+    isValidSpot(x, y) {
+        console.log(this.board.getHole(x, y));
+        const hole = this.board.getHole(x - 2, y - 8);
+        if (hole) {
+            return !hole.active && hole.valid;
+        }
+        else {
+            return false;
+        }
+    }
 }
