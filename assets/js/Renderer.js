@@ -85,6 +85,17 @@ class Context {
         }).observe(canvas);
     }
 
+    drawCurve(sx, sy, ex, ey, cx, cy, colour, width)
+    {
+        this.ctx.beginPath();
+        this.ctx.moveTo(sx, sy);
+        this.ctx.quadraticCurveTo(cx, cy, ex, ey);
+        this.ctx.lineWidth = width;
+        this.ctx.strokeStyle = colour;
+        this.ctx.stroke();
+        this.ctx.lineWidth = 1;
+    }
+
     getHeight() {
         return this.canvas.height;
     }
@@ -123,8 +134,6 @@ class Context {
         this.ctx.translate(-0.5, -0.5);
         this.cmds.length = 0;
 
-        this.ctx.stroke();
-        this.ctx.fill();
     }
 
 }
