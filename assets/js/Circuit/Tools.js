@@ -60,6 +60,48 @@ class WireTool extends Tool {
     }
 }
 
+class LEDTool extends Tool {
+    constructor(board) {
+        super(board);
+        this.activeComponent = new LEDComponent(0, 0);
+    }
+
+    onMouseMove(x, y) {
+        if (this.activeComponent) {
+            this.activeComponent.x = x;
+            this.activeComponent.y = y;
+        }
+    }
+
+    onClick(x, y) {
+        if (!this.isValidSpot(x, y)) {
+            return;
+        }
+        this.board.addButton(new LEDComponent(this.activeComponent.x, this.activeComponent.y));
+    }
+
+    isValidSpot(mx, my) {
+        const board = this.board;
+
+        function valid(x, y) {
+            const hole = board.getHole(x - 2, y - 6);
+            if (hole) {
+                return !hole.active && hole.valid;
+            } else {
+                return false;
+            }
+        }
+
+        return valid(mx, my) && valid(mx + 2, my) && valid(mx, my + 2) && valid(mx + 2, my + 2);
+    }
+
+    componentSize() {
+        return {
+            w: 2,
+            h: 1
+        }
+    }
+}
 
 class ButtonTool extends Tool {
     constructor(board) {
@@ -93,20 +135,7 @@ class ButtonTool extends Tool {
             }
         }
 
-        function empty() {
-            for (let y = my; y < my + 3; y++) {
-                for (let x = mx; x < mx + 3; x++) {
-                    const hole = board.getHole(x - 2, y - 6);
-                    if (hole) {
-                        return !hole.active;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-        }
-
-        return valid(mx, my) && valid(mx + 2, my) && valid(mx, my + 2) && valid(mx + 2, my + 2) && empty();
+        return valid(mx, my) && valid(mx + 2, my) && valid(mx, my + 2) && valid(mx + 2, my + 2);
     }
 
     componentSize() {
