@@ -12,18 +12,18 @@ class DrawRectCommand {
 
     render(ctx) {
         ctx.strokeStyle = this.outlineColour;
-        ctx.fillStyle = this.fillColour;
+        ctx.fillStyle = this.fillColour;ctx.lineWidth = 1;
         ctx.fillRect(
-            floor(this.x),
-            floor(this.y),
-            floor(this.w),
-            floor(this.h)
+            Math.floor(this.x),
+            Math.floor(this.y),
+            Math.floor(this.w),
+            Math.floor(this.h)
         );
         ctx.strokeRect(
-            floor(this.x),
-            floor(this.y),
-            floor(this.w),
-            floor(this.h)
+            Math.floor(this.x + 1),
+            Math.floor(this.y + 1),
+            Math.floor(this.w - 2),
+            Math.floor(this.h - 2)
         );
     }
 }
@@ -122,6 +122,9 @@ class Context {
         }
         this.ctx.translate(-0.5, -0.5);
         this.cmds.length = 0;
+
+        this.ctx.stroke();
+        this.ctx.fill();
     }
 
 }
