@@ -48,7 +48,8 @@ class Context {
     }
 
     clear() {
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.fillColour = "black";
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
     drawLine(x, y, xend, yend, colour, thickness) {
