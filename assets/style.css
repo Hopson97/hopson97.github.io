@@ -33,6 +33,22 @@ main {
     margin: auto;
 }
 
+footer {
+    width: 50%;
+    margin: auto;
+}
+
+.cent {
+    text-align: center;
+
+}
+
+footer .fab {
+    border-top: 1px solid rgb(68, 68, 68);
+    padding: 20px;
+    color: white;
+}
+
 /* 
     ============================
 

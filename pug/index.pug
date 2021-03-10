@@ -2,50 +2,46 @@ html(lang="en")
   include _partials/common.pug
   script(src="assets/js/Projects.js")
   main
-    mixin project(name, date, tags, p1, p2, p3, imgurl)
+    mixin project(name, date, tags, imgurl)
       article.project(tags=tags)
-        .project-title
+        .project-title.pb-2
           h3= name
           p= date
         .row 
           .col-7
-            p=p1
-            p=p2
-            p=p3 
+            block
           .col-5     
             img(src=imgurl) 
         .inline.project-links.pl-2.pt-2
           h5 Links:
         .inline.project-tags.pl-2.pt-2
           h5 Tags:
+
+
     h1 Projects
     ul#projects-index
     .project-list
     #project-articles.project-articles
-      +project(
-        "Pyoro Clone",
-        "December 2015",
-        "cpp sfml game",
-        "A simple clone of the WarioWare game, Pyoro (https://www.mariowiki.com/Pyoro).",
-        "I create this when I racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we go.",
-        "In total, it took ~14 hours to complete.",
-        "assets/img/projects/pyoro.png"
-      )
-      +project(
-        "Hopson Land",
-        "August 2015",
-        "cpp game",
-        "This was one of my earliest games, created when I was first learning C++. It was also my first time creating classes correctly, as before this I did not really know what they were for.",
-        "It was just a simple RPG game where you had the ability to roam around a little world, and then encounter enemies in certain parts where it would transision to an RPG turn-based-style battle system.",
-        "",
-        "assets/img/projects/hopsonland.png"
-      )
-  //+project(
-  //  "Name", 
-  //  "Date", 
-  //  "Tags", 
-  //  "Paragraph 1", 
-  //  "Paragraph 2", 
-  //  "Paragraph 3", 
-  //  "Image URL"   
-  //  )
+      
+      //
+      //  P Y O R O
+      //
+      +project("Pyoro Clone", "December 2015", "cpp sfml game", "assets/img/projects/pyoro.png")
+        p A simple clone of the WarioWare game, Pyoro 
+          a(href="https://www.mariowiki.com/Pyoro", target="_blank") (Link to original)
+        p This was created when racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we went. 
+        p For example, he implemented the fading background, while I developed the extendable tongue.
+        p In total, it took ~14 hours to complete.
+
+      //
+      //  H O P S O N     L A N D
+      //
+      +project("Hopson Land", "August 2015","cpp game", "assets/img/projects/hopsonland.png")
+        p This was one of my earliest games, created when I was first learning C++. It was also my first time creating classes correctly, as before this I did not really know what they were for.
+        p It was just a simple RPG game where you had the ability to roam around a little world, and then encounter enemies in certain parts where it would transision to an RPG turn-based-style battle system.
+        
+      
+      // +project("Name", "Date",  "Tags", "Image URL")
+      //  
+
+  include _partials/footer.pug
