@@ -17,14 +17,37 @@ html(lang="en")
         .inline.project-tags.pl-2.pt-2
           h5 Tags:
 
+    mixin project_multiimage(name, date, tags, imgurl1, imgurl2)
+      article.project(tags=tags)
+        .project-title.pb-2
+          h3= name
+          p= date
+        block
+        .row.d-flex.justify-content-center.pb-2
+          img(src=imgurl1) 
+          img(src=imgurl2) 
+        .inline.project-links.pl-2.pt-2
+          h5 Links:
+        .inline.project-tags.pl-2.pt-2
+          h5 Tags:
+
 
     h1 Projects
     ul#projects-index
     .project-list
     #project-articles.project-articles
+
+      //
+      //  FASTER THAN WIND
+      //
+      +project_multiimage("Faster Than Wind", "January 2016", "cpp sfml game", "assets/img/projects/ftw1.png", "assets/img/projects/ftw2.png")
+        p An attempted clone of the game "FTL: Fater than Light". At the time I was very into the game FTL, so I felt like creating my own version would be an interesting challenge.  
+          a(href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/", target="_blank") (Link to original) 
+        p It features a ship editor, as well as the game itself. The game itself was never finished beyond a main menu screen and a ship selection screen.
+        p Eventually I would like to revisit this project and probably rewrite it.
       
       //
-      //  P Y O R O
+      //  PYORO
       //
       +project("Pyoro Clone", "December 2015", "cpp sfml game", "assets/img/projects/pyoro.png")
         p A simple clone of the WarioWare game, Pyoro 
@@ -34,7 +57,7 @@ html(lang="en")
         p In total, it took ~14 hours to complete.
 
       //
-      //  H O P S O N     L A N D
+      //  HOPSON LAND
       //
       +project("Hopson Land", "August 2015","cpp game", "assets/img/projects/hopsonland.png")
         p This was one of my earliest games, created when I was first learning C++. It was also my first time creating classes correctly, as before this I did not really know what they were for.

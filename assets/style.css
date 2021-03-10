@@ -29,7 +29,7 @@ nav a {
 }
 
 main {
-    width: 55%;
+    width: 65%;
     margin: auto;
 }
 
@@ -90,6 +90,7 @@ footer .fab {
 
 
 .project img {
+    margin: 1%;
     transition: 2s;
     max-height: 25vh;
     width: auto;
@@ -98,7 +99,7 @@ footer .fab {
 
 
 .project img:hover {
-    max-height: 50vh;
+    max-height: 45vh;
     display:block;
     z-index:999;
 }
