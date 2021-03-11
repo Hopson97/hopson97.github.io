@@ -3,8 +3,13 @@ html(lang="en")
   include mixins/project_mixins.pug
   script(src="assets/js/Projects.js")
   main
-    h1 Projects
-    .row.project-directory 
+    h1.pb-2 Projects
+    div Filter by tag:
+      div#reset-tags.project-tag-filter.pl-2.pt-1 RESET FILTERS
+      p.pl-2#filters.row 
+
+    div Project list:
+    .row.project-directory.pl-2 
       .col-4#project-index-row0 
       .col-4#project-index-row1
       .col-4#project-index-row2
@@ -49,18 +54,10 @@ html(lang="en")
         p A playable demo can be found 
           a(href="https://mindo21.github.io/hackPompeyGame/index.html", target="_blank") here
 
-
-
       //
-      //  BALIC
+      //  Sorting Visualiser
       //
-      +project("BALIC", "October 2018",  "cpp sfml", "balic", "https://github.com/Hopson97/Balic")
-        p BALIC stands for "Bad and Lossy Image Compressor". This was mostly made just for fun, which takes an input image and then outputs a sometimes larger lower quality image. Furthermore, it is able to also show the process on a seperate thread.
-        
-      //
-      //  Sort Algorithm Visualiser
-      //
-      +project("Sort Algorithm Visualiser", "September 2018",  "java swing", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
+      +project("Sorting Visualiser", "September 2018",  "java swing", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
         p A sorting algorithm visualiser which features a main menu to select which algorithms to run.
         p This utilises multi-threading, where one thread handles the updates (eg runs the sort algorithm), and the other thread handles the drawing and updating of the stair case.
         p It features bubble sort, counting sort, cycle sort, gnome sort, heap sort, insertion sort, iterative merge sort, merge sort, pancake sort, quick sort, radix sort, selection sort, and stooge sort. 
@@ -76,8 +73,8 @@ html(lang="en")
       //  Rusty GL
       //
       +project_noimage("Rusty GL", "August 2018",  "rust opengl library", "asciimonrs", "https://github.com/Hopson97/rusty-gl")
-      p An OpenGL wrapper for Rust.
-      p I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.
+        p An OpenGL wrapper for Rust.
+        p I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.
 
       //
       //  AsciiMon-rs
@@ -207,9 +204,9 @@ html(lang="en")
       //  SFML Game Framework
       //
       +project_noimage("SFML Game Framework", "August 2017",  "cpp sfml library", "https://github.com/Hopson97/SFML-Game-Framework", "https://www.youtube.com/watch?v=J_ZnUpXGMmg")
-      p Simple framework for SFML games.
+        p Simple framework for SFML games.
 
-      p Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.
+        p Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.
 
 
       //
@@ -237,7 +234,7 @@ html(lang="en")
       //
       //  Minecraft One Week Challenge
       //
-      +project_multiimage("Minecraft One Week Challenge", "August 2017",  "cpp sfml opengl game challenge", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
+      +project_multiimage("Minecraft Challenge", "August 2017",  "cpp sfml opengl game challenge", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
         p Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.
         p This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.
 
@@ -252,7 +249,7 @@ html(lang="en")
       //
       //  Brainf*ck Interpretter
       //
-      +project_noimage("Brainf*ck Interpretter", "February 2017",  "cpp emulator", "https://github.com/Hopson97/Brainf-ck-Interpretter")
+      +project_noimage("Brainf*ck", "February 2017",  "cpp emulator", "https://github.com/Hopson97/Brainf-ck-Interpretter")
         p Says it on the tin really, just an interpretter for the Brainf*ck langauge.
         p From Wikipedia: "Brainf*ck is an esoteric programming language created in 1993 by Urban Müller. Notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer. While it is fully Turing complete, it is not intended for practical use, but to challenge and amuse programmers. Brainf*ck simply requires one to break commands into microscopic steps."
         

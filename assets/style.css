@@ -45,9 +45,6 @@ main {
     text-decoration: none;
 }
 
-.hidden {
-    display: none;
-}
 
 footer {
     border-top: 1px solid rgb(68, 68, 68);
@@ -123,7 +120,7 @@ footer .fab {
 .project-tag {
     margin: 1%;
 }
-.project-tag:hover, .project-directory a:hover {
+.project-tag:hover, .project-directory a:hover, .project-tag-filter:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -139,6 +136,15 @@ footer .fab {
 .project-directory a {
     color: white;
     text-decoration: none;
+}
+
+.project-tag-filter {
+    padding-left: 15px;
+}
+
+.selected-tag {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /* 
@@ -345,4 +351,8 @@ canvas {
     .project img:hover {
         max-height: 15vh;
     }
+}
+
+.hidden {
+    display: none;
 }

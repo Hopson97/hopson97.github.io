@@ -21,8 +21,13 @@
   </body>
   <script src="assets/js/Projects.js"></script>
   <main>
-    <h1>Projects</h1>
-    <div class="row project-directory"> 
+    <h1 class="pb-2">Projects</h1>
+    <div>Filter by tag:
+      <div class="project-tag-filter pl-2 pt-1" id="reset-tags">RESET FILTERS</div>
+      <p class="pl-2 row" id="filters"> </p>
+    </div>
+    <div>Project list:</div>
+    <div class="row project-directory pl-2"> 
       <div class="col-4" id="project-index-row0"> </div>
       <div class="col-4" id="project-index-row1"></div>
       <div class="col-4" id="project-index-row2"></div>
@@ -139,32 +144,11 @@
               </div>
           </article>
       <!---->
-      <!--  BALIC-->
-      <!---->
-          <article class="project" tags="cpp sfml">
-            <div class="project-title pb-2">
-              <h3>BALIC</h3>
-              <p class="date">October 2018</p>
-              <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Balic" target="_blank">
-                  <div class="fab fa-github fa-2x"></div></a>
-              </div>
-            </div>
-            <div class="row"> 
-              <div class="col-7">
-                <p>BALIC stands for "Bad and Lossy Image Compressor". This was mostly made just for fun, which takes an input image and then outputs a sometimes larger lower quality image. Furthermore, it is able to also show the process on a seperate thread.</p>
-              </div>
-              <div class="col-5">    <img src="assets/img/projects/balic.png"/></div>
-            </div>
-              <div class="inline project-tags pl-2 pt-2">
-                <h5>Tags:</h5>
-              </div>
-          </article>
-      <!---->
-      <!--  Sort Algorithm Visualiser-->
+      <!--  Sorting Visualiser-->
       <!---->
           <article class="project" tags="java swing">
             <div class="project-title pb-2">
-              <h3>Sort Algorithm Visualiser</h3>
+              <h3>Sorting Visualiser</h3>
               <p class="date">September 2018</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Sort-Algorithm-Visualiser" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=tPtvKYinUzc" target="_blank">
@@ -216,12 +200,12 @@
                   <div class="fab fa-youtube fa-2x"> </div></a>
               </div>
             </div>
+            <p>An OpenGL wrapper for Rust.</p>
+            <p>I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.</p>
               <div class="inline project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
-      <p>An OpenGL wrapper for Rust.</p>
-      <p>I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.</p>
       <!---->
       <!--  AsciiMon-rs-->
       <!---->
@@ -516,12 +500,12 @@
                   <div class="fab fa-youtube fa-2x"> </div></a>
               </div>
             </div>
+            <p>Simple framework for SFML games.</p>
+            <p>Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.</p>
               <div class="inline project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
-      <p>Simple framework for SFML games.</p>
-      <p>Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.</p>
       <!---->
       <!--  Game of Life-->
       <!---->
@@ -582,7 +566,7 @@
       <!---->
           <article class="project" tags="cpp sfml opengl game challenge">
             <div class="project-title pb-2">
-              <h3>Minecraft One Week Challenge</h3>
+              <h3>Minecraft Challenge</h3>
               <p class="date">August 2017</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/MineCraft-One-Week-Challenge" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=Xq3isov6mZ8" target="_blank">
@@ -624,7 +608,7 @@
       <!---->
           <article class="project" tags="cpp emulator">
             <div class="project-title pb-2">
-              <h3>Brainf*ck Interpretter</h3>
+              <h3>Brainf*ck</h3>
               <p class="date">February 2017</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Brainf-ck-Interpretter" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a>
