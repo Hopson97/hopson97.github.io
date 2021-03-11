@@ -1,36 +1,34 @@
-mixin project_header(name, date, tags)
+mixin project_header(name, date, tags, github, youtube)
   article.project(tags=tags)
     .project-title.pb-2
-      h3= name
-      p= date
+        h3= name
+        p= date
+        .inline.project-links
+            if github
+                a.p-3(href=github)
+                .fab.fa-github.fa-2x
+            if youtube
+                a.p-3(href=youtube)
+                .fab.fa-youtube.fa-2x 
     block 
 
-mixin project_footer(github, youtube)
-  .inline.project-links.pl-2.pt-2
-    if youtube || github
-      h5 Links: 
-      if github
-        a.p-3(href=github)
-          .fab.fa-github.fa-2x
-      if youtube
-        a.p-3(href=youtube)
-          .fab.fa-youtube.fa-2x 
+mixin project_footer()
   .inline.project-tags.pl-2.pt-2
     h5 Tags:
 
 mixin project(name, date, tags, imgurl, github, youtube)
-  +project_header(name, date, tags)
+  +project_header(name, date, tags, github, youtube)
     .row 
       .col-7
         block
       .col-5     
-        img(src=imgurl) 
+        img(src=`assets/img/projects/${imgurl}.png`) 
     +project_footer(github, youtube)
 
 mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
-    +project_header(name, date, tags)
+    +project_header(name, date, tags, github, youtube)
         block
         .row.d-flex.justify-content-center.pb-2
-        img(src=imgurl1) 
-        img(src=imgurl2) 
+            img(src=`assets/img/projects/${imgurl1}.png`) 
+            img(src=`assets/img/projects/${imgurl2}.png`) 
         +project_footer(github, youtube)

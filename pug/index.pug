@@ -1,5 +1,6 @@
 html(lang="en")
   include _partials/common.pug
+  include mixins/project_mixins.pug
   script(src="assets/js/Projects.js")
   main
     h1 Projects
@@ -7,17 +8,23 @@ html(lang="en")
     .project-list
     #project-articles.project-articles
 
+      //  KINGDOM
+      //
+      +project_multiimage("Kingdom", "April 2016", "cpp sfml game", "kingdom1", "kingdom2", "https://github.com/Hopson97/Kingdom", "https://www.youtube.com/watch?v=MITfqzzeLC8&ab_channel=Hopson")
+        p Kingdom was "game" that was originally supposed to be a "minicraft x stardew valley" combo, but instead ending up being more like an experimental project where I played around with a custom componenet system, that would allow attatching different logic types to entities, eg following the player, or turnng water into ice when stepped on.
+        p Every entity had an std::vector of components, taht are looped through every frame in the update method, after doing any unique logic of a derived entity class first. These components are added in the constructor of any class that is derived by the entity class.
+        p If you are interested, there is a tonne more info in the YouTube/ Github links below the images.
 
       //  ATTACK
       //
-      +project("Attack", "April 2016", "cpp sfml game", "assets/img/projects/attack.png", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack")
-        p A heli attack clone except without any helicopters. This was my first time doing a title-map collision detection system, and a simple particle system. 
-          a(href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/", target="_blank") (Link to original) 
-        p It features a little animated army-dressed character who is able to walk around a map. The maps themselves are loaded from a text file with different characters representing tile types, where g = grass, d = dirt, and a "space" is just air.
+      +project("Attack", "April 2016", "cpp sfml game", "attack", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack", "https://www.youtube.com/watch?v=fZSS32AHWpU&ab_channel=Hopson")
+        p A simple shooting game. This was my first time doing a title-map collision detection system, and also implementing a particle system. 
+          a(href="https://www.miniclip.com/games/heli-attack-3/en/", target="_blank") (Link to original) 
+        p It features a little animated army-dressed character who is able to walk around a map. The maps themselves are loaded from a text file with different characters representing tile types, where g = grass, d = dirt, and a space is just air.
 
       //  FASTER THAN WIND
       //
-      +project_multiimage("Faster Than Wind", "January 2016", "cpp sfml game", "assets/img/projects/ftw1.png", "assets/img/projects/ftw2.png")
+      +project_multiimage("Faster Than Wind", "January 2016", "cpp sfml game", "ftw1", "ftw2", "https://github.com/Hopson97/Faster-Than-Wind")
         p An attempted clone of the game "FTL: Fater than Light". At the time I was very into the game FTL, so I felt like creating my own version would be an interesting challenge.  
           a(href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/", target="_blank") (Link to original) 
         p It features a ship editor, as well as the game itself. The game itself was never finished beyond a main menu screen and a ship selection screen.
@@ -26,7 +33,7 @@ html(lang="en")
       //
       //  PYORO
       //
-      +project("Pyoro Clone", "December 2015", "cpp sfml game", "assets/img/projects/pyoro.png")
+      +project("Pyoro Clone", "December 2015", "cpp sfml game", "pyoro", "https://github.com/Hopson97/Pyoro", "https://www.youtube.com/watch?v=kzaj-PKvoLU&ab_channel=Hopson")
         p A simple clone of the WarioWare game, Pyoro 
           a(href="https://www.mariowiki.com/Pyoro", target="_blank") (Link to original)
         p This was created when racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we went. 
@@ -35,12 +42,11 @@ html(lang="en")
 
       //  HOPSON LAND
       //
-      +project("Hopson Land", "August 2015","cpp game", "assets/img/projects/hopsonland.png")
+      +project("Hopson Land", "August 2015","cpp game", "hopsonland", "https://github.com/Hopson97/Hopson-Land")
         p This was one of my earliest games, created when I was first learning C++. It was also my first time creating classes correctly, as before this I did not really know what they were for.
         p It was just a simple RPG game where you had the ability to roam around a little world, and then encounter enemies in certain parts where it would transision to an RPG turn-based-style battle system.
         
       
-      // +project("Name", "Date",  "Tags", "Image URL")
-      //  
-
+      // +project_multiimage("Name", "Date",  "Tags", "Image", "image", "github", "youtube")
+      // +project("Name", "Date",  "Tags", "Image", "github", "youtube")
   include _partials/footer.pug
