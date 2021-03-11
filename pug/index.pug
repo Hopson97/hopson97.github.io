@@ -47,7 +47,7 @@ html(lang="en")
         p A game created for a weekend long university-ran hackathon that runs anually.
         p We decided to go full meta, where the idea of the game is you are an organiser of HackPompy2018 and you have to help maintain the satisfaction of the people all by yourself
         p A playable demo can be found 
-          a(href="https://mindo21.github.io/hackPompeyGame/index.html", taget="_blank") here
+          a(href="https://mindo21.github.io/hackPompeyGame/index.html", target="_blank") here
 
 
 
@@ -93,52 +93,107 @@ html(lang="en")
       //  Wireworld
       //
       +project("Wireworld", "July 2018",  "cpp sfml cellular-automaton", "wireworld", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/WireWorld", "https://www.youtube.com/watch?v=p9quENRDW00")
+        p Wireworld implementation in C++ and SFML.
+        p From 
+          a(href="https://en.wikipedia.org/wiki/Wireworld", target="_blank") wikipedia: 
+        p Each cell can be in one of four states:
+        ol
+          li Empty (black),
+          li Electron head (blue),
+          li Electron tail (red),
+          li Conductor (yellow).
+        p Each step of sim, this happens to each cell type: 
+        ul
+          li Empty → Empty,
+          li Electron head → Electron tail,
+          li Electron tail → Conductor,
+          li Conductor → Electron head if exactly one or two of the neighbouring cells are electron heads, otherwise remains conductor.
 
       //
       //  Brian's Brain
       //
       +project("Brian's Brain", "June 2018",  "cpp sfml cellular-automaton", "brianbrain", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/BriansBrain", "https://www.youtube.com/watch?v=ALQO0KtnV4E&")
+        p Brian's brain has 3 cell types: On, Off, and dying.
 
+        p Each generation: 
+        ul 
+          li On cells go into a dying state 
+          li Dying cells go into the off state 
+          li Off cells go into an on state, if and only if exactly 2 [Moore's] neighbours are in the On state
       //
       //  Conglomerate
       //
       +project_noimage("Conglomerate", "January 2018",  "cpp tool", "https://github.com/Hopson97/Conglomerate")
-      p Combines a C++ project into a single .cpp file. (AKA a unity builder)
-      p This is done by sorting the header files by their dependancies (#include directives from this project), and then spitting them out into a .cpp file, and then putting the source files below.
-      p Any local includes are discarded from the output, as they would not be needed in the conglomerate file, but non-local includes are kept.
-      p An example output can be found 
-        a(href="https://github.com/Hopson97/Conglomerate/blob/master/glom_output/out.cpp" taget="_blank")
+        p Combines a C++ project into a single .cpp file. (AKA a unity builder)
+        p This is done by sorting the header files by their dependancies (#include directives from this project), and then spitting them out into a .cpp file, and then putting the source files below.
+        p Any local includes are discarded from the output, as they would not be needed in the conglomerate file, but non-local includes are kept.
+        p An example output can be found 
+          a(href="https://github.com/Hopson97/Conglomerate/blob/master/glom_output/out.cpp" target="_blank")
 
       //
       //  IAS Computer Simulation
       //
       +project("IAS Computer Sim", "December 2017",  "cpp emulator sfml", "ias", "https://github.com/Hopson97/IAS-Computer")
+        p About Implementation of an 8-bit IAS Computer with custom opcodes
+        p The computer has 3-bit instructions and 5-bit addresses.
+
+        p This allows up to 8 instructions, and up to 32 memory locations addressable.
+
+        p For example, 00100110 means "Adds the number stored in memory address 00110 to the accumulator register., because the first 3 bits is the opcode (in this case, 0x1), and the final 5 digits is the memory address (in this case, 0x6).
+
 
 
       //
       //  Hopson Bot
       //
-      +project("Hopson Bot", "December 2017",  "javascriot nodejs discord collab", "hopbot", "https://github.com/HopsonCommunity/HopsonBot")
+      +project("Hopson Bot", "December 2017",  "javascript nodejs discord collab", "hopbot", "https://github.com/HopsonCommunity/HopsonBot")
+        p Discord bot for the Hopson Community Server.
+        p It was made to assist in moderation, where it would track edited and deleted messages, and general fun commands such a polling system and the ability to add and remove roles to oneself.
 
       //
       //  Python Contest Game
       //
       +project("Python Contest Game", "December 2017",  "python", "androids", "https://github.com/Hopson97/Android-Apple-Drop", "https://www.youtube.com/watch?v=AX-Zfcz1AEs")
+        p This is a game about an Android eating apples. It was created for a contest run by the computing dept. at my university.
+        p The rules were as follows:
+        ul 
+          li I had to use graphics.py for the graphics.
+          li I was not allowed to write my own classes (I presume because we were yet to be taught this, so they wanted to keep it fair)
+          li I was not allowed to use non-standard modules such as pygame
+          li This means only Python 3 standard modules could be used
+          li The game had to either be about a bat and ball, or an Android eating apples (I went with the latter)
 
       //
       //  Slonder Man
       //
       +project("Slonder Man", "November 2017",  "cpp sfml opengl game challenge", "slondaman", "https://github.com/Hopson97/Slonda-Man")
+        p A game like Slender: The Eight Pages.
+
+        p I started creating this on 17th October 2017, and my goal as to complete it in 2 weeks (In time for Halloween). However, I never finished it due to general illness (fresher's flu).
+        p It features a forest to explore where you must find 8 "teddy bears" without looking at the SlonderMan for too long.
+
 
       //
       //  Littleman Computer 
       //
-      +project("Littleman Computer", "October 2017",  "python tkinter collab", "lmc", "https://github.com/Portsmouth-Computing/LittleManComputer")
+      +project("Littleman Computer", "October 2017",  "python tkinter collab emulator", "lmc", "https://github.com/Portsmouth-Computing/LittleManComputer")
+        p Littleman computer implemention created by a friend and I. 
+        p The original by Peter Higginson can be found
+          a(href="https://peterhigginson.co.uk/LMC/", target="_blank") here.
+        p It shows 100 memory cells, numbered 0 to 99, and it allows you enter a program using a minimalist instruction set, which is then executed by the computer.
+        p Each assembly language instruction is made up of a 3 letter mnemonic (which represents the operation code), usually followed by the memory address of the data the CPU is to act on (this is called absolute memory addressing).
+        p It contains registers such as the instruction pointer, which points to the memory address of the currently executed instruction; and the accumulator, which stores the results of arithmetic operations.
+
 
       //
       //  Langton's Ant
       //
       +project("Langton's Ant", "September 2017",  "cpp sfml cellular-automaton", "langtonsant", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/LangtonsAnt", "https://www.youtube.com/watch?v=HGa5u6I-8Qg")
+        p Langton's ant implemented in C++
+        p Squares on a plane are colored variously or blank. We arbitrarily identify one square as the "ant". The ant can travel in any of the four cardinal directions at each step it takes. The "ant" moves according to the rules below:
+
+        p At a blank square, turn 90° right, flip the color of the square, move forward one unit.
+        p At a colored square, turn 90° left, flip the color of the square, move forward one unit
 
       //
       //  Empire
@@ -161,7 +216,13 @@ html(lang="en")
       //  Game of Life
       //
       +project("Game of Life", "August 2017",  "cpp sfml cellular-automaton", "gameoflife", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/GameOfLife", "https://www.youtube.com/watch?v=WVCM3Rv4VV8")
-
+        p Game of life implemented in C++
+        p The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead, or "populated" or "unpopulated". Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:
+        ul 
+          li Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
+          li Any live cell with two or three live neighbours lives on to the next generation.
+          li Any live cell with more than three live neighbours dies, as if by overpopulation.
+          li Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
       //
       //  Predator And Prey
@@ -186,7 +247,7 @@ html(lang="en")
       +project("Hero", "February 2017",  "cpp sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas")
         p A game based on "Hero" by FaceOS on Scratch. It features running between different zones using a map you can access by walking to a corner sign post on each area. 
         p Each area features a set of monsters to fight, and eventually as you level up you unlock the ability to reach new areas.
-        a(hef="https://scratch.mit.edu/projects/2399118/", taget="_blank") (Link to OG Game)
+        a(hef="https://scratch.mit.edu/projects/2399118/", target="_blank") (Link to OG Game)
       
       //
       //  Brainf*ck Interpretter
@@ -216,7 +277,7 @@ html(lang="en")
       +project("City Game", "September 2016",  "cpp sfml game", "citygame1", "https://github.com/Hopson97/City-Game")
         p A city building game based on Dot Village, which is a game on Scratch. It featured "days" that would pass, which would look at the current buildings in the city and then update some values, such as coins, population, and resources (eg food, wood, and stone)
         p The original game can be found 
-          a(href="https://scratch.mit.edu/projects/2151947/" taget="_blank")
+          a(href="https://scratch.mit.edu/projects/2151947/" target="_blank")
       
       //
       //  HOP Virtual Machine

@@ -130,7 +130,7 @@
               <div class="col-7">
                 <p>A game created for a weekend long university-ran hackathon that runs anually.</p>
                 <p>We decided to go full meta, where the idea of the game is you are an organiser of HackPompy2018 and you have to help maintain the satisfaction of the people all by yourself</p>
-                <p>A playable demo can be found <a href="https://mindo21.github.io/hackPompeyGame/index.html" taget="_blank">here</a></p>
+                <p>A playable demo can be found <a href="https://mindo21.github.io/hackPompeyGame/index.html" target="_blank">here</a></p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/hackpompy.png"/></div>
             </div>
@@ -261,6 +261,22 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>Wireworld implementation in C++ and SFML.</p>
+                <p>From <a href="https://en.wikipedia.org/wiki/Wireworld" target="_blank">wikipedia: </a></p>
+                <p>Each cell can be in one of four states:</p>
+                <ol>
+                  <li>Empty (black),</li>
+                  <li>Electron head (blue),</li>
+                  <li>Electron tail (red),</li>
+                  <li>Conductor (yellow).</li>
+                </ol>
+                <p>Each step of sim, this happens to each cell type: </p>
+                <ul>
+                  <li>Empty → Empty,</li>
+                  <li>Electron head → Electron tail,</li>
+                  <li>Electron tail → Conductor,</li>
+                  <li>Conductor → Electron head if exactly one or two of the neighbouring cells are electron heads, otherwise remains conductor.</li>
+                </ul>
               </div>
               <div class="col-5">    <img src="assets/img/projects/wireworld.png"/></div>
             </div>
@@ -282,6 +298,13 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>Brian's brain has 3 cell types: On, Off, and dying.</p>
+                <p>Each generation: </p>
+                <ul> 
+                  <li>On cells go into a dying state </li>
+                  <li>Dying cells go into the off state </li>
+                  <li>Off cells go into an on state, if and only if exactly 2 [Moore's] neighbours are in the On state</li>
+                </ul>
               </div>
               <div class="col-5">    <img src="assets/img/projects/brianbrain.png"/></div>
             </div>
@@ -300,14 +323,14 @@
                   <div class="fab fa-github fa-2x"></div></a>
               </div>
             </div>
+            <p>Combines a C++ project into a single .cpp file. (AKA a unity builder)</p>
+            <p>This is done by sorting the header files by their dependancies (#include directives from this project), and then spitting them out into a .cpp file, and then putting the source files below.</p>
+            <p>Any local includes are discarded from the output, as they would not be needed in the conglomerate file, but non-local includes are kept.</p>
+            <p>An example output can be found <a href="https://github.com/Hopson97/Conglomerate/blob/master/glom_output/out.cpp" target="_blank"></a></p>
               <div class="inline project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
-      <p>Combines a C++ project into a single .cpp file. (AKA a unity builder)</p>
-      <p>This is done by sorting the header files by their dependancies (#include directives from this project), and then spitting them out into a .cpp file, and then putting the source files below.</p>
-      <p>Any local includes are discarded from the output, as they would not be needed in the conglomerate file, but non-local includes are kept.</p>
-      <p>An example output can be found <a href="https://github.com/Hopson97/Conglomerate/blob/master/glom_output/out.cpp" taget="_blank"></a></p>
       <!---->
       <!--  IAS Computer Simulation-->
       <!---->
@@ -321,6 +344,10 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>About Implementation of an 8-bit IAS Computer with custom opcodes</p>
+                <p>The computer has 3-bit instructions and 5-bit addresses.</p>
+                <p>This allows up to 8 instructions, and up to 32 memory locations addressable.</p>
+                <p>For example, 00100110 means "Adds the number stored in memory address 00110 to the accumulator register., because the first 3 bits is the opcode (in this case, 0x1), and the final 5 digits is the memory address (in this case, 0x6).</p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/ias.png"/></div>
             </div>
@@ -331,7 +358,7 @@
       <!---->
       <!--  Hopson Bot-->
       <!---->
-          <article class="project" tags="javascriot nodejs discord collab">
+          <article class="project" tags="javascript nodejs discord collab">
             <div class="project-title pb-2">
               <h3>Hopson Bot</h3>
               <p class="date">December 2017</p>
@@ -341,6 +368,8 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>Discord bot for the Hopson Community Server.</p>
+                <p>It was made to assist in moderation, where it would track edited and deleted messages, and general fun commands such a polling system and the ability to add and remove roles to oneself.</p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/hopbot.png"/></div>
             </div>
@@ -362,6 +391,15 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>This is a game about an Android eating apples. It was created for a contest run by the computing dept. at my university.</p>
+                <p>The rules were as follows:</p>
+                <ul> 
+                  <li>I had to use graphics.py for the graphics.</li>
+                  <li>I was not allowed to write my own classes (I presume because we were yet to be taught this, so they wanted to keep it fair)</li>
+                  <li>I was not allowed to use non-standard modules such as pygame</li>
+                  <li>This means only Python 3 standard modules could be used</li>
+                  <li>The game had to either be about a bat and ball, or an Android eating apples (I went with the latter)</li>
+                </ul>
               </div>
               <div class="col-5">    <img src="assets/img/projects/androids.png"/></div>
             </div>
@@ -382,6 +420,9 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>A game like Slender: The Eight Pages.</p>
+                <p>I started creating this on 17th October 2017, and my goal as to complete it in 2 weeks (In time for Halloween). However, I never finished it due to general illness (fresher's flu).</p>
+                <p>It features a forest to explore where you must find 8 "teddy bears" without looking at the SlonderMan for too long.</p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/slondaman.png"/></div>
             </div>
@@ -392,7 +433,7 @@
       <!---->
       <!--  Littleman Computer -->
       <!---->
-          <article class="project" tags="python tkinter collab">
+          <article class="project" tags="python tkinter collab emulator">
             <div class="project-title pb-2">
               <h3>Littleman Computer</h3>
               <p class="date">October 2017</p>
@@ -402,6 +443,11 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>Littleman computer implemention created by a friend and I. </p>
+                <p>The original by Peter Higginson can be found<a href="https://peterhigginson.co.uk/LMC/" target="_blank">here.</a></p>
+                <p>It shows 100 memory cells, numbered 0 to 99, and it allows you enter a program using a minimalist instruction set, which is then executed by the computer.</p>
+                <p>Each assembly language instruction is made up of a 3 letter mnemonic (which represents the operation code), usually followed by the memory address of the data the CPU is to act on (this is called absolute memory addressing).</p>
+                <p>It contains registers such as the instruction pointer, which points to the memory address of the currently executed instruction; and the accumulator, which stores the results of arithmetic operations.</p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/lmc.png"/></div>
             </div>
@@ -423,6 +469,10 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>Langton's ant implemented in C++</p>
+                <p>Squares on a plane are colored variously or blank. We arbitrarily identify one square as the "ant". The ant can travel in any of the four cardinal directions at each step it takes. The "ant" moves according to the rules below:</p>
+                <p>At a blank square, turn 90° right, flip the color of the square, move forward one unit.</p>
+                <p>At a colored square, turn 90° left, flip the color of the square, move forward one unit</p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/langtonsant.png"/></div>
             </div>
@@ -486,6 +536,14 @@
             </div>
             <div class="row"> 
               <div class="col-7">
+                <p>Game of life implemented in C++</p>
+                <p>The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead, or "populated" or "unpopulated". Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
+                <ul> 
+                  <li>Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</li>
+                  <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+                  <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+                  <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+                </ul>
               </div>
               <div class="col-5">    <img src="assets/img/projects/gameoflife.png"/></div>
             </div>
@@ -553,7 +611,7 @@
             <div class="row"> 
               <div class="col-7">
                 <p>A game based on "Hero" by FaceOS on Scratch. It features running between different zones using a map you can access by walking to a corner sign post on each area. </p>
-                <p>Each area features a set of monsters to fight, and eventually as you level up you unlock the ability to reach new areas.</p><a hef="https://scratch.mit.edu/projects/2399118/" taget="_blank">(Link to OG Game)</a>
+                <p>Each area features a set of monsters to fight, and eventually as you level up you unlock the ability to reach new areas.</p><a hef="https://scratch.mit.edu/projects/2399118/" target="_blank">(Link to OG Game)</a>
               </div>
               <div class="col-5">    <img src="assets/img/projects/hero.png"/></div>
             </div>
@@ -634,7 +692,7 @@
             <div class="row"> 
               <div class="col-7">
                 <p>A city building game based on Dot Village, which is a game on Scratch. It featured "days" that would pass, which would look at the current buildings in the city and then update some values, such as coins, population, and resources (eg food, wood, and stone)</p>
-                <p>The original game can be found <a href="https://scratch.mit.edu/projects/2151947/" taget="_blank"></a></p>
+                <p>The original game can be found <a href="https://scratch.mit.edu/projects/2151947/" target="_blank"></a></p>
               </div>
               <div class="col-5">    <img src="assets/img/projects/citygame1.png"/></div>
             </div>
