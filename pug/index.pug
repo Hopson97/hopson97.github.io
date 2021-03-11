@@ -83,11 +83,31 @@ html(lang="en")
       //  AsciiMon-rs
       //
       +project("AsciiMon-rs", "August 2018",  "rust ascii game", "asciimonrs", "https://github.com/Hopson97/Asciimon", "https://www.youtube.com/watch?v=8KP8rjUCa9w")
+        p Pokemon-inspired game created using Rust for ANSI terminals
+        p This was my first project using Rust, which similar to the AsciiMon classic game, the rust code acts as an engine meaning that any maps or asciimon added into the game will "just work" without having to edit any of the code 
+        p It features a custom "terminal renderer", which splits the terminal into several sections, such as the title, the input section, and the game itself.
+        p The renderer also utilises ANSI escape sequences, which allows it to position the cursor at certain locations, clear the terminal, and support colours.
+
+
+      //
+      //  Wireworld
+      //
+      +project("Wireworld", "July 2018",  "cpp sfml cellular-automaton", "wireworld", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/WireWorld", "https://www.youtube.com/watch?v=p9quENRDW00")
+
+      //
+      //  Brian's Brain
+      //
+      +project("Brian's Brain", "June 2018",  "cpp sfml cellular-automaton", "brianbrain", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/BriansBrain", "https://www.youtube.com/watch?v=ALQO0KtnV4E&")
 
       //
       //  Conglomerate
       //
       +project_noimage("Conglomerate", "January 2018",  "cpp tool", "https://github.com/Hopson97/Conglomerate")
+      p Combines a C++ project into a single .cpp file. (AKA a unity builder)
+      p This is done by sorting the header files by their dependancies (#include directives from this project), and then spitting them out into a .cpp file, and then putting the source files below.
+      p Any local includes are discarded from the output, as they would not be needed in the conglomerate file, but non-local includes are kept.
+      p An example output can be found 
+        a(href="https://github.com/Hopson97/Conglomerate/blob/master/glom_output/out.cpp" taget="_blank")
 
       //
       //  IAS Computer Simulation
@@ -96,14 +116,14 @@ html(lang="en")
 
 
       //
-      //  Littleman Computer 
+      //  Hopson Bot
       //
-      +project("Hopson Bot", "December 2017",  "javascriot nodejs discord collab", "hero", "https://github.com/HopsonCommunity/HopsonBot")
+      +project("Hopson Bot", "December 2017",  "javascriot nodejs discord collab", "hopbot", "https://github.com/HopsonCommunity/HopsonBot")
 
       //
       //  Python Contest Game
       //
-      +project("Python Contest Game", "December 2017",  "python", "hero", "https://github.com/Hopson97/Android-Apple-Drop", "https://www.youtube.com/watch?v=AX-Zfcz1AEs")
+      +project("Python Contest Game", "December 2017",  "python", "androids", "https://github.com/Hopson97/Android-Apple-Drop", "https://www.youtube.com/watch?v=AX-Zfcz1AEs")
 
       //
       //  Slonder Man
@@ -113,12 +133,12 @@ html(lang="en")
       //
       //  Littleman Computer 
       //
-      +project("Littleman Computer", "October 2017",  "python tkinter collab", "hero", "https://github.com/Portsmouth-Computing/LittleManComputer")
+      +project("Littleman Computer", "October 2017",  "python tkinter collab", "lmc", "https://github.com/Portsmouth-Computing/LittleManComputer")
 
       //
       //  Langton's Ant
       //
-      +project("Langton's Ant", "September 2017",  "cpp sfml cellular-automaton", "hero", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/LangtonsAnt", "https://www.youtube.com/watch?v=HGa5u6I-8Qg")
+      +project("Langton's Ant", "September 2017",  "cpp sfml cellular-automaton", "langtonsant", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/LangtonsAnt", "https://www.youtube.com/watch?v=HGa5u6I-8Qg")
 
       //
       //  Empire
@@ -131,19 +151,28 @@ html(lang="en")
       //
       //  SFML Game Framework
       //
-      +project("SFML Game Framework", "August 2017",  "cpp sfml library", "hero", "https://github.com/Hopson97/https://github.com/Hopson97/SFML-Game-Framework", "https://www.youtube.com/watch?v=J_ZnUpXGMmg")
+      +project_noimage("SFML Game Framework", "August 2017",  "cpp sfml library", "https://github.com/Hopson97/SFML-Game-Framework", "https://www.youtube.com/watch?v=J_ZnUpXGMmg")
+      p Simple framework for SFML games.
+
+      p Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.
+
 
       //
       //  Game of Life
       //
-      +project("Game of Life", "August 2017",  "cpp sfml cellular-automaton", "hero", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/GameOfLife", "https://www.youtube.com/watch?v=WVCM3Rv4VV8")
+      +project("Game of Life", "August 2017",  "cpp sfml cellular-automaton", "gameoflife", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/GameOfLife", "https://www.youtube.com/watch?v=WVCM3Rv4VV8")
 
 
       //
       //  Predator And Prey
       //
-      +project("Predator And Prey", "August 2017",  "cpp sfml cellular-automaton", "hero", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/PredatorAndPrey", "https://www.youtube.com/watch?v=v7Z2euv7kwY")
-
+      +project("Predator And Prey", "August 2017",  "cpp sfml cellular-automaton", "predatorandprey", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/PredatorAndPrey", "https://www.youtube.com/watch?v=v7Z2euv7kwY")
+        p My first ever Cellular Automaton.
+        p Predator and prey features two cell types, predator and prey, and each cell is given a health value.
+        p For both types of cell, each step of the simulation means they move in a random direction.
+        p They prey has their health increase each step, and when this reaches a theshold, they will create a new prey and have their health reset to 0.
+        p For predators, their health decreased each step, and when this reaches 0 they die. When they come across a prey their health is increased by the amount the prey had, the the prey will turn into a predator. 
+        
       //
       //  Minecraft One Week Challenge
       //

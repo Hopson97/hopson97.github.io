@@ -26,7 +26,7 @@ window.addEventListener("load", _ => {
         
         // Get the ID of the project from its name, and then add it to the project list
         const title = project.querySelector(".project-title h3").textContent;
-        const id = title.toLowerCase().split(" ").join("-").replace("*", "_");
+        const id = title.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_");
         project.id = id;
 
         const currentList = projectLists[currColumn++];

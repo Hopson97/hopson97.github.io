@@ -45,6 +45,10 @@ main {
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+
 footer {
     border-top: 1px solid rgb(68, 68, 68);
 }
