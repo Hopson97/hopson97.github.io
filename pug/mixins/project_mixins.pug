@@ -1,0 +1,36 @@
+mixin project_header(name, date, tags)
+  article.project(tags=tags)
+    .project-title.pb-2
+      h3= name
+      p= date
+    block 
+
+mixin project_footer(github, youtube)
+  .inline.project-links.pl-2.pt-2
+    if youtube || github
+      h5 Links: 
+      if github
+        a.p-3(href=github)
+          .fab.fa-github.fa-2x
+      if youtube
+        a.p-3(href=youtube)
+          .fab.fa-youtube.fa-2x 
+  .inline.project-tags.pl-2.pt-2
+    h5 Tags:
+
+mixin project(name, date, tags, imgurl, github, youtube)
+  +project_header(name, date, tags)
+    .row 
+      .col-7
+        block
+      .col-5     
+        img(src=imgurl) 
+    +project_footer(github, youtube)
+
+mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
+    +project_header(name, date, tags)
+        block
+        .row.d-flex.justify-content-center.pb-2
+        img(src=imgurl1) 
+        img(src=imgurl2) 
+        +project_footer(github, youtube)

@@ -43,10 +43,14 @@ footer {
 
 }
 
+.fab {
+    color: white;
+    text-decoration: none;
+}
+
 footer .fab {
     border-top: 1px solid rgb(68, 68, 68);
     padding: 20px;
-    color: white;
 }
 
 /* 
@@ -99,7 +103,7 @@ footer .fab {
 
 
 .project img:hover {
-    max-height: 45vh;
+    max-height: 40vh;
     display:block;
     z-index:999;
 }

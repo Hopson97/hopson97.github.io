@@ -2,42 +2,19 @@ html(lang="en")
   include _partials/common.pug
   script(src="assets/js/Projects.js")
   main
-    mixin project(name, date, tags, imgurl)
-      article.project(tags=tags)
-        .project-title.pb-2
-          h3= name
-          p= date
-        .row 
-          .col-7
-            block
-          .col-5     
-            img(src=imgurl) 
-        .inline.project-links.pl-2.pt-2
-          h5 Links:
-        .inline.project-tags.pl-2.pt-2
-          h5 Tags:
-
-    mixin project_multiimage(name, date, tags, imgurl1, imgurl2)
-      article.project(tags=tags)
-        .project-title.pb-2
-          h3= name
-          p= date
-        block
-        .row.d-flex.justify-content-center.pb-2
-          img(src=imgurl1) 
-          img(src=imgurl2) 
-        .inline.project-links.pl-2.pt-2
-          h5 Links:
-        .inline.project-tags.pl-2.pt-2
-          h5 Tags:
-
-
     h1 Projects
     ul#projects-index
     .project-list
     #project-articles.project-articles
 
+
+      //  ATTACK
       //
+      +project("Attack", "April 2016", "cpp sfml game", "assets/img/projects/attack.png", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack")
+        p A heli attack clone except without any helicopters. This was my first time doing a title-map collision detection system, and a simple particle system. 
+          a(href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/", target="_blank") (Link to original) 
+        p It features a little animated army-dressed character who is able to walk around a map. The maps themselves are loaded from a text file with different characters representing tile types, where g = grass, d = dirt, and a "space" is just air.
+
       //  FASTER THAN WIND
       //
       +project_multiimage("Faster Than Wind", "January 2016", "cpp sfml game", "assets/img/projects/ftw1.png", "assets/img/projects/ftw2.png")
@@ -56,7 +33,6 @@ html(lang="en")
         p For example, he implemented the fading background, while I developed the extendable tongue.
         p In total, it took ~14 hours to complete.
 
-      //
       //  HOPSON LAND
       //
       +project("Hopson Land", "August 2015","cpp game", "assets/img/projects/hopsonland.png")
