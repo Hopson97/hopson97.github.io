@@ -8,6 +8,36 @@ html(lang="en")
     .project-list
     #project-articles.project-articles
 
+    
+
+      +project("Hero", "February 2017",  "cpp sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas&ab_channel=Hopson")
+        p A game based on "Hero" by FaceOS on Scratch. It features running between different zones using a map you can access by walking to a corner sign post on each area. 
+        p Each area features a set of monsters to fight, and eventually as you level up you unlock the ability to reach new areas.
+        a(hef="https://scratch.mit.edu/projects/2399118/", taget="_blank") (Link to OG Game)
+
+      +project_noimage("Brainf*ck Interpretter", "February 2017",  "cpp", "https://github.com/Hopson97/Brainf-ck-Interpretter")
+        p Says it on the tin really, just an interpretter for the Brainf*ck langauge.
+        p From Wikipedia: "Brainf*ck is an esoteric programming language created in 1993 by Urban Müller. Notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer. While it is fully Turing complete, it is not intended for practical use, but to challenge and amuse programmers. Brainf*ck simply requires one to break commands into microscopic steps."
+        
+
+      +project("HopsonCraft", "October 2016",  "cpp opengl sfml minecraft game", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU&ab_channel=Hopson")
+        p My first ever large(ish) OpenGL project, which was a Minecraft clone. When I started to learn programming, creating a clone of Minecraft was a mini-goal of mine, and a a year bit from starting to learn C++ I eventually did create what is basically "minecraft classic" without a GUI.
+        p This was mostly created an excersise for learning OpenGL, as before this everything was done very simple. The project itself went through multiple iterations as I was learning new things and wanted to structure the project differently. These iterations can be found on my YouTube channel.
+        p It featured world generaiton using perlin noise, and world breaking and modelling. Certain features were added or removed at certain points in time. For example, some iterations had the "Minecraft-like" lighting models, others had infinite height, and others had world saving/ loading. 
+
+      +project_multiimage("3D Cubes", "March 2016",  "cpp opengl", "3dcubes", "3dcubes2", "https://github.com/Hopson97/3D-Alien-Cubes", "https://www.youtube.com/watch?v=mrrUkoSiPJE&ab_channel=Hopson")
+        p An early OpenGL project created when trying to work out how to build a Minecraft clone. The cubes themselves are rendered individually as at the time I was unaware of creating large meshes or instance rendering techniques.
+
+      +project("City Game", "September 2016",  "cpp sfml game", "citygame1", "https://github.com/Hopson97/City-Game")
+        p A city building game based on Dot Village, which is a game on Scratch. It featured "days" that would pass, which would look at the current buildings in the city and then update some values, such as coins, population, and resources (eg food, wood, and stone)
+        p The original game can be found 
+          a(href="https://scratch.mit.edu/projects/2151947/" taget="_blank")
+
+      +project("Hop Virtual Machine", "September 2016",  "cpp emulator", "hopvm", "https://github.com/Hopson97/HOP-Virtual-Machine", "youtube")
+        p At the time a friend was teaching about how computers actually work, by executing very simple instuctions that contained an opcode and operands.
+        p This programs was to emulate the a very simple machine using a custom instruction set/byte code. It featured 10 commands, (push, pop, add, sub, print, jump, jie, jin, jil, jig, exit), and an "assembler" to convert high level instrucions into the byte code that the VM would understand.
+        p This works by using the fetch, decode, excute model, where the "CPU" will fetch the next instruction based on the instruction pointer location, decode the opcode and operands, and then finally execute the instruction.
+
       //  ASCIIMON Clasic
       //
       +project_multiimage("AsciiMon Classic", "July 2016",  "cpp ascii game", "asciimonclassic1", "asciimonclassic2", "https://github.com/Hopson97/ASCIImon", "https://www.youtube.com/watch?v=_catGKf-yCk&ab_channel=Hopson")
