@@ -147,3 +147,177 @@ canvas {
 .inline * {
     display: inline;
 }
+
+@media only screen and (max-width: 1600px) {
+    
+    header {
+        width: 80%;
+    }
+    
+    nav {
+        font-size: large;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+    nav a {
+        font-size: larger;
+    }
+    
+    main {
+        width: 80%;
+    }
+    
+    footer {
+        width: 80%;
+    }
+    
+    footer .fab {
+        padding: 20px;
+    }
+    
+    /* 
+        ============================
+    
+                LINKS PAGE
+    
+        ============================
+    */
+    .common_link {
+        padding-left: 1%;
+    }
+    
+    /* 
+        =================================
+    
+                PROJECTS PAGE
+    
+        =================================
+    */
+    .project {
+        min-height: 35vh;
+    }
+
+    .project img {
+        max-height: 20vh;
+    }
+    
+    .project img:hover {
+        max-height: 30vh;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    
+    header {
+        width: 85%;
+    }
+    
+    nav {
+        font-size: large;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+    nav a {
+        font-size: larger;
+    }
+    
+    main {
+        width: 85%;
+    }
+    
+    footer {
+        width: 80%;
+    }
+    
+    footer .fab {
+        padding: 20px;
+    }
+    
+    /* 
+        ============================
+    
+                LINKS PAGE
+    
+        ============================
+    */
+    .common_link {
+        padding-left: 1%;
+    }
+    
+    /* 
+        =================================
+    
+                PROJECTS PAGE
+    
+        =================================
+    */
+    .project {
+        min-height: 20vh;
+    }
+
+    .project img {
+        max-height: 10vh;
+    }
+    
+    .project img:hover {
+        max-height: 20vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    header {
+        width: 95%;
+    }
+    
+    nav {
+        font-size: large;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    
+    nav a {
+        font-size: larger;
+    }
+    
+    main {
+        width: 95%;
+    }
+    
+    footer {
+        width: 95%;
+    }
+    
+    footer .fab {
+        padding: 20px;
+    }
+    
+    /* 
+        ============================
+    
+                LINKS PAGE
+    
+        ============================
+    */
+    .common_link {
+        padding-left: 1%;
+    }
+    
+    /* 
+        =================================
+    
+                PROJECTS PAGE
+    
+        =================================
+    */
+    .project {
+        min-height: 20vh;
+    }
+
+    .project img {
+        max-height: 10vh;
+    }
+    
+    .project img:hover {
+        max-height: 15vh;
+    }
+}

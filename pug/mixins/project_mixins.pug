@@ -5,11 +5,11 @@ mixin project_header(name, date, tags, github, youtube)
         p= date
         .inline.project-links
             if github
-                a.p-3(href=github)
-                .fab.fa-github.fa-2x
+                a.p-3(href=github, taget="_blank")
+                    .fab.fa-github.fa-2x
             if youtube
-                a.p-3(href=youtube)
-                .fab.fa-youtube.fa-2x 
+                a.p-3(href=youtube, taget="_blank")
+                    .fab.fa-youtube.fa-2x 
     block 
 
 mixin project_footer()
@@ -20,9 +20,9 @@ mixin project(name, date, tags, imgurl, github, youtube)
   +project_header(name, date, tags, github, youtube)
     .row 
       .col-7
-        block
+            block
       .col-5     
-        img(src=`assets/img/projects/${imgurl}.png`) 
+            img(src=`assets/img/projects/${imgurl}.png`) 
     +project_footer(github, youtube)
 
 mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
