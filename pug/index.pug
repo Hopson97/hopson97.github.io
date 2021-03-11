@@ -10,60 +10,212 @@ html(lang="en")
       .col-4#project-index-row2
     ul#project-index
     #project-articles.project-articles
+      //
+      // Pong 3D
+      //
+      +project("Pong 3D", "July 2020",  "cpp opengl sfml game", "pong3d", "https://github.com/Hopson97/Pong3D") 
+        p Pong except it is rendered in 3D 
+        p At the time I made this I was very into retro-future styles, so I made a pong game attempting to recreate this style. Furthermore, I used this app as way to learn about post-processing effects, and so implemented bloom.
 
-      +project("Empire", "August 2017",  "cpp sfml cellular-automaton", "empire", "https://www.youtube.com/watch?v=3mgGQR6oGxI&t=145s&ab_channel=Hopson", "https://github.com/Hopson97/Empire", "youtube")
+      //
+      // OpenBuilder
+      //
+      +project_multiimage("Open Builder", "December 2019",  "cpp opengl sfml game lua networking", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
+        p A voxel multiplayer game that allows players to play and build in the same world, which used the OpenGL API as a rendering backend and ENet for UDP socket communication. 
+        p This created for the purpose of learning how to integrate Lua into a C++ application, as well how to create a multiplayer game. Lua gives the ability to add biomes, block types, edit UI, and probably eventually.
+        
+      //
+      // Pixelator
+      //
+      +project("Pixelator", "September 2019",  "sfml game cpp", "pixelator", "https://github.com/Hopson97/Pixelator")
+        p Converts images into a pixelated form.
+        p The program works by taking the average colour around an area, and then filling that area with that colour.
+
+      //
+      // Space Invaders
+      //
+      //
+      +project("Space Invaders", "April 2019",  "sfml game cpp", "spaceinvaders", "https://github.com/Hopson97/Hopson-Arcade", "https://www.youtube.com/watch?v=MkpxwsybNPo")
+        p Space Invaders is a 1978 arcade game created by Tomohiro Nishikado. It was manufactured and sold by Taito in Japan under the title Uchū Shinryaku-sha. 
+        p This project aimed to recreate that game using SFML.
+        p It features a main menu, the game itself, and a highscore system.
+
+
+      //  Hack Pompy
+      //
+      +project("Hack Pompy 2018", "October 2018",  "javascript game collab", "hackpompy", "https://github.com/KevinDNF/hackTheGame")
+        p A game created for a weekend long university-ran hackathon that runs anually.
+        p We decided to go full meta, where the idea of the game is you are an organiser of HackPompy2018 and you have to help maintain the satisfaction of the people all by yourself
+        p A playable demo can be found 
+          a(href="https://mindo21.github.io/hackPompeyGame/index.html", taget="_blank") here
+
+
+
+      //
+      //  BALIC
+      //
+      +project("BALIC", "October 2018",  "cpp sfml", "balic", "https://github.com/Hopson97/Balic")
+        p BALIC stands for "Bad and Lossy Image Compressor". This was mostly made just for fun, which takes an input image and then outputs a sometimes larger lower quality image. Furthermore, it is able to also show the process on a seperate thread.
+        
+      //
+      //  Sort Algorithm Visualiser
+      //
+      +project("Sort Algorithm Visualiser", "September 2018",  "java swing", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
+        p A sorting algorithm visualiser which features a main menu to select which algorithms to run.
+        p This utilises multi-threading, where one thread handles the updates (eg runs the sort algorithm), and the other thread handles the drawing and updating of the stair case.
+        p It features bubble sort, counting sort, cycle sort, gnome sort, heap sort, insertion sort, iterative merge sort, merge sort, pancake sort, quick sort, radix sort, selection sort, and stooge sort. 
+        
+
+      //
+      //  BALIC
+      //
+      +project("BALIC", "October 2018",  "cpp sfml", "balic", "https://github.com/Hopson97/Balic")
+        p BALIC stands for "Bad and Lossy Image Compressor". This was mostly made just for fun, which takes an input image and then outputs a sometimes larger lower quality image. Furthermore, it is able to also show the process on a seperate thread.
+        
+      //
+      //  Rusty GL
+      //
+      +project_noimage("Rusty GL", "August 2018",  "rust opengl library", "asciimonrs", "https://github.com/Hopson97/rusty-gl")
+      p An OpenGL wrapper for Rust.
+      p I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.
+
+      //
+      //  AsciiMon-rs
+      //
+      +project("AsciiMon-rs", "August 2018",  "rust ascii game", "asciimonrs", "https://github.com/Hopson97/Asciimon", "https://www.youtube.com/watch?v=8KP8rjUCa9w")
+
+      //
+      //  Conglomerate
+      //
+      +project_noimage("Conglomerate", "January 2018",  "cpp tool", "https://github.com/Hopson97/Conglomerate")
+
+      //
+      //  IAS Computer Simulation
+      //
+      +project("IAS Computer Sim", "December 2017",  "cpp emulator sfml", "ias", "https://github.com/Hopson97/IAS-Computer")
+
+
+      //
+      //  Littleman Computer 
+      //
+      +project("Hopson Bot", "December 2017",  "javascriot nodejs discord collab", "hero", "https://github.com/HopsonCommunity/HopsonBot")
+
+      //
+      //  Python Contest Game
+      //
+      +project("Python Contest Game", "December 2017",  "python", "hero", "https://github.com/Hopson97/Android-Apple-Drop", "https://www.youtube.com/watch?v=AX-Zfcz1AEs")
+
+      //
+      //  Slonder Man
+      //
+      +project("Slonder Man", "November 2017",  "cpp sfml opengl game challenge", "slondaman", "https://github.com/Hopson97/Slonda-Man")
+
+      //
+      //  Littleman Computer 
+      //
+      +project("Littleman Computer", "October 2017",  "python tkinter collab", "hero", "https://github.com/Portsmouth-Computing/LittleManComputer")
+
+      //
+      //  Langton's Ant
+      //
+      +project("Langton's Ant", "September 2017",  "cpp sfml cellular-automaton", "hero", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/LangtonsAnt", "https://www.youtube.com/watch?v=HGa5u6I-8Qg")
+
+      //
+      //  Empire
+      //
+      +project("Empire", "August 2017",  "cpp sfml cellular-automaton", "empire", "https://www.youtube.com/watch?v=3mgGQR6oGxI", "https://github.com/Hopson97/Empire", "youtube")
         p Empire was custom cellular automaton (Which technically isn't a cellular automaton but more of a simulation) which aimed to simulate different colonies taking over a "map". 
         p It was based on a classic RPG system, where a colonist would move to random square adjacent to them, and if there was someone from a different colinist then they would fight. The colonist with the higher strength value would survive, and the other one would die. 
         p Each move, the age of the person would decrease but there would be a small chance to produce a child, who would inherit the traits of the parent, such as their strangth value; however they would sometimes mutate, which would increase their strength value.
 
-      +project_multiimage("Minecraft One Week Challenge", "August 2017",  "cpp sfml opengl game challenge", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8&ab_channel=Hopson")
+      //
+      //  SFML Game Framework
+      //
+      +project("SFML Game Framework", "August 2017",  "cpp sfml library", "hero", "https://github.com/Hopson97/https://github.com/Hopson97/SFML-Game-Framework", "https://www.youtube.com/watch?v=J_ZnUpXGMmg")
+
+      //
+      //  Game of Life
+      //
+      +project("Game of Life", "August 2017",  "cpp sfml cellular-automaton", "hero", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/GameOfLife", "https://www.youtube.com/watch?v=WVCM3Rv4VV8")
+
+
+      //
+      //  Predator And Prey
+      //
+      +project("Predator And Prey", "August 2017",  "cpp sfml cellular-automaton", "hero", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/PredatorAndPrey", "https://www.youtube.com/watch?v=v7Z2euv7kwY")
+
+      //
+      //  Minecraft One Week Challenge
+      //
+      +project_multiimage("Minecraft One Week Challenge", "August 2017",  "cpp sfml opengl game challenge", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
         p Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.
         p This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.
 
-      +project("Hero", "February 2017",  "cpp sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas&ab_channel=Hopson")
+      //
+      //  Hero
+      //
+      +project("Hero", "February 2017",  "cpp sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas")
         p A game based on "Hero" by FaceOS on Scratch. It features running between different zones using a map you can access by walking to a corner sign post on each area. 
         p Each area features a set of monsters to fight, and eventually as you level up you unlock the ability to reach new areas.
         a(hef="https://scratch.mit.edu/projects/2399118/", taget="_blank") (Link to OG Game)
-
-      +project_noimage("Brainf*ck Interpretter", "February 2017",  "cpp", "https://github.com/Hopson97/Brainf-ck-Interpretter")
+      
+      //
+      //  Brainf*ck Interpretter
+      //
+      +project_noimage("Brainf*ck Interpretter", "February 2017",  "cpp emulator", "https://github.com/Hopson97/Brainf-ck-Interpretter")
         p Says it on the tin really, just an interpretter for the Brainf*ck langauge.
         p From Wikipedia: "Brainf*ck is an esoteric programming language created in 1993 by Urban Müller. Notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer. While it is fully Turing complete, it is not intended for practical use, but to challenge and amuse programmers. Brainf*ck simply requires one to break commands into microscopic steps."
         
-
-      +project("HopsonCraft", "October 2016",  "cpp opengl sfml minecraft game", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU&ab_channel=Hopson")
+      //
+      //  HopsonCraft
+      //
+      +project("HopsonCraft", "October 2016",  "cpp opengl sfml minecraft game", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU")
         p My first ever large(ish) OpenGL project, which was a Minecraft clone. When I started to learn programming, creating a clone of Minecraft was a mini-goal of mine, and a a year bit from starting to learn C++ I eventually did create what is basically "minecraft classic" without a GUI.
         p This was mostly created an excersise for learning OpenGL, as before this everything was done very simple. The project itself went through multiple iterations as I was learning new things and wanted to structure the project differently. These iterations can be found on my YouTube channel.
         p It featured world generaiton using perlin noise, and world breaking and modelling. Certain features were added or removed at certain points in time. For example, some iterations had the "Minecraft-like" lighting models, others had infinite height, and others had world saving/ loading. 
 
-      +project_multiimage("3D Cubes", "March 2016",  "cpp opengl", "3dcubes", "3dcubes2", "https://github.com/Hopson97/3D-Alien-Cubes", "https://www.youtube.com/watch?v=mrrUkoSiPJE&ab_channel=Hopson")
+
+      //
+      //  Alien Cubes
+      //
+      +project_multiimage("3D Cubes", "March 2016",  "cpp opengl", "3dcubes", "3dcubes2", "https://github.com/Hopson97/3D-Alien-Cubes", "https://www.youtube.com/watch?v=mrrUkoSiPJE")
         p An early OpenGL project created when trying to work out how to build a Minecraft clone. The cubes themselves are rendered individually as at the time I was unaware of creating large meshes or instance rendering techniques.
 
+      //
+      //  City Game
+      //
       +project("City Game", "September 2016",  "cpp sfml game", "citygame1", "https://github.com/Hopson97/City-Game")
         p A city building game based on Dot Village, which is a game on Scratch. It featured "days" that would pass, which would look at the current buildings in the city and then update some values, such as coins, population, and resources (eg food, wood, and stone)
         p The original game can be found 
           a(href="https://scratch.mit.edu/projects/2151947/" taget="_blank")
-
+      
+      //
+      //  HOP Virtual Machine
+      //
       +project("Hop Virtual Machine", "September 2016",  "cpp emulator", "hopvm", "https://github.com/Hopson97/HOP-Virtual-Machine", "youtube")
         p At the time a friend was teaching about how computers actually work, by executing very simple instuctions that contained an opcode and operands.
         p This programs was to emulate the a very simple machine using a custom instruction set/byte code. It featured 10 commands, (push, pop, add, sub, print, jump, jie, jin, jil, jig, exit), and an "assembler" to convert high level instrucions into the byte code that the VM would understand.
         p This works by using the fetch, decode, excute model, where the "CPU" will fetch the next instruction based on the instruction pointer location, decode the opcode and operands, and then finally execute the instruction.
 
+      //
       //  ASCIIMON Clasic
       //
-      +project_multiimage("AsciiMon Classic", "July 2016",  "cpp ascii game", "asciimonclassic1", "asciimonclassic2", "https://github.com/Hopson97/ASCIImon", "https://www.youtube.com/watch?v=_catGKf-yCk&ab_channel=Hopson")
+      +project_multiimage("AsciiMon Classic", "July 2016",  "cpp ascii game", "asciimonclassic1", "asciimonclassic2", "https://github.com/Hopson97/ASCIImon", "https://www.youtube.com/watch?v=_catGKf-yCk")
         p Pokemon game created using ASCII art. It was implemented as a custom engine, meaning that any maps or asciimon added into the game will "just work" without having to edit any of the C++ code.
         p It features basic talking scenes, a world to explore, tall grass where you can encounter "asciimon", a battle system. and a leveling up system for the different Asciimon.
 
+      //
       //  KINGDOM
       //
-      +project_multiimage("Kingdom", "April 2016", "cpp sfml game", "kingdom1", "kingdom2", "https://github.com/Hopson97/Kingdom", "https://www.youtube.com/watch?v=MITfqzzeLC8&ab_channel=Hopson")
+      +project_multiimage("Kingdom", "April 2016", "cpp sfml game", "kingdom1", "kingdom2", "https://github.com/Hopson97/Kingdom", "https://www.youtube.com/watch?v=MITfqzzeLC8")
         p Kingdom was "game" that was originally supposed to be a "minicraft x stardew valley" combo, but instead ending up being more like an experimental project where I played around with a custom componenet system, that would allow attatching different logic types to entities, eg following the player, or turnng water into ice when stepped on.
         p Every entity had an std::vector of components, taht are looped through every frame in the update method, after doing any unique logic of a derived entity class first. These components are added in the constructor of any class that is derived by the entity class.
         p If you are interested, there is a tonne more info in the YouTube/ Github links below the images.
 
-      //  ATTACK
       //
-      +project("Attack", "April 2016", "cpp sfml game", "attack", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack", "https://www.youtube.com/watch?v=fZSS32AHWpU&ab_channel=Hopson")
+      //  Attack
+      //
+      +project("Attack", "April 2016", "cpp sfml game", "attack", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack", "https://www.youtube.com/watch?v=fZSS32AHWpU")
         p A simple shooting game. This was my first time doing a title-map collision detection system, and also implementing a particle system. 
           a(href="https://www.miniclip.com/games/heli-attack-3/en/", target="_blank") (Link to original) 
         p It features a little animated army-dressed character who is able to walk around a map. The maps themselves are loaded from a text file with different characters representing tile types, where g = grass, d = dirt, and a space is just air.
@@ -79,7 +231,7 @@ html(lang="en")
       //
       //  PYORO
       //
-      +project("Pyoro Clone", "December 2015", "cpp sfml game", "pyoro", "https://github.com/Hopson97/Pyoro", "https://www.youtube.com/watch?v=kzaj-PKvoLU&ab_channel=Hopson")
+      +project("Pyoro Clone", "December 2015", "cpp sfml game", "pyoro", "https://github.com/Hopson97/Pyoro", "https://www.youtube.com/watch?v=kzaj-PKvoLU")
         p A simple clone of the WarioWare game, Pyoro 
           a(href="https://www.mariowiki.com/Pyoro", target="_blank") (Link to original)
         p This was created when racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we went. 
