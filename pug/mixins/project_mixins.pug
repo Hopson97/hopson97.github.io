@@ -2,7 +2,7 @@ mixin project_header(name, date, tags, github, youtube)
   article.project(tags=tags)
     .project-title.pb-2
         h3= name
-        p= date
+        p.date= date
         .inline.project-links
             if github
                 a.p-3(href=github, target="_blank")

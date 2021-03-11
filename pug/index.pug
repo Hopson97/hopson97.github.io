@@ -4,11 +4,21 @@ html(lang="en")
   script(src="assets/js/Projects.js")
   main
     h1 Projects
-    ul#projects-index
-    .project-list
+    .row.project-directory 
+      .col-4#project-index-row0 
+      .col-4#project-index-row1
+      .col-4#project-index-row2
+    ul#project-index
     #project-articles.project-articles
 
-    
+      +project("Empire", "August 2017",  "cpp sfml cellular-automaton", "empire", "https://www.youtube.com/watch?v=3mgGQR6oGxI&t=145s&ab_channel=Hopson", "https://github.com/Hopson97/Empire", "youtube")
+        p Empire was custom cellular automaton (Which technically isn't a cellular automaton but more of a simulation) which aimed to simulate different colonies taking over a "map". 
+        p It was based on a classic RPG system, where a colonist would move to random square adjacent to them, and if there was someone from a different colinist then they would fight. The colonist with the higher strength value would survive, and the other one would die. 
+        p Each move, the age of the person would decrease but there would be a small chance to produce a child, who would inherit the traits of the parent, such as their strangth value; however they would sometimes mutate, which would increase their strength value.
+
+      +project_multiimage("Minecraft One Week Challenge", "August 2017",  "cpp sfml opengl game challenge", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8&ab_channel=Hopson")
+        p Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.
+        p This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.
 
       +project("Hero", "February 2017",  "cpp sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas&ab_channel=Hopson")
         p A game based on "Hero" by FaceOS on Scratch. It features running between different zones using a map you can access by walking to a corner sign post on each area. 

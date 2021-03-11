@@ -22,13 +22,54 @@
   <script src="assets/js/Projects.js"></script>
   <main>
     <h1>Projects</h1>
-    <ul id="projects-index"></ul>
-    <div class="project-list"></div>
+    <div class="row project-directory"> 
+      <div class="col-4" id="project-index-row0"> </div>
+      <div class="col-4" id="project-index-row1"></div>
+      <div class="col-4" id="project-index-row2"></div>
+    </div>
+    <ul id="project-index"></ul>
     <div class="project-articles" id="project-articles">
+          <article class="project" tags="cpp sfml cellular-automaton">
+            <div class="project-title pb-2">
+              <h3>Empire</h3>
+              <p class="date">August 2017</p>
+              <div class="inline project-links"><a class="p-3" href="https://www.youtube.com/watch?v=3mgGQR6oGxI&amp;t=145s&amp;ab_channel=Hopson" target="_blank">
+                  <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://github.com/Hopson97/Empire" target="_blank">
+                  <div class="fab fa-youtube fa-2x"> </div></a>
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-7">
+                <p>Empire was custom cellular automaton (Which technically isn't a cellular automaton but more of a simulation) which aimed to simulate different colonies taking over a "map". </p>
+                <p>It was based on a classic RPG system, where a colonist would move to random square adjacent to them, and if there was someone from a different colinist then they would fight. The colonist with the higher strength value would survive, and the other one would die. </p>
+                <p>Each move, the age of the person would decrease but there would be a small chance to produce a child, who would inherit the traits of the parent, such as their strangth value; however they would sometimes mutate, which would increase their strength value.</p>
+              </div>
+              <div class="col-5">    <img src="assets/img/projects/empire.png"/></div>
+            </div>
+              <div class="inline project-tags pl-2 pt-2">
+                <h5>Tags:</h5>
+              </div>
+          </article>
+          <article class="project" tags="cpp sfml opengl game challenge">
+            <div class="project-title pb-2">
+              <h3>Minecraft One Week Challenge</h3>
+              <p class="date">August 2017</p>
+              <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/MineCraft-One-Week-Challenge" target="_blank">
+                  <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=Xq3isov6mZ8&amp;ab_channel=Hopson" target="_blank">
+                  <div class="fab fa-youtube fa-2x"> </div></a>
+              </div>
+            </div>
+            <p>Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.</p>
+            <p>This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.</p>
+            <div class="row d-flex justify-content-center pb-2"><img src="assets/img/projects/mcweek1.png"/><img src="assets/img/projects/mcweek2.png"/></div>
+              <div class="inline project-tags pl-2 pt-2">
+                <h5>Tags:</h5>
+              </div>
+          </article>
           <article class="project" tags="cpp sfml game">
             <div class="project-title pb-2">
               <h3>Hero</h3>
-              <p>February 2017</p>
+              <p class="date">February 2017</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Hero" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=P8uNqotAbas&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -48,7 +89,7 @@
           <article class="project" tags="cpp">
             <div class="project-title pb-2">
               <h3>Brainf*ck Interpretter</h3>
-              <p>February 2017</p>
+              <p class="date">February 2017</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Brainf-ck-Interpretter" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a>
               </div>
@@ -62,7 +103,7 @@
           <article class="project" tags="cpp opengl sfml minecraft game">
             <div class="project-title pb-2">
               <h3>HopsonCraft</h3>
-              <p>October 2016</p>
+              <p class="date">October 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/HopsonCraft" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=GACpZp8oquU&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -83,7 +124,7 @@
           <article class="project" tags="cpp opengl">
             <div class="project-title pb-2">
               <h3>3D Cubes</h3>
-              <p>March 2016</p>
+              <p class="date">March 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/3D-Alien-Cubes" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=mrrUkoSiPJE&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -98,7 +139,7 @@
           <article class="project" tags="cpp sfml game">
             <div class="project-title pb-2">
               <h3>City Game</h3>
-              <p>September 2016</p>
+              <p class="date">September 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/City-Game" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a>
               </div>
@@ -117,7 +158,7 @@
           <article class="project" tags="cpp emulator">
             <div class="project-title pb-2">
               <h3>Hop Virtual Machine</h3>
-              <p>September 2016</p>
+              <p class="date">September 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/HOP-Virtual-Machine" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="youtube" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -140,7 +181,7 @@
           <article class="project" tags="cpp ascii game">
             <div class="project-title pb-2">
               <h3>AsciiMon Classic</h3>
-              <p>July 2016</p>
+              <p class="date">July 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/ASCIImon" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=_catGKf-yCk&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -158,7 +199,7 @@
           <article class="project" tags="cpp sfml game">
             <div class="project-title pb-2">
               <h3>Kingdom</h3>
-              <p>April 2016</p>
+              <p class="date">April 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Kingdom" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=MITfqzzeLC8&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -177,7 +218,7 @@
           <article class="project" tags="cpp sfml game">
             <div class="project-title pb-2">
               <h3>Attack</h3>
-              <p>April 2016</p>
+              <p class="date">April 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=fZSS32AHWpU&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -199,7 +240,7 @@
           <article class="project" tags="cpp sfml game">
             <div class="project-title pb-2">
               <h3>Faster Than Wind</h3>
-              <p>January 2016</p>
+              <p class="date">January 2016</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Faster-Than-Wind" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a>
               </div>
@@ -218,7 +259,7 @@
           <article class="project" tags="cpp sfml game">
             <div class="project-title pb-2">
               <h3>Pyoro Clone</h3>
-              <p>December 2015</p>
+              <p class="date">December 2015</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Pyoro" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a><a class="p-3" href="https://www.youtube.com/watch?v=kzaj-PKvoLU&amp;ab_channel=Hopson" target="_blank">
                   <div class="fab fa-youtube fa-2x"> </div></a>
@@ -242,7 +283,7 @@
           <article class="project" tags="cpp ascii game">
             <div class="project-title pb-2">
               <h3>Hopson Land</h3>
-              <p>August 2015</p>
+              <p class="date">August 2015</p>
               <div class="inline project-links"><a class="p-3" href="https://github.com/Hopson97/Hopson-Land" target="_blank">
                   <div class="fab fa-github fa-2x"></div></a>
               </div>
