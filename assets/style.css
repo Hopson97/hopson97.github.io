@@ -147,6 +147,14 @@ footer .fab {
     font-weight: bold;
 }
 
+.project-desktop {
+    display:inherit;
+}
+
+.project-mobile {
+    display: none;
+}
+
 /* 
     ============================
 
@@ -193,9 +201,14 @@ canvas {
     nav a {
         font-size: larger;
     }
+
+    nav img {
+        display: none ;
+    }
     
     main {
         width: 80%;
+        margin: auto;
     }
     
     footer {
@@ -229,11 +242,11 @@ canvas {
     }
 
     .project img {
-        max-height: 20vh;
+        max-height: 30vh;
     }
     
     .project img:hover {
-        max-height: 30vh;
+        max-height: 35vh;
     }
 }
 
@@ -254,6 +267,7 @@ canvas {
     
     main {
         width: 85%;
+        margin: auto;
     }
     
     footer {
@@ -286,12 +300,12 @@ canvas {
         min-height: 20vh;
     }
 
-    .project img {
-        max-height: 10vh;
+    .project-desktop {
+        display:none;
     }
-    
-    .project img:hover {
-        max-height: 20vh;
+
+    .project-mobile {
+        display: inherit;
     }
 }
 
@@ -331,25 +345,6 @@ canvas {
     */
     .common_link {
         padding-left: 1%;
-    }
-    
-    /* 
-        =================================
-    
-                PROJECTS PAGE
-    
-        =================================
-    */
-    .project {
-        min-height: 20vh;
-    }
-
-    .project img {
-        max-height: 10vh;
-    }
-    
-    .project img:hover {
-        max-height: 15vh;
     }
 }
 

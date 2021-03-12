@@ -84,11 +84,14 @@ window.addEventListener("load", _ => {
         }
     }
 
+    const cache = []
+
     for (const project of projects) {
         // Ensure it is actually an article
         if (project.nodeName !== "ARTICLE") {
             continue;
         }
+        
         project.classList.add("hideable");
 
         // Get the tag list
@@ -107,6 +110,23 @@ window.addEventListener("load", _ => {
             }
         }
 
+        // Get the ID of the project from its name, and then add it to the project list
+        const title = project.querySelector(".project-title h3").textContent;
+        const id = title.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_");
+        project.id = id;
+
+        let found = false;
+        for (const p of cache) {
+            if (p === title) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            continue;
+        }
+        cache.push(title);
+
         // Get the date of the project
         const date = project.querySelector(".project-title .date").textContent.split(" ");
         let month = date[0];
@@ -115,10 +135,7 @@ window.addEventListener("load", _ => {
         year = year[2] + year[3];
         const dateString = `${month} ${year}`;
 
-        // Get the ID of the project from its name, and then add it to the project list
-        const title = project.querySelector(".project-title h3").textContent;
-        const id = title.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_");
-        project.id = id;
+
 
         const projectLink = document.createElement("a");
         projectLink.href = `#${id}`;
