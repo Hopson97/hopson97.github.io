@@ -2,6 +2,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: rgb(20, 20, 20);
     color: white;
+
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -117,9 +120,7 @@ footer .fab {
     z-index:999;
 }
 
-.project-tag {
-    margin: 1%;
-}
+
 .project-tag:hover, .project-directory a:hover, .project-tag-filter:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -136,10 +137,6 @@ footer .fab {
 .project-directory a {
     color: white;
     text-decoration: none;
-}
-
-.project-tag-filter {
-    padding-left: 15px;
 }
 
 .selected-tag {

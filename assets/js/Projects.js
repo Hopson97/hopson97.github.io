@@ -13,7 +13,7 @@ function unique(arr) {
 }
 
 function initTagEvent(tagbutton, projectLinks) {
-    const tag = tagbutton.textContent;
+    const tag = tagbutton.textContent.replaceAll("+", "p");
     tagbutton.addEventListener("click", () => {
         const items = document.querySelectorAll(".hideable");
         items.forEach(item => {
@@ -80,7 +80,7 @@ window.addEventListener("load", _ => {
         element.classList.add("taggable")
         for (const tag of tags) {
             allTags.push(tag);
-            element.classList.add(tag)
+            element.classList.add(tag.replaceAll("+", "p"));
         }
     }
 
@@ -91,7 +91,7 @@ window.addEventListener("load", _ => {
         if (project.nodeName !== "ARTICLE") {
             continue;
         }
-        
+
         project.classList.add("hideable");
 
         // Get the tag list
@@ -104,7 +104,9 @@ window.addEventListener("load", _ => {
                 tagNode.textContent = tag;
                 tagNode.classList.add("project-tag");
                 tagNode.classList.add("project-tag-filter-all");
-                tagNode.classList.add("filter" + tagNode.textContent);
+                tagNode.classList.add("ml-3");
+
+                tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
                 project.querySelector(".project-tags").appendChild(tagNode);
                 initTagEvent(tagNode, projectLinks);
             }
@@ -156,10 +158,12 @@ window.addEventListener("load", _ => {
     for (const tag of filteredTags) {
         const tagNode = document.createElement("div");
         tagNode.textContent = tag;
-        tagNode.classList.add("filter" + tagNode.textContent);
+        tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
 
         tagNode.classList.add("project-tag-filter-all");
         tagNode.classList.add("project-tag-filter");
+        tagNode.classList.add("mr-3");
+        tagNode.classList.add("pl-2");
         tagFilters.appendChild(tagNode);
         initTagEvent(tagNode, projectLinks);
     }
@@ -170,6 +174,9 @@ window.addEventListener("load", _ => {
             item.classList.remove("hidden");
             updateLinks(projectLinks);
 
+        });
+        document.querySelectorAll(".project-tag-filter-all").forEach(tag => {
+            tag.classList.remove("selected-tag");
         });
     });
     updateLinks(projectLinks);
