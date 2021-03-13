@@ -1,5 +1,16 @@
 "use strict"
 
+function makeTagElement(tagName) {
+    const tagNode = document.createElement("div");
+    tagNode.textContent = tagName;
+
+    tagNode.classList.add("filter" + tagName.replaceAll("+", "p"));
+    tagNode.classList.add("project-tag");
+    tagNode.classList.add("ml-3");
+
+    return tagNode;
+}
+
 function unique(arr) {
     const u = {};
     const a = [];
@@ -100,12 +111,7 @@ window.addEventListener("load", _ => {
             tags = tags.split(" ");
             addTagClasses(tags, project);
             for (const tag of tags) {
-                const tagNode = document.createElement("div");
-                tagNode.textContent = tag;
-                tagNode.classList.add("project-tag");
-                tagNode.classList.add("ml-3");
-
-                tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
+                const tagNode = makeTagElement(tag);
                 project.querySelector(".project-tags").appendChild(tagNode);
                 initTagEvent(tagNode, projectLinks);
             }
@@ -155,12 +161,8 @@ window.addEventListener("load", _ => {
 
     const tagFilters = document.getElementById("filters");
     for (const tag of filteredTags) {
-        const tagNode = document.createElement("div");
-        tagNode.textContent = tag;
-        tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
+        const tagNode = makeTagElement(tag);
 
-        tagNode.classList.add("project-tag");
-        tagNode.classList.add("ml-3");
         tagFilters.appendChild(tagNode);
         initTagEvent(tagNode, projectLinks);
     }
