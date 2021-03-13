@@ -3,12 +3,12 @@ mixin project_header(name, date, langTags, miscTags, github, youtube)
     .project-title.pb-2
         h3= name
         p.date= date
-        .inline.project-links
+    .project-links.pb-2
             if github
-                a.p-3(href=github, target="_blank")
+                a.p-1(href=github, target="_blank")
                     .fab.fa-github.fa-2x
             if youtube
-                a.p-3(href=youtube, target="_blank")
+                a.p-1(href=youtube, target="_blank")
                     .fab.fa-youtube.fa-2x 
     block 
 

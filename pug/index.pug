@@ -39,10 +39,11 @@ html(lang="en")
       //
       // OpenBuilder
       //
-      +project_multiimage("Open Builder", "December 2019",  "c++", "opengl sfml game lua sockets collab minecraft multi-threaded", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
+      +project_multiimage("Open Builder", "December 2019",  "c++ lua", "opengl sfml game sockets collab minecraft multi-threaded", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
         p A voxel multiplayer game that allows players to play and build in the same world, which used the OpenGL API as a rendering backend and ENet for UDP socket communication. 
         p This created for the purpose of learning how to integrate Lua into a C++ application, as well how to create a multiplayer game. Lua gives the ability to add biomes, block types, edit UI, and probably eventually.
         p The project was actively encouraged to have contributions from people on GitHub, and as a result of this it has over 25 contributors. 
+        p Multithreading was used to run the client and server on seperate threads if the user is creating a local game.
 
       //
       // Pixelator
@@ -62,11 +63,9 @@ html(lang="en")
 
 
       +project_multiimage("Mall Map Dashboard", "March 2018",  "javascript nodejs", "opengl sockets", "mallmap1", "mallmap2", "https://github.com/Hopson97/Mall-Map-Dashboard", "https://www.youtube.com/watch?v=q5xO-FBfnOk&ab_channel=Hopson")
-        p Configurable remote display created for a coursework where it was graded 76%.
-        p The client-server app is split into two parts, input and dashboard.
-        p The input allows editing a mall map from a top down persepctive, as well as adding shops and ads.
-        p The dashboard shows a 3D rotating view of the mall.
-        p The app also uses websockets for real-time communication, so if the dashboard is being edited while someone is viewing it, then it will automatically update without needing a refresh.
+        p Client-server web application that features remote configurable dasboard, created for a coursework where it was graded 76%.
+        p Split into two parts, input and dashboard, the input side allows editing a mall map from a top down persepctive, as well as adding shops and ads; and the dashboard shows a 3D rotating view of the mall.
+        p Websockets are used for real-time communication, so if the dashboard is being edited while someone is viewing it, then it will automatically update without needing a refresh.
 
       //  Hack Pompy
       //
@@ -259,6 +258,7 @@ html(lang="en")
       +project_multiimage("Minecraft Challenge", "August 2017",  "c++", "sfml opengl game challenge minecraft multi-threaded", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
         p Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.
         p This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.
+        p Multithreading was used to run the terrain generation/ mesh generation seperate from the main rendering thread, as this was a bottleneck. 
 
       //
       //  Hero
@@ -282,7 +282,7 @@ html(lang="en")
         p My first ever large(ish) OpenGL project, which was a Minecraft clone. When I started to learn programming, creating a clone of Minecraft was a mini-goal of mine, and a a year bit from starting to learn C++ I eventually did create what is basically "minecraft classic" without a GUI.
         p This was mostly created an excersise for learning OpenGL, as before this everything was done very simple. The project itself went through multiple iterations as I was learning new things and wanted to structure the project differently. These iterations can be found on my YouTube channel.
         p It featured world generaiton using perlin noise, and world breaking and modelling. Certain features were added or removed at certain points in time. For example, some iterations had the "Minecraft-like" lighting models, others had infinite height, and others had world saving/ loading. 
-
+        p Multithreading was used to run the terrain generation/ mesh generation seperate from the main rendering thread, as this was a bottleneck.
 
       //
       //  Alien Cubes
