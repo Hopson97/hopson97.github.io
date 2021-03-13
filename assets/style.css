@@ -92,7 +92,7 @@ footer .fab {
 }
 
 .project-link {
-    display: block;
+    width: 33%;
 }
 
 .project p {
@@ -120,28 +120,35 @@ footer .fab {
     z-index:999;
 }
 
-
-.project-tag:hover, .project-directory a:hover, .project-tag-filter:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.project-directory  {
+/*
+    P R O J E C T 
+    L I S T
+*/
+#project-list  {
     font-family: monospace, monospace,monospace;
 }
 
-.project-directory a::before {
+#project-list a::before {
     content: "-";
 }
 
-.project-directory a {
+#project-list a {
     color: white;
     text-decoration: none;
 }
 
+/*
+    P R O J E C T 
+    T A G S
+*/
 .selected-tag {
     text-decoration: underline;
     font-weight: bold;
+}
+
+.project-tag:hover, #project-list a:hover, .project-tag-filter:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .project-desktop {
