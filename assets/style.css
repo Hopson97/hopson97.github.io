@@ -99,11 +99,9 @@ footer .fab {
     text-align: justify;
 }
 
-
 .project-title h3::after {
     content: " | ";
 }
-
 
 .project img {
     margin: 1%;
@@ -119,6 +117,17 @@ footer .fab {
     display:block;
     z-index:999;
 }
+
+.project-single-image-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
+}
+
+.project-single-image-container .project-images {
+    margin-left: 5%;
+}
+
 
 /*
     P R O J E C T 
