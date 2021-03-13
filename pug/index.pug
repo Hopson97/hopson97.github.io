@@ -4,11 +4,19 @@ html(lang="en")
   script(src="assets/js/Projects.js")
   main
     h1.pb-2 Projects
-    div Filter by tag:
-      .row
+    .row.ml-2
       .col-12
-        div#reset-tags.project-tag-filter.pl-2.pt-1 RESET FILTERS
-        p.pl-2#filters.row 
+        .row 
+          div#reset-tags.project-tag-filter.pb-2.font-weight-bold.font-italic Reset Filters
+        .row
+          div.font-weight-bold Filter by language: 
+        .row.ml-2
+          p#lang-tags-filters.row 
+        .row
+          div.font-weight-bold Filter misc tags:
+        .row.ml-2
+          p#misc-tags-filters.row 
+          
 
     div Project list:
     ul#project-list.pl-2.d-flex.flex-wrap.align-content-start.justify-content-around 
@@ -17,21 +25,21 @@ html(lang="en")
       //
       // YARE
       //
-      +project("YARE", "February 2021",  "c++ opengl sfml game", "yare", "https://github.com/Hopson97/Yare") 
+      +project("YARE", "February 2021",  "c++", "opengl sfml game", "yare", "https://github.com/Hopson97/Yare") 
         p Yet Another Render Engine.
         p A work in progress project where I aiming to delve deeper into OpenGL and experimenting with topcis such as low poly terrain, reflections, and tessellation shaders.
         p So far, it is small low-poly terrain world that is procedurally generated using simplex noise.
       //
       // Pong 3D
       //
-      +project("Pong 3D", "July 2020",  "c++ opengl sfml game", "pong3d", "https://github.com/Hopson97/Pong3D") 
+      +project("Pong 3D", "July 2020",  "c++", "opengl sfml game", "pong3d", "https://github.com/Hopson97/Pong3D") 
         p Pong except it is rendered in 3D 
         p At the time I made this I was very into retro-future styles, so I made a pong game attempting to recreate this style. Furthermore, I used this app as way to learn about post-processing effects, and so implemented bloom.
 
       //
       // OpenBuilder
       //
-      +project_multiimage("Open Builder", "December 2019",  "c++ opengl sfml game lua networking collab", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
+      +project_multiimage("Open Builder", "December 2019",  "c++", "opengl sfml game lua sockets collab minecraft multi-threaded", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
         p A voxel multiplayer game that allows players to play and build in the same world, which used the OpenGL API as a rendering backend and ENet for UDP socket communication. 
         p This created for the purpose of learning how to integrate Lua into a C++ application, as well how to create a multiplayer game. Lua gives the ability to add biomes, block types, edit UI, and probably eventually.
         p The project was actively encouraged to have contributions from people on GitHub, and as a result of this it has over 25 contributors. 
@@ -39,7 +47,7 @@ html(lang="en")
       //
       // Pixelator
       //
-      +project("Pixelator", "September 2019",  "c++ sfml", "pixelator", "https://github.com/Hopson97/Pixelator")
+      +project("Pixelator", "September 2019",  "c++", "sfml", "pixelator", "https://github.com/Hopson97/Pixelator")
         p Converts images into a pixelated form.
         p The program works by taking the average colour around an area, and then filling that area with that colour.
 
@@ -47,13 +55,13 @@ html(lang="en")
       // Space Invaders
       //
       //
-      +project("Space Invaders", "April 2019",  "c++ sfml game", "spaceinvaders", "https://github.com/Hopson97/Hopson-Arcade", "https://www.youtube.com/watch?v=MkpxwsybNPo")
+      +project("Space Invaders", "April 2019",  "c++", "sfml game", "spaceinvaders", "https://github.com/Hopson97/Hopson-Arcade", "https://www.youtube.com/watch?v=MkpxwsybNPo")
         p Space Invaders is a 1978 arcade game created by Tomohiro Nishikado. It was manufactured and sold by Taito in Japan under the title Uchū Shinryaku-sha. 
         p This project aimed to recreate that game using SFML.
         p It features a main menu, the game itself, and a highscore system.
 
 
-      +project_multiimage("Mall Map Dashboard", "March 2018",  "javascript nodejs opengl", "mallmap1", "mallmap2", "https://github.com/Hopson97/Mall-Map-Dashboard", "https://www.youtube.com/watch?v=q5xO-FBfnOk&ab_channel=Hopson")
+      +project_multiimage("Mall Map Dashboard", "March 2018",  "javascript nodejs", "opengl sockets", "mallmap1", "mallmap2", "https://github.com/Hopson97/Mall-Map-Dashboard", "https://www.youtube.com/watch?v=q5xO-FBfnOk&ab_channel=Hopson")
         p Configurable remote display created for a coursework where it was graded 76%.
         p The client-server app is split into two parts, input and dashboard.
         p The input allows editing a mall map from a top down persepctive, as well as adding shops and ads.
@@ -62,7 +70,7 @@ html(lang="en")
 
       //  Hack Pompy
       //
-      +project("Hack Pompy 2018", "October 2018",  "javascript game collab", "hackpompy", "https://github.com/KevinDNF/hackTheGame")
+      +project("Hack Pompy 2018", "October 2018",  "javascript", "game collab", "hackpompy", "https://github.com/KevinDNF/hackTheGame")
         p A game created for a weekend long university-ran hackathon that runs anually.
         p We decided to go full meta, where the idea of the game is you are an organiser of HackPompy2018 and you have to help maintain the satisfaction of the people all by yourself
         p A playable demo can be found 
@@ -71,7 +79,7 @@ html(lang="en")
       //
       //  Sorting Visualiser
       //
-      +project("Sorting Visualiser", "September 2018",  "java swing", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
+      +project("Sorting Visualiser", "September 2018",  "java", "swing multi-threaded", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
         p A sorting algorithm visualiser which features a main menu to select which algorithms to run.
         p This utilises multi-threading, where one thread handles the updates (eg runs the sort algorithm), and the other thread handles the drawing and updating of the stair case.
         p It features bubble sort, counting sort, cycle sort, gnome sort, heap sort, insertion sort, iterative merge sort, merge sort, pancake sort, quick sort, radix sort, selection sort, and stooge sort. 
@@ -80,20 +88,20 @@ html(lang="en")
       //
       //  BALIC
       //
-      +project("BALIC", "October 2018",  "c++ sfml", "balic", "https://github.com/Hopson97/Balic")
+      +project("BALIC", "October 2018",  "c++", "sfml", "balic", "https://github.com/Hopson97/Balic")
         p BALIC stands for "Bad and Lossy Image Compressor". This was mostly made just for fun, which takes an input image and then outputs a sometimes larger lower quality image. Furthermore, it is able to also show the process on a seperate thread.
         
       //
       //  Rusty GL
       //
-      +project_noimage("Rusty GL", "August 2018",  "rust opengl library", "https://github.com/Hopson97/rusty-gl")
+      +project_noimage("Rusty GL", "August 2018",  "rust", "opengl library", "https://github.com/Hopson97/rusty-gl")
         p An OpenGL wrapper for Rust.
         p I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.
 
       //
       //  AsciiMon-rs
       //
-      +project("AsciiMon-rs", "August 2018",  "rust ascii game", "asciimonrs", "https://github.com/Hopson97/Asciimon", "https://www.youtube.com/watch?v=8KP8rjUCa9w")
+      +project("AsciiMon-rs", "August 2018",  "rust", "ascii game", "asciimonrs", "https://github.com/Hopson97/Asciimon", "https://www.youtube.com/watch?v=8KP8rjUCa9w")
         p Pokemon-inspired game created using Rust for ANSI terminals
         p This was my first project using Rust, which similar to the AsciiMon classic game, the rust code acts as an engine meaning that any maps or asciimon added into the game will "just work" without having to edit any of the code 
         p It features a custom "terminal renderer", which splits the terminal into several sections, such as the title, the input section, and the game itself.
@@ -103,7 +111,7 @@ html(lang="en")
       //
       //  Wireworld
       //
-      +project("Wireworld", "July 2018",  "c++ sfml cellular-automaton", "wireworld", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/WireWorld", "https://www.youtube.com/watch?v=p9quENRDW00")
+      +project("Wireworld", "July 2018",  "c++", "sfml cellular-automaton", "wireworld", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/WireWorld", "https://www.youtube.com/watch?v=p9quENRDW00")
         p Wireworld implementation in C++ and SFML.
         p From 
           a(href="https://en.wikipedia.org/wiki/Wireworld", target="_blank") wikipedia: 
@@ -123,7 +131,7 @@ html(lang="en")
       //
       //  Brian's Brain
       //
-      +project("Brian's Brain", "June 2018",  "c++ sfml cellular-automaton", "brianbrain", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/BriansBrain", "https://www.youtube.com/watch?v=ALQO0KtnV4E&")
+      +project("Brian's Brain", "June 2018",  "c++", "sfml cellular-automaton", "brianbrain", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/BriansBrain", "https://www.youtube.com/watch?v=ALQO0KtnV4E&")
         p Brian's brain has 3 cell types: On, Off, and dying.
 
         p Each generation: 
@@ -134,7 +142,7 @@ html(lang="en")
       //
       //  Conglomerate
       //
-      +project_noimage("Conglomerate", "January 2018",  "c++ tool", "https://github.com/Hopson97/Conglomerate")
+      +project_noimage("Conglomerate", "January 2018",  "c++", "tool", "https://github.com/Hopson97/Conglomerate")
         p Combines a C++ project into a single .cpp file. (AKA a unity builder)
         p This is done by sorting the header files by their dependancies (#include directives from this project), and then spitting them out into a .cpp file, and then putting the source files below.
         p Any local includes are discarded from the output, as they would not be needed in the conglomerate file, but non-local includes are kept.
@@ -144,7 +152,7 @@ html(lang="en")
       //
       //  IAS Computer Simulation
       //
-      +project("IAS Computer Sim", "December 2017",  "c++ emulator sfml", "ias", "https://github.com/Hopson97/IAS-Computer")
+      +project("IAS Computer Sim", "December 2017",  "c++", "emulator sfml", "ias", "https://github.com/Hopson97/IAS-Computer")
         p About Implementation of an 8-bit IAS Computer with custom opcodes
         p The computer has 3-bit instructions and 5-bit addresses.
 
@@ -157,14 +165,14 @@ html(lang="en")
       //
       //  Hopson Bot
       //
-      +project("Hopson Bot", "December 2017",  "javascript nodejs discord collab", "hopbot", "https://github.com/HopsonCommunity/HopsonBot")
+      +project("Hopson Bot", "December 2017",  "javascript nodejs", "discord collab", "hopbot", "https://github.com/HopsonCommunity/HopsonBot")
         p Discord bot for the Hopson Community Server.
         p It was made to assist in moderation, where it would track edited and deleted messages, and general fun commands such a polling system and the ability to add and remove roles to oneself.
 
       //
       //  Python Contest Game
       //
-      +project("Python Contest Game", "December 2017",  "python", "androids", "https://github.com/Hopson97/Android-Apple-Drop", "https://www.youtube.com/watch?v=AX-Zfcz1AEs")
+      +project("Python Contest Game", "December 2017",  "python", "challenge", "androids", "https://github.com/Hopson97/Android-Apple-Drop", "https://www.youtube.com/watch?v=AX-Zfcz1AEs")
         p This is a game about an Android eating apples. It was created for a contest run by the computing dept. at my university.
         p The rules were as follows:
         ul 
@@ -177,7 +185,7 @@ html(lang="en")
       //
       //  Slonder Man
       //
-      +project("Slonder Man", "November 2017",  "c++ sfml opengl game challenge", "slondaman", "https://github.com/Hopson97/Slonda-Man")
+      +project("Slonder Man", "November 2017",  "c++", "sfml opengl game challenge", "slondaman", "https://github.com/Hopson97/Slonda-Man")
         p A game like Slender: The Eight Pages.
 
         p I started creating this on 17th October 2017, and my goal as to complete it in 2 weeks (In time for Halloween). However, I never finished it due to general illness (fresher's flu).
@@ -187,7 +195,7 @@ html(lang="en")
       //
       //  Littleman Computer 
       //
-      +project("Littleman Computer", "October 2017",  "python tkinter collab emulator", "lmc", "https://github.com/Portsmouth-Computing/LittleManComputer")
+      +project("Littleman Computer", "October 2017",  "python", "tkinter collab emulator", "lmc", "https://github.com/Portsmouth-Computing/LittleManComputer")
         p Littleman computer implemention created by a friend and I. 
         p The original by Peter Higginson can be found
           a(href="https://peterhigginson.co.uk/LMC/", target="_blank") here.
@@ -199,7 +207,7 @@ html(lang="en")
       //
       //  Langton's Ant
       //
-      +project("Langton's Ant", "September 2017",  "c++ sfml cellular-automaton", "langtonsant", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/LangtonsAnt", "https://www.youtube.com/watch?v=HGa5u6I-8Qg")
+      +project("Langton's Ant", "September 2017",  "c++", "sfml cellular-automaton", "langtonsant", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/LangtonsAnt", "https://www.youtube.com/watch?v=HGa5u6I-8Qg")
         p Langton's ant implemented in C++
         p Squares on a plane are colored variously or blank. We arbitrarily identify one square as the "ant". The ant can travel in any of the four cardinal directions at each step it takes. The "ant" moves according to the rules below:
 
@@ -209,7 +217,7 @@ html(lang="en")
       //
       //  Empire
       //
-      +project("Empire", "August 2017",  "c++ sfml cellular-automaton", "empire", "https://www.youtube.com/watch?v=3mgGQR6oGxI", "https://github.com/Hopson97/Empire", "youtube")
+      +project("Empire", "August 2017",  "c++", "sfml cellular-automaton", "empire", "https://www.youtube.com/watch?v=3mgGQR6oGxI", "https://github.com/Hopson97/Empire", "youtube")
         p Empire was custom cellular automaton (Which technically isn't a cellular automaton but more of a simulation) which aimed to simulate different colonies taking over a "map". 
         p It was based on a classic RPG system, where a colonist would move to random square adjacent to them, and if there was someone from a different colinist then they would fight. The colonist with the higher strength value would survive, and the other one would die. 
         p Each move, the age of the person would decrease but there would be a small chance to produce a child, who would inherit the traits of the parent, such as their strangth value; however they would sometimes mutate, which would increase their strength value.
@@ -217,7 +225,7 @@ html(lang="en")
       //
       //  SFML Game Framework
       //
-      +project_noimage("SFML Game Framework", "August 2017",  "c++ sfml library", "https://github.com/Hopson97/SFML-Game-Framework", "https://www.youtube.com/watch?v=J_ZnUpXGMmg")
+      +project_noimage("SFML Game Framework", "August 2017",  "c++", "sfml library", "https://github.com/Hopson97/SFML-Game-Framework", "https://www.youtube.com/watch?v=J_ZnUpXGMmg")
         p Simple framework for SFML games.
 
         p Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.
@@ -226,7 +234,7 @@ html(lang="en")
       //
       //  Game of Life
       //
-      +project("Game of Life", "August 2017",  "c++ sfml cellular-automaton", "gameoflife", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/GameOfLife", "https://www.youtube.com/watch?v=WVCM3Rv4VV8")
+      +project("Game of Life", "August 2017",  "c++", "sfml cellular-automaton", "gameoflife", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/GameOfLife", "https://www.youtube.com/watch?v=WVCM3Rv4VV8")
         p Game of life implemented in C++
         p The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead, or "populated" or "unpopulated". Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:
         ul 
@@ -238,7 +246,7 @@ html(lang="en")
       //
       //  Predator And Prey
       //
-      +project("Predator And Prey", "August 2017",  "c++ sfml cellular-automaton", "predatorandprey", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/PredatorAndPrey", "https://www.youtube.com/watch?v=v7Z2euv7kwY")
+      +project("Predator And Prey", "August 2017",  "c++", "sfml cellular-automaton", "predatorandprey", "https://github.com/Hopson97/CellularAutomaton/tree/master/Source/PredatorAndPrey", "https://www.youtube.com/watch?v=v7Z2euv7kwY")
         p My first ever Cellular Automaton.
         p Predator and prey features two cell types, predator and prey, and each cell is given a health value.
         p For both types of cell, each step of the simulation means they move in a random direction.
@@ -248,14 +256,14 @@ html(lang="en")
       //
       //  Minecraft One Week Challenge
       //
-      +project_multiimage("Minecraft Challenge", "August 2017",  "c++ sfml opengl game challenge", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
+      +project_multiimage("Minecraft Challenge", "August 2017",  "c++", "sfml opengl game challenge minecraft multi-threaded", "mcweek1", "mcweek2", "https://github.com/Hopson97/MineCraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
         p Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.
         p This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.
 
       //
       //  Hero
       //
-      +project("Hero", "February 2017",  "c++ sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas")
+      +project("Hero", "February 2017",  "c++", "sfml game", "hero", "https://github.com/Hopson97/Hero", "https://www.youtube.com/watch?v=P8uNqotAbas")
         p A game based on "Hero" by FaceOS on Scratch. It features running between different zones using a map you can access by walking to a corner sign post on each area. 
         p Each area features a set of monsters to fight, and eventually as you level up you unlock the ability to reach new areas.
         a(hef="https://scratch.mit.edu/projects/2399118/", target="_blank") (Link to OG Game)
@@ -263,14 +271,14 @@ html(lang="en")
       //
       //  Brainf*ck Interpretter
       //
-      +project_noimage("Brainf*ck", "February 2017",  "c++ emulator", "https://github.com/Hopson97/Brainf-ck-Interpretter")
+      +project_noimage("Brainf*ck", "February 2017",  "c++", "emulator", "https://github.com/Hopson97/Brainf-ck-Interpretter")
         p Says it on the tin really, just an interpretter for the Brainf*ck langauge.
         p From Wikipedia: "Brainf*ck is an esoteric programming language created in 1993 by Urban Müller. Notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer. While it is fully Turing complete, it is not intended for practical use, but to challenge and amuse programmers. Brainf*ck simply requires one to break commands into microscopic steps."
         
       //
       //  HopsonCraft
       //
-      +project("HopsonCraft", "October 2016",  "c++ opengl sfml minecraft game", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU")
+      +project("HopsonCraft", "October 2016",  "c++", "opengl sfml minecraft game multi-threaded", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU")
         p My first ever large(ish) OpenGL project, which was a Minecraft clone. When I started to learn programming, creating a clone of Minecraft was a mini-goal of mine, and a a year bit from starting to learn C++ I eventually did create what is basically "minecraft classic" without a GUI.
         p This was mostly created an excersise for learning OpenGL, as before this everything was done very simple. The project itself went through multiple iterations as I was learning new things and wanted to structure the project differently. These iterations can be found on my YouTube channel.
         p It featured world generaiton using perlin noise, and world breaking and modelling. Certain features were added or removed at certain points in time. For example, some iterations had the "Minecraft-like" lighting models, others had infinite height, and others had world saving/ loading. 
@@ -279,13 +287,13 @@ html(lang="en")
       //
       //  Alien Cubes
       //
-      +project_multiimage("3D Cubes", "March 2016",  "c++ opengl", "3dcubes", "3dcubes2", "https://github.com/Hopson97/3D-Alien-Cubes", "https://www.youtube.com/watch?v=mrrUkoSiPJE")
+      +project_multiimage("3D Cubes", "March 2016",  "c++", "opengl", "3dcubes", "3dcubes2", "https://github.com/Hopson97/3D-Alien-Cubes", "https://www.youtube.com/watch?v=mrrUkoSiPJE")
         p An early OpenGL project created when trying to work out how to build a Minecraft clone. The cubes themselves are rendered individually as at the time I was unaware of creating large meshes or instance rendering techniques.
 
       //
       //  City Game
       //
-      +project("City Game", "September 2016",  "c++ sfml game", "citygame1", "https://github.com/Hopson97/City-Game")
+      +project("City Game", "September 2016",  "c++", "sfml game", "citygame1", "https://github.com/Hopson97/City-Game")
         p A city building game based on Dot Village, which is a game on Scratch. It featured "days" that would pass, which would look at the current buildings in the city and then update some values, such as coins, population, and resources (eg food, wood, and stone)
         p The original game can be found 
           a(href="https://scratch.mit.edu/projects/2151947/" target="_blank")
@@ -293,7 +301,7 @@ html(lang="en")
       //
       //  HOP Virtual Machine
       //
-      +project("Hop Virtual Machine", "September 2016",  "c++ emulator", "hopvm", "https://github.com/Hopson97/HOP-Virtual-Machine", "youtube")
+      +project("Hop Virtual Machine", "September 2016",  "c++", "emulator", "hopvm", "https://github.com/Hopson97/HOP-Virtual-Machine", "youtube")
         p At the time a friend was teaching about how computers actually work, by executing very simple instuctions that contained an opcode and operands.
         p This programs was to emulate the a very simple machine using a custom instruction set/byte code. It featured 10 commands, (push, pop, add, sub, print, jump, jie, jin, jil, jig, exit), and an "assembler" to convert high level instrucions into the byte code that the VM would understand.
         p This works by using the fetch, decode, excute model, where the "CPU" will fetch the next instruction based on the instruction pointer location, decode the opcode and operands, and then finally execute the instruction.
@@ -301,14 +309,14 @@ html(lang="en")
       //
       //  ASCIIMON Clasic
       //
-      +project_multiimage("AsciiMon Classic", "July 2016",  "c++ ascii game", "asciimonclassic1", "asciimonclassic2", "https://github.com/Hopson97/ASCIImon", "https://www.youtube.com/watch?v=_catGKf-yCk")
+      +project_multiimage("AsciiMon Classic", "July 2016",  "c++", "ascii game", "asciimonclassic1", "asciimonclassic2", "https://github.com/Hopson97/ASCIImon", "https://www.youtube.com/watch?v=_catGKf-yCk")
         p Pokemon game created using ASCII art. It was implemented as a custom engine, meaning that any maps or asciimon added into the game will "just work" without having to edit any of the C++ code.
         p It features basic talking scenes, a world to explore, tall grass where you can encounter "asciimon", a battle system. and a leveling up system for the different Asciimon.
 
       //
       //  KINGDOM
       //
-      +project_multiimage("Kingdom", "April 2016", "c++ sfml game", "kingdom1", "kingdom2", "https://github.com/Hopson97/Kingdom", "https://www.youtube.com/watch?v=MITfqzzeLC8")
+      +project_multiimage("Kingdom", "April 2016", "c++", "sfml game", "kingdom1", "kingdom2", "https://github.com/Hopson97/Kingdom", "https://www.youtube.com/watch?v=MITfqzzeLC8")
         p Kingdom was "game" that was originally supposed to be a "minicraft x stardew valley" combo, but instead ending up being more like an experimental project where I played around with a custom componenet system, that would allow attatching different logic types to entities, eg following the player, or turnng water into ice when stepped on.
         p Every entity had an std::vector of components, taht are looped through every frame in the update method, after doing any unique logic of a derived entity class first. These components are added in the constructor of any class that is derived by the entity class.
         p If you are interested, there is a tonne more info in the YouTube/ Github links below the images.
@@ -316,14 +324,14 @@ html(lang="en")
       //
       //  Attack
       //
-      +project("Attack", "April 2016", "c++ sfml game", "attack", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack", "https://www.youtube.com/watch?v=fZSS32AHWpU")
+      +project("Attack", "April 2016", "c++", "sfml game", "attack", "https://github.com/Hopson97/Ancient-Projects/tree/master/c%2B%2B/heli-attack", "https://www.youtube.com/watch?v=fZSS32AHWpU")
         p A simple shooting game. This was my first time doing a title-map collision detection system, and also implementing a particle system. 
           a(href="https://www.miniclip.com/games/heli-attack-3/en/", target="_blank") (Link to original) 
         p It features a little animated army-dressed character who is able to walk around a map. The maps themselves are loaded from a text file with different characters representing tile types, where g = grass, d = dirt, and a space is just air.
 
       //  FASTER THAN WIND
       //
-      +project_multiimage("Faster Than Wind", "January 2016", "c++ sfml game", "ftw1", "ftw2", "https://github.com/Hopson97/Faster-Than-Wind")
+      +project_multiimage("Faster Than Wind", "January 2016", "c++", "sfml game", "ftw1", "ftw2", "https://github.com/Hopson97/Faster-Than-Wind")
         p An attempted clone of the game "FTL: Fater than Light". At the time I was very into the game FTL, so I felt like creating my own version would be an interesting challenge.  
           a(href="https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/", target="_blank") (Link to original) 
         p It features a ship editor, as well as the game itself. The game itself was never finished beyond a main menu screen and a ship selection screen.
@@ -332,7 +340,7 @@ html(lang="en")
       //
       //  PYORO
       //
-      +project("Pyoro Clone", "December 2015", "c++ sfml game", "pyoro", "https://github.com/Hopson97/Pyoro", "https://www.youtube.com/watch?v=kzaj-PKvoLU")
+      +project("Pyoro Clone", "December 2015", "c++", "sfml game", "pyoro", "https://github.com/Hopson97/Pyoro", "https://www.youtube.com/watch?v=kzaj-PKvoLU")
         p A simple clone of the WarioWare game, Pyoro 
           a(href="https://www.mariowiki.com/Pyoro", target="_blank") (Link to original)
         p This was created when racing a friend, who was also creating the same project. At the time, we were both new to using SFML in C++, and so we were giving eachother tips on how to implement certain functionality as we went. 
@@ -341,11 +349,8 @@ html(lang="en")
 
       //  HOPSON LAND
       //
-      +project("Hopson Land", "August 2015","c++ ascii game", "hopsonland", "https://github.com/Hopson97/Hopson-Land")
+      +project("Hopson Land", "August 2015","c++", "ascii game", "hopsonland", "https://github.com/Hopson97/Hopson-Land")
         p This was one of my earliest games, created when I was first learning C++. It was also my first time creating classes correctly, as before this I did not really know what they were for.
         p It was just a simple RPG game where you had the ability to roam around a little world, and then encounter enemies in certain parts where it would transision to an RPG turn-based-style battle system.
-        
-      
-      // +project_multiimage("Name", "Date",  "Tags", "Image", "image", "github", "youtube")
-      // +project("Name", "Date",  "Tags", "Image", "github", "youtube")
+
   include _partials/footer.pug

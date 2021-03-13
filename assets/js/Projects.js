@@ -19,6 +19,7 @@ function makeTagElement(tagName) {
     const tagNode = document.createElement("div");
     tagNode.textContent = tagName;
 
+
     tagNode.classList.add("filter" + tagName.replaceAll("+", "p"));
     tagNode.classList.add("project-tag");
     tagNode.classList.add("ml-3");
@@ -64,8 +65,7 @@ function updateLinks(projectLinks, tagName) {
     for (const link of projectLinks) {
         if (link.classList.contains(tagName) || !tagName) {
             link.classList.remove("hidden");
-        }
-        else {
+        } else {
             link.classList.add("hidden");
         }
     }
@@ -77,6 +77,8 @@ window.addEventListener("load", _ => {
     projects.pop();
 
     const allTags = [];
+    const allLangTags = [];
+    const allMiscTags = [];
     const projectLinks = [];
 
 
@@ -88,42 +90,45 @@ window.addEventListener("load", _ => {
 
         project.classList.add("hideable");
 
-        // Get the tag list
-        let tags = project.getAttribute("tags");
-        if (tags) {
-            tags = tags.split(" ");
-            for (const tag of tags) {
-                allTags.push(tag);
-                project.classList.add(tag.replaceAll("+", "p"));
-            }
-            for (const tag of tags) {
-                const tagNode = makeTagElement(tag);
-                project.querySelector(".project-tags").appendChild(tagNode);
-                initTagEvent(tagNode, projectLinks);
-            }
-        }
-
-        // Get the date of the project
-    const projectList = document.getElementById("project-list");
-
+        const projectList = document.getElementById("project-list");
         const projectLink = makeProjectLinkElement(project);
         projectLinks.push(projectLink);
+
+        // Get the tag list
+        const langTags = project.getAttribute("langTags");
+        const miscTags = project.getAttribute("miscTags");
+        const tags = `${langTags} ${miscTags}`.split(" ");
+
         for (const tag of tags) {
+            allTags.push(tag);
+            project.classList.add(tag.replaceAll("+", "p"));
+            const tagNode = makeTagElement(tag);
+            project.querySelector(".project-tags").appendChild(tagNode);
+            initTagEvent(tagNode, projectLinks);
+
             allTags.push(tag);
             projectLink.classList.add(tag.replaceAll("+", "p"));
             projectList.appendChild(projectLink);
         }
+
+        allLangTags.push(...langTags.split(" "));
+        allMiscTags.push(...miscTags.split(" "));
     }
 
-    const filteredTags = unique(allTags).sort();
-
-    const tagFilters = document.getElementById("filters");
-    for (const tag of filteredTags) {
-        const tagNode = makeTagElement(tag);
-
-        tagFilters.appendChild(tagNode);
-        initTagEvent(tagNode, projectLinks);
+    function addTagsToFilter(tags, filterList) {
+        for (const tag of tags) {
+            const tagNode = makeTagElement(tag);
+    
+            filterList.appendChild(tagNode);
+            initTagEvent(tagNode, projectLinks);
+        }
     }
+    const filteredLangTags = unique(allLangTags).sort();
+    const filteredMiscTags = unique(allMiscTags).sort();
+    const langTagFilters = document.getElementById("lang-tags-filters");
+    const miscTagFilters = document.getElementById("misc-tags-filters");
+    addTagsToFilter(filteredLangTags, langTagFilters);
+    addTagsToFilter(filteredMiscTags, miscTagFilters);
 
     document.getElementById("reset-tags").addEventListener("click", () => {
         const items = document.querySelectorAll(".hideable");
