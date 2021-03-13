@@ -24,8 +24,8 @@ mixin project(name, date, tags, imgurl, github, youtube)
             .col-5     
                     img(src=`assets/img/projects/${imgurl}.png`) 
             +project_footer(github, youtube)
-    +project_mobile(name, date, tags, github, youtube, imgurl)
-        block
+    //+project_mobile(name, date, tags, github, youtube, imgurl)
+    //    block
         
 mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
     +project_header(name, date, tags, github, youtube, "desktop")
@@ -34,15 +34,15 @@ mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
             img(src=`assets/img/projects/${imgurl1}.png`) 
             img(src=`assets/img/projects/${imgurl2}.png`) 
         +project_footer(github, youtube)
-    +project_mobile(name, date, tags, github, youtube, imgurl2)
-        block
+    //+project_mobile(name, date, tags, github, youtube, imgurl2)
+    //    block
 
 mixin project_noimage(name, date, tags, github, youtube)
     +project_header(name, date, tags, github, youtube, "desktop")
             block
             +project_footer(github, youtube)
-    +project_mobile(name, date, tags, github, youtube)
-        block
+    //+project_mobile(name, date, tags, github, youtube)
+    //    block
 
 
 mixin project_mobile(name, date, tags, github, youtube, imgurl)
