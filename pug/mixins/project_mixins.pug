@@ -1,5 +1,5 @@
 mixin project_header(name, date, tags, github, youtube, kind)
-  article(tags=tags, class=`project taggable hideable project-${kind}`)
+  article(tags=tags, class=`project taggable hideable project-${kind}` id=name.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_"))
     .project-title.pb-2
         h3= name
         p.date= date

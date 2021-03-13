@@ -241,6 +241,7 @@ canvas {
     
         =================================
     */
+    /*
     .project {
         min-height: 35vh;
     }
@@ -251,7 +252,7 @@ canvas {
     
     .project img:hover {
         max-height: 35vh;
-    }
+    }*/
 }
 
 @media only screen and (max-width: 1280px) {
@@ -300,6 +301,8 @@ canvas {
     
         =================================
     */
+
+    /*
     .project {
         min-height: 20vh;
     }
@@ -311,6 +314,7 @@ canvas {
     .project-mobile {
         display: inherit;
     }
+    */
 }
 
 @media only screen and (max-width: 768px) {
