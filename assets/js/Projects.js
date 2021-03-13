@@ -25,7 +25,7 @@ function initTagEvent(tagbutton, projectLinks) {
         });
         updateLinks(projectLinks);
 
-        document.querySelectorAll(".project-tag-filter-all").forEach(tag => {
+        document.querySelectorAll(".project-tag").forEach(tag => {
             tag.classList.remove("selected-tag");
         });
         document.querySelectorAll(".filter" + tag).forEach(tag => {
@@ -103,7 +103,6 @@ window.addEventListener("load", _ => {
                 const tagNode = document.createElement("div");
                 tagNode.textContent = tag;
                 tagNode.classList.add("project-tag");
-                tagNode.classList.add("project-tag-filter-all");
                 tagNode.classList.add("ml-3");
 
                 tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
@@ -160,10 +159,8 @@ window.addEventListener("load", _ => {
         tagNode.textContent = tag;
         tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
 
-        tagNode.classList.add("project-tag-filter-all");
-        tagNode.classList.add("project-tag-filter");
-        tagNode.classList.add("mr-3");
-        tagNode.classList.add("pl-2");
+        tagNode.classList.add("project-tag");
+        tagNode.classList.add("ml-3");
         tagFilters.appendChild(tagNode);
         initTagEvent(tagNode, projectLinks);
     }
@@ -175,7 +172,7 @@ window.addEventListener("load", _ => {
             updateLinks(projectLinks);
 
         });
-        document.querySelectorAll(".project-tag-filter-all").forEach(tag => {
+        document.querySelectorAll(".project-tag").forEach(tag => {
             tag.classList.remove("selected-tag");
         });
     });
