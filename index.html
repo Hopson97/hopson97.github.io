@@ -21,11 +21,23 @@
   <script src="assets/js/Projects.js"></script>
   <main>
     <h1 class="pb-2">Projects</h1>
-    <div>Filter by tag:
-      <div class="row"></div>
+    <div class="row ml-2">
       <div class="col-12">
-        <div class="project-tag-filter pl-2 pt-1" id="reset-tags">RESET FILTERS</div>
-        <p class="pl-2 row" id="filters"> </p>
+        <div class="row"> 
+          <div class="project-tag-filter pb-2 font-weight-bold font-italic" id="reset-tags">Reset Filters</div>
+        </div>
+        <div class="row">
+          <div class="font-weight-bold">Filter by language: </div>
+        </div>
+        <div class="row ml-2">
+          <p class="row" id="lang-tags-filters"> </p>
+        </div>
+        <div class="row">
+          <div class="font-weight-bold">Filter misc tags:</div>
+        </div>
+        <div class="row ml-2">
+          <p class="row" id="misc-tags-filters"> </p>
+        </div>
       </div>
     </div>
     <div>Project list:</div>
@@ -34,7 +46,7 @@
       <!---->
       <!-- YARE-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ opengl sfml game" id="yare">
+          <article class="project taggable hideable" langTags="c++" miscTags="opengl sfml game" id="yare">
             <div class="project-title pb-2">
               <h3>YARE</h3>
               <p class="date">February 2021</p>
@@ -57,7 +69,7 @@
       <!---->
       <!-- Pong 3D-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ opengl sfml game" id="pong-3d">
+          <article class="project taggable hideable" langTags="c++" miscTags="opengl sfml game" id="pong-3d">
             <div class="project-title pb-2">
               <h3>Pong 3D</h3>
               <p class="date">July 2020</p>
@@ -79,7 +91,7 @@
       <!---->
       <!-- OpenBuilder-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ opengl sfml game lua networking collab" id="open-builder">
+          <article class="project taggable hideable" langTags="c++" miscTags="opengl sfml game lua sockets collab minecraft multi-threaded" id="open-builder">
             <div class="project-title pb-2">
               <h3>Open Builder</h3>
               <p class="date">December 2019</p>
@@ -102,7 +114,7 @@
       <!---->
       <!-- Pixelator-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml" id="pixelator">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml" id="pixelator">
             <div class="project-title pb-2">
               <h3>Pixelator</h3>
               <p class="date">September 2019</p>
@@ -125,7 +137,7 @@
       <!-- Space Invaders-->
       <!---->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="space-invaders">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="space-invaders">
             <div class="project-title pb-2">
               <h3>Space Invaders</h3>
               <p class="date">April 2019</p>
@@ -146,7 +158,7 @@
                 <h5>Tags:</h5>
               </div>
           </article>
-          <article class="project taggable hideable project-desktop" tags="javascript nodejs opengl" id="mall-map-dashboard">
+          <article class="project taggable hideable" langTags="javascript nodejs" miscTags="opengl sockets" id="mall-map-dashboard">
             <div class="project-title pb-2">
               <h3>Mall Map Dashboard</h3>
               <p class="date">March 2018</p>
@@ -171,7 +183,7 @@
           </article>
       <!--  Hack Pompy-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="javascript game collab" id="hack-pompy-2018">
+          <article class="project taggable hideable" langTags="javascript" miscTags="game collab" id="hack-pompy-2018">
             <div class="project-title pb-2">
               <h3>Hack Pompy 2018</h3>
               <p class="date">October 2018</p>
@@ -194,7 +206,7 @@
       <!---->
       <!--  Sorting Visualiser-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="java swing" id="sorting-visualiser">
+          <article class="project taggable hideable" langTags="java" miscTags="swing multi-threaded" id="sorting-visualiser">
             <div class="project-title pb-2">
               <h3>Sorting Visualiser</h3>
               <p class="date">September 2018</p>
@@ -218,7 +230,7 @@
       <!---->
       <!--  BALIC-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml" id="balic">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml" id="balic">
             <div class="project-title pb-2">
               <h3>BALIC</h3>
               <p class="date">October 2018</p>
@@ -239,7 +251,7 @@
       <!---->
       <!--  Rusty GL-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="rust opengl library" id="rusty-gl">
+          <article class="project taggable hideable" langTags="rust" miscTags="opengl library" id="rusty-gl">
             <div class="project-title pb-2">
               <h3>Rusty GL</h3>
               <p class="date">August 2018</p>
@@ -260,7 +272,7 @@
       <!---->
       <!--  AsciiMon-rs-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="rust ascii game" id="asciimon-rs">
+          <article class="project taggable hideable" langTags="rust" miscTags="ascii game" id="asciimon-rs">
             <div class="project-title pb-2">
               <h3>AsciiMon-rs</h3>
               <p class="date">August 2018</p>
@@ -285,7 +297,7 @@
       <!---->
       <!--  Wireworld-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml cellular-automaton" id="wireworld">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml cellular-automaton" id="wireworld">
             <div class="project-title pb-2">
               <h3>Wireworld</h3>
               <p class="date">July 2018</p>
@@ -322,7 +334,7 @@
       <!---->
       <!--  Brian's Brain-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml cellular-automaton" id="brian_s-brain">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml cellular-automaton" id="brian_s-brain">
             <div class="project-title pb-2">
               <h3>Brian's Brain</h3>
               <p class="date">June 2018</p>
@@ -350,7 +362,7 @@
       <!---->
       <!--  Conglomerate-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ tool" id="conglomerate">
+          <article class="project taggable hideable" langTags="c++" miscTags="tool" id="conglomerate">
             <div class="project-title pb-2">
               <h3>Conglomerate</h3>
               <p class="date">January 2018</p>
@@ -373,7 +385,7 @@
       <!---->
       <!--  IAS Computer Simulation-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ emulator sfml" id="ias-computer-sim">
+          <article class="project taggable hideable" langTags="c++" miscTags="emulator sfml" id="ias-computer-sim">
             <div class="project-title pb-2">
               <h3>IAS Computer Sim</h3>
               <p class="date">December 2017</p>
@@ -397,7 +409,7 @@
       <!---->
       <!--  Hopson Bot-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="javascript nodejs discord collab" id="hopson-bot">
+          <article class="project taggable hideable" langTags="javascript nodejs" miscTags="discord collab" id="hopson-bot">
             <div class="project-title pb-2">
               <h3>Hopson Bot</h3>
               <p class="date">December 2017</p>
@@ -419,7 +431,7 @@
       <!---->
       <!--  Python Contest Game-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="python" id="python-contest-game">
+          <article class="project taggable hideable" langTags="python" miscTags="challenge" id="python-contest-game">
             <div class="project-title pb-2">
               <h3>Python Contest Game</h3>
               <p class="date">December 2017</p>
@@ -449,7 +461,7 @@
       <!---->
       <!--  Slonder Man-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml opengl game challenge" id="slonder-man">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml opengl game challenge" id="slonder-man">
             <div class="project-title pb-2">
               <h3>Slonder Man</h3>
               <p class="date">November 2017</p>
@@ -472,7 +484,7 @@
       <!---->
       <!--  Littleman Computer -->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="python tkinter collab emulator" id="littleman-computer">
+          <article class="project taggable hideable" langTags="python" miscTags="tkinter collab emulator" id="littleman-computer">
             <div class="project-title pb-2">
               <h3>Littleman Computer</h3>
               <p class="date">October 2017</p>
@@ -497,7 +509,7 @@
       <!---->
       <!--  Langton's Ant-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml cellular-automaton" id="langton_s-ant">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml cellular-automaton" id="langton_s-ant">
             <div class="project-title pb-2">
               <h3>Langton's Ant</h3>
               <p class="date">September 2017</p>
@@ -522,7 +534,7 @@
       <!---->
       <!--  Empire-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml cellular-automaton" id="empire">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml cellular-automaton" id="empire">
             <div class="project-title pb-2">
               <h3>Empire</h3>
               <p class="date">August 2017</p>
@@ -546,7 +558,7 @@
       <!---->
       <!--  SFML Game Framework-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml library" id="sfml-game-framework">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml library" id="sfml-game-framework">
             <div class="project-title pb-2">
               <h3>SFML Game Framework</h3>
               <p class="date">August 2017</p>
@@ -568,7 +580,7 @@
       <!---->
       <!--  Game of Life-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml cellular-automaton" id="game-of-life">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml cellular-automaton" id="game-of-life">
             <div class="project-title pb-2">
               <h3>Game of Life</h3>
               <p class="date">August 2017</p>
@@ -597,7 +609,7 @@
       <!---->
       <!--  Predator And Prey-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml cellular-automaton" id="predator-and-prey">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml cellular-automaton" id="predator-and-prey">
             <div class="project-title pb-2">
               <h3>Predator And Prey</h3>
               <p class="date">August 2017</p>
@@ -623,7 +635,7 @@
       <!---->
       <!--  Minecraft One Week Challenge-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml opengl game challenge" id="minecraft-challenge">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml opengl game challenge minecraft multi-threaded" id="minecraft-challenge">
             <div class="project-title pb-2">
               <h3>Minecraft Challenge</h3>
               <p class="date">August 2017</p>
@@ -646,7 +658,7 @@
       <!---->
       <!--  Hero-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="hero">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="hero">
             <div class="project-title pb-2">
               <h3>Hero</h3>
               <p class="date">February 2017</p>
@@ -669,7 +681,7 @@
       <!---->
       <!--  Brainf*ck Interpretter-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ emulator" id="brainf_ck">
+          <article class="project taggable hideable" langTags="c++" miscTags="emulator" id="brainf_ck">
             <div class="project-title pb-2">
               <h3>Brainf*ck</h3>
               <p class="date">February 2017</p>
@@ -690,7 +702,7 @@
       <!---->
       <!--  HopsonCraft-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ opengl sfml minecraft game" id="hopsoncraft">
+          <article class="project taggable hideable" langTags="c++" miscTags="opengl sfml minecraft game multi-threaded" id="hopsoncraft">
             <div class="project-title pb-2">
               <h3>HopsonCraft</h3>
               <p class="date">October 2016</p>
@@ -714,7 +726,7 @@
       <!---->
       <!--  Alien Cubes-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ opengl" id="3d-cubes">
+          <article class="project taggable hideable" langTags="c++" miscTags="opengl" id="3d-cubes">
             <div class="project-title pb-2">
               <h3>3D Cubes</h3>
               <p class="date">March 2016</p>
@@ -736,7 +748,7 @@
       <!---->
       <!--  City Game-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="city-game">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="city-game">
             <div class="project-title pb-2">
               <h3>City Game</h3>
               <p class="date">September 2016</p>
@@ -758,7 +770,7 @@
       <!---->
       <!--  HOP Virtual Machine-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ emulator" id="hop-virtual-machine">
+          <article class="project taggable hideable" langTags="c++" miscTags="emulator" id="hop-virtual-machine">
             <div class="project-title pb-2">
               <h3>Hop Virtual Machine</h3>
               <p class="date">September 2016</p>
@@ -782,7 +794,7 @@
       <!---->
       <!--  ASCIIMON Clasic-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ ascii game" id="asciimon-classic">
+          <article class="project taggable hideable" langTags="c++" miscTags="ascii game" id="asciimon-classic">
             <div class="project-title pb-2">
               <h3>AsciiMon Classic</h3>
               <p class="date">July 2016</p>
@@ -805,7 +817,7 @@
       <!---->
       <!--  KINGDOM-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="kingdom">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="kingdom">
             <div class="project-title pb-2">
               <h3>Kingdom</h3>
               <p class="date">April 2016</p>
@@ -829,7 +841,7 @@
       <!---->
       <!--  Attack-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="attack">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="attack">
             <div class="project-title pb-2">
               <h3>Attack</h3>
               <p class="date">April 2016</p>
@@ -851,7 +863,7 @@
           </article>
       <!--  FASTER THAN WIND-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="faster-than-wind">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="faster-than-wind">
             <div class="project-title pb-2">
               <h3>Faster Than Wind</h3>
               <p class="date">January 2016</p>
@@ -874,7 +886,7 @@
       <!---->
       <!--  PYORO-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ sfml game" id="pyoro-clone">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml game" id="pyoro-clone">
             <div class="project-title pb-2">
               <h3>Pyoro Clone</h3>
               <p class="date">December 2015</p>
@@ -898,7 +910,7 @@
           </article>
       <!--  HOPSON LAND-->
       <!---->
-          <article class="project taggable hideable project-desktop" tags="c++ ascii game" id="hopson-land">
+          <article class="project taggable hideable" langTags="c++" miscTags="ascii game" id="hopson-land">
             <div class="project-title pb-2">
               <h3>Hopson Land</h3>
               <p class="date">August 2015</p>
@@ -917,8 +929,6 @@
                 <h5>Tags:</h5>
               </div>
           </article>
-      <!-- +project_multiimage("Name", "Date",  "Tags", "Image", "image", "github", "youtube")-->
-      <!-- +project("Name", "Date",  "Tags", "Image", "github", "youtube")-->
     </div>
   </main>
   <footer> 

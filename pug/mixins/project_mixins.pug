@@ -1,5 +1,5 @@
-mixin project_header(name, date, tags, github, youtube, kind)
-  article(tags=tags, class=`project taggable hideable project-${kind}` id=name.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_"))
+mixin project_header(name, date, langTags, miscTags, github, youtube)
+  article(langTags=langTags, miscTags=miscTags class=`project taggable hideable` id=name.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_"))
     .project-title.pb-2
         h3= name
         p.date= date
@@ -16,8 +16,8 @@ mixin project_footer()
     .inline.project-tags.pl-2.pt-2
         h5 Tags:
 
-mixin project(name, date, tags, imgurl, github, youtube)
-    +project_header(name, date, tags, github, youtube, "desktop")
+mixin project(name, date, langTags, miscTags, imgurl, github, youtube)
+    +project_header(name, date, langTags, miscTags, github, youtube)
         .project-single-image-container
             .project-content 
                 block
@@ -25,8 +25,8 @@ mixin project(name, date, tags, imgurl, github, youtube)
                 img.img-primary(src=`assets/img/projects/${imgurl}.png`) 
         +project_footer(github, youtube)
         
-mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
-    +project_header(name, date, tags, github, youtube, "desktop")
+mixin project_multiimage(name, date, langTags, miscTags, imgurl1, imgurl2, github, youtube)
+    +project_header(name, date, langTags, miscTags, github, youtube)
         .project-double-image-container
             .project-content
                 block
@@ -35,8 +35,8 @@ mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
                 img.img-primary(src=`assets/img/projects/${imgurl2}.png`) 
         +project_footer(github, youtube)
 
-mixin project_noimage(name, date, tags, github, youtube)
-    +project_header(name, date, tags, github, youtube, "desktop")
+mixin project_noimage(name, date, langTags, miscTags, github, youtube)
+    +project_header(name, date, langTags, miscTags, github, youtube)
         .project-double-image-container
             .project-content
                 block
