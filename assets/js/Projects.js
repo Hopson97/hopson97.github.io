@@ -4,15 +4,12 @@ function makeProjectLinkElement(project) {
     const title = project.querySelector(".project-title h3").textContent;
 
     const date = project.querySelector(".project-title .date").textContent.split(" ");
-    let month = date[0];
-    let year = date[1];
-    month = month[0] + month[1] + month[2];
-    year = year[2] + year[3];
-    const dateString = `${month} ${year}`;
+    const month = date[0].substr(0, 3);
+    const year = date[1].substr(2, 2);
 
     const projectLink = document.createElement("a");
     projectLink.href = `#${project.id}`;
-    projectLink.textContent = `${dateString}: ${title}`;
+    projectLink.textContent = `${month} ${year}: ${title}`;
     projectLink.classList.add("project-link");
     projectLink.classList.add("hideable");
     return projectLink;
@@ -52,7 +49,7 @@ function initTagEvent(tagbutton, projectLinks) {
                 item.classList.add("hidden");
             }
         });
-        updateLinks(projectLinks);
+        updateLinks(projectLinks, tag);
 
         document.querySelectorAll(".project-tag").forEach(tag => {
             tag.classList.remove("selected-tag");
@@ -63,21 +60,13 @@ function initTagEvent(tagbutton, projectLinks) {
     });
 }
 
-function updateLinks(projectLinks) {
-
-    const projectList = document.getElementById("project-list");
-    projectList.innerHTML = "";
-
-    for (const projectLink of projectLinks) {
-        if (projectLink.classList.contains("hidden")) {
-            continue;
+function updateLinks(projectLinks, tagName) {
+    for (const link of projectLinks) {
+        if (link.classList.contains(tagName) || !tagName) {
+            link.classList.remove("hidden");
         }
-        projectList.appendChild(projectLink);
-    }
-
-    for (const projectLink of projectLinks) {
-        if (projectLink.classList.contains("hidden")) {
-            projectList.appendChild(projectLink);
+        else {
+            link.classList.add("hidden");
         }
     }
 }
@@ -115,11 +104,14 @@ window.addEventListener("load", _ => {
         }
 
         // Get the date of the project
+    const projectList = document.getElementById("project-list");
+
         const projectLink = makeProjectLinkElement(project);
         projectLinks.push(projectLink);
         for (const tag of tags) {
             allTags.push(tag);
             projectLink.classList.add(tag.replaceAll("+", "p"));
+            projectList.appendChild(projectLink);
         }
     }
 
