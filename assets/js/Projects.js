@@ -11,16 +11,16 @@ function makeTagElement(tagName) {
     return tagNode;
 }
 
-function unique(arr) {
-    const u = {};
-    const a = [];
-    for (let i = 0, l = arr.length; i < l; ++i) {
-        if (!u.hasOwnProperty(arr[i])) {
-            a.push(arr[i]);
-            u[arr[i]] = 1;
+function unique(oldArray) {
+    const tracker = {};
+    const newArray = [];
+    for (let i = 0; i < oldArray.length; i++) {
+        if (!tracker.hasOwnProperty(oldArray[i])) {
+            newArray.push(oldArray[i]);
+            tracker[oldArray[i]] = 1;
         }
     }
-    return a;
+    return newArray;
 }
 
 function initTagEvent(tagbutton, projectLinks) {
@@ -87,14 +87,6 @@ window.addEventListener("load", _ => {
     const allTags = [];
     const projectLinks = [];
 
-    function addTagClasses(tags, element) {
-        element.classList.add("taggable")
-        for (const tag of tags) {
-            allTags.push(tag);
-            element.classList.add(tag.replaceAll("+", "p"));
-        }
-    }
-
     const cache = []
 
     for (const project of projects) {
@@ -109,7 +101,10 @@ window.addEventListener("load", _ => {
         let tags = project.getAttribute("tags");
         if (tags) {
             tags = tags.split(" ");
-            addTagClasses(tags, project);
+            for (const tag of tags) {
+                allTags.push(tag);
+                project.classList.add(tag.replaceAll("+", "p"));
+            }
             for (const tag of tags) {
                 const tagNode = makeTagElement(tag);
                 project.querySelector(".project-tags").appendChild(tagNode);
@@ -142,19 +137,12 @@ window.addEventListener("load", _ => {
         year = year[2] + year[3];
         const dateString = `${month} ${year}`;
 
-
-
         const projectLink = document.createElement("a");
         projectLink.href = `#${id}`;
         projectLink.textContent = `${dateString}: ${title}`;
         projectLink.classList.add("project-link");
         projectLink.classList.add("hideable");
         projectLinks.push(projectLink);
-        if (tags) {
-            addTagClasses(tags, projectLink);
-        }
-
-
     }
 
     const filteredTags = unique(allTags).sort();
