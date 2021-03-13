@@ -1,6 +1,8 @@
 "use strict"
 
-function makeProjectLinkElement(id, title, project) {
+function makeProjectLinkElement(project) {
+    const title = project.querySelector(".project-title h3").textContent;
+
     const date = project.querySelector(".project-title .date").textContent.split(" ");
     let month = date[0];
     let year = date[1];
@@ -9,7 +11,7 @@ function makeProjectLinkElement(id, title, project) {
     const dateString = `${month} ${year}`;
 
     const projectLink = document.createElement("a");
-    projectLink.href = `#${id}`;
+    projectLink.href = `#${project.id}`;
     projectLink.textContent = `${dateString}: ${title}`;
     projectLink.classList.add("project-link");
     projectLink.classList.add("hideable");
@@ -88,7 +90,6 @@ window.addEventListener("load", _ => {
     const allTags = [];
     const projectLinks = [];
 
-    const cache = []
 
     for (const project of projects) {
         // Ensure it is actually an article
@@ -113,25 +114,8 @@ window.addEventListener("load", _ => {
             }
         }
 
-        // Get the ID of the project from its name, and then add it to the project list
-        const title = project.querySelector(".project-title h3").textContent;
-        const id = title.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_");
-        project.id = id;
-
-        let found = false;
-        for (const p of cache) {
-            if (p === title) {
-                found = true;
-                break;
-            }
-        }
-        if (found) {
-            continue;
-        }
-        cache.push(title);
-
         // Get the date of the project
-        const projectLink = makeProjectLinkElement(id, title, project);
+        const projectLink = makeProjectLinkElement(project);
         projectLinks.push(projectLink);
         for (const tag of tags) {
             allTags.push(tag);
