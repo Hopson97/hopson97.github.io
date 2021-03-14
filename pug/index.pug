@@ -3,23 +3,29 @@ html(lang="en")
   include mixins/project_mixins.pug
   script(src="assets/js/Projects.js")
   main
-    h1.pb-2 Projects
-    .row.ml-2
-      .col-12
-        .row 
-          div#reset-tags.project-tag-filter.pb-2.font-weight-bold.font-italic Reset Filters
-        .row
-          div.font-weight-bold Filter by language: 
-        .row.ml-2
-          p#lang-tags-filters.row 
-        .row
-          div.font-weight-bold Filter misc tags:
-        .row.ml-2
-          p#misc-tags-filters.row 
-          
+    h2.pb-2(style="margin:0px;") Projects
+    p This page shows most of my projects, right from where I got started in ~2015/2016 up to the present day. The projects can be filtered using the tag buttons buttons below, or under each project.
 
-    div Project list:
-    ul#project-list.pl-2.d-flex.flex-wrap.align-content-start.justify-content-around 
+    .inline.cent
+      .font-weight-bold.cent Filters
+      #reset-tags.project-tag-filter.pb-2.font-weight-bold.font-italic.pl-2 (Reset)
+    p#tags-filters.d-flex.flex-wrap.justify-content-center.cent
+      //.col-6
+      //  .font-weight-bold.cent Language Filters
+      //  .row.ml-2
+      //    p#lang-tags-filters.row.d-flex.flex-wrap.align-content-start.justify-content-around  
+      //.col-6
+      //  .font-weight-bold.cent Misc Filters
+      //  .row.ml-2
+      //    p#misc-tags-filters.row.d-flex.flex-wrap.align-content-start.justify-content-around  
+      //    
+      //  .row 
+      //    div#reset-tags.project-tag-filter.pb-2.font-weight-bold.font-italic Reset Filters
+    .inline.cent
+      .font-weight-bold.cent.pb-2 Projects
+      .project-tag-container
+        ul#project-list.pl-2.d-flex.flex-wrap.align-content-start
+
     #project-articles.project-articles
 
       //
@@ -27,7 +33,7 @@ html(lang="en")
       //
       +project("YARE", "February 2021",  "c++", "opengl sfml game", "yare", "https://github.com/Hopson97/Yare") 
         p Yet Another Render Engine.
-        p A work in progress project where I aiming to delve deeper into OpenGL and experimenting with topcis such as low poly terrain, reflections, and tessellation shaders.
+        p A work in progress project where I am aiming to delve deeper into OpenGL and experiment with topics such as low poly terrain, reflections, and tessellation shaders.
         p So far, it is small low-poly terrain world that is procedurally generated using simplex noise.
       //
       // Pong 3D
@@ -48,9 +54,10 @@ html(lang="en")
       //
       // Pixelator
       //
-      +project("Pixelator", "September 2019",  "c++", "sfml", "pixelator", "https://github.com/Hopson97/Pixelator")
+      +project("Pixelator", "September 2019",  "c++", "sfml multi-threaded", "pixelator", "https://github.com/Hopson97/Pixelator")
         p Converts images into a pixelated form.
         p The program works by taking the average colour around an area, and then filling that area with that colour.
+        p Mulithreading was utilised for watching the image get pixelated while the algorithms ran on a seperate thread,
 
       //
       // Space Invaders
@@ -87,7 +94,7 @@ html(lang="en")
       //
       //  BALIC
       //
-      +project("BALIC", "October 2018",  "c++", "sfml", "balic", "https://github.com/Hopson97/Balic")
+      +project("BALIC", "October 2018",  "c++", "sfml multi-threaded", "balic", "https://github.com/Hopson97/Balic")
         p BALIC stands for "Bad and Lossy Image Compressor". This was mostly made just for fun, which takes an input image and then outputs a sometimes larger lower quality image. Furthermore, it is able to also show the process on a seperate thread.
         
       //

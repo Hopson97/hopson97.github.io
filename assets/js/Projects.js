@@ -9,7 +9,7 @@ function makeProjectLinkElement(project) {
 
     const projectLink = document.createElement("a");
     projectLink.href = `#${project.id}`;
-    projectLink.textContent = `${month} ${year}: ${title}`;
+    projectLink.textContent = `${title}`;
     projectLink.classList.add("project-link");
     projectLink.classList.add("hideable");
     return projectLink;
@@ -118,18 +118,19 @@ window.addEventListener("load", _ => {
     function addTagsToFilter(tags, filterList) {
         for (const tag of tags) {
             const tagNode = makeTagElement(tag);
-    
+
             filterList.appendChild(tagNode);
             initTagEvent(tagNode, projectLinks);
         }
     }
     const filteredLangTags = unique(allLangTags).sort();
     const filteredMiscTags = unique(allMiscTags).sort();
-    const langTagFilters = document.getElementById("lang-tags-filters");
-    const miscTagFilters = document.getElementById("misc-tags-filters");
-    addTagsToFilter(filteredLangTags, langTagFilters);
-    addTagsToFilter(filteredMiscTags, miscTagFilters);
-
+    //const langTagFilters = document.getElementById("lang-tags-filters");
+    //const miscTagFilters = document.getElementById("misc-tags-filters");
+    //addTagsToFilter(filteredLangTags, langTagFilters);
+    //addTagsToFilter(filteredMiscTags, miscTagFilters);
+    addTagsToFilter(filteredLangTags, document.getElementById("tags-filters"));
+    addTagsToFilter(filteredMiscTags, document.getElementById("tags-filters"));
     document.getElementById("reset-tags").addEventListener("click", () => {
         const items = document.querySelectorAll(".hideable");
         items.forEach(item => {
