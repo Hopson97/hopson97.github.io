@@ -14,34 +14,39 @@
   </head>
   <body>
     <header class="mt-2">
-      <div class="d-flex justify-content-center"><a href="#"></a></div>
-      <nav class="d-flex justify-content-center pb-2"><a class="align-middle p-4" href="about.html">About</a><a class="align-middle p-4" href="index.html">Projects</a><img class="align-middle" src="https://avatars.githubusercontent.com/u/13512660?s=460&amp;u=012cdce07c7f341b2f995ddbe55d29765248794a&amp;v=4"/><a class="align-middle p-4" href="links.html">Useful Links </a><a class="align-middle p-4" href="fun.html">Fun</a></nav>
+      <nav>
+        <h1 class="cent pb-2">Matthew Hopson</h1>
+        <div class="d-flex justify-content-center pb-2"><a class="align-middle pl-4" href="about.html">About</a><a class="align-middle pl-4" href="index.html">Projects</a><a class="align-middle pl-4" href="links.html">Useful Links </a><a class="align-middle pl-4" href="fun.html">Fun</a></div>
+      </nav>
     </header>
   </body>
   <script src="assets/js/Projects.js"></script>
   <main>
-    <h1 class="pb-2">Projects</h1>
-    <div class="row ml-2">
-      <div class="col-12">
-        <div class="row"> 
-          <div class="project-tag-filter pb-2 font-weight-bold font-italic" id="reset-tags">Reset Filters</div>
-        </div>
-        <div class="row">
-          <div class="font-weight-bold">Filter by language: </div>
-        </div>
-        <div class="row ml-2">
-          <p class="row" id="lang-tags-filters"> </p>
-        </div>
-        <div class="row">
-          <div class="font-weight-bold">Filter misc tags:</div>
-        </div>
-        <div class="row ml-2">
-          <p class="row" id="misc-tags-filters"> </p>
-        </div>
+    <h2 class="pb-2" style="margin:0px;">Projects</h2>
+    <p>This page shows most of my projects, right from where I got started in ~2015/2016 up to the present day. The projects can be filtered using the tag buttons buttons below, or under each project.</p>
+    <div class="inline cent">
+      <div class="font-weight-bold cent">Filters</div>
+      <div class="project-tag-filter pb-2 font-weight-bold font-italic pl-2" id="reset-tags">(Reset)</div>
+    </div>
+    <p class="d-flex flex-wrap justify-content-center cent" id="tags-filters">
+      <!--.col-6-->
+      <!--  .font-weight-bold.cent Language Filters-->
+      <!--  .row.ml-2-->
+      <!--    p#lang-tags-filters.row.d-flex.flex-wrap.align-content-start.justify-content-around  -->
+      <!--.col-6-->
+      <!--  .font-weight-bold.cent Misc Filters-->
+      <!--  .row.ml-2-->
+      <!--    p#misc-tags-filters.row.d-flex.flex-wrap.align-content-start.justify-content-around  -->
+      <!--    -->
+      <!--  .row -->
+      <!--    div#reset-tags.project-tag-filter.pb-2.font-weight-bold.font-italic Reset Filters-->
+    </p>
+    <div class="inline cent">
+      <div class="font-weight-bold cent pb-2">Projects</div>
+      <div class="project-tag-container">
+        <ul class="pl-2 d-flex flex-wrap align-content-start" id="project-list"></ul>
       </div>
     </div>
-    <div>Project list:</div>
-    <ul class="pl-2 d-flex flex-wrap align-content-start justify-content-around" id="project-list"> </ul>
     <div class="project-articles" id="project-articles">
       <!---->
       <!-- YARE-->
@@ -57,12 +62,12 @@
             <div class="project-single-image-container">
               <div class="project-content">  
                 <p>Yet Another Render Engine.</p>
-                <p>A work in progress project where I aiming to delve deeper into OpenGL and experimenting with topcis such as low poly terrain, reflections, and tessellation shaders.</p>
+                <p>A work in progress project where I am aiming to delve deeper into OpenGL and experiment with topics such as low poly terrain, reflections, and tessellation shaders.</p>
                 <p>So far, it is small low-poly terrain world that is procedurally generated using simplex noise.</p>
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/yare.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -84,7 +89,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/pong3d.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -108,14 +113,14 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/openbuilder1.png"/><img class="img-primary" src="assets/img/projects/openbuilder2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
       <!---->
       <!-- Pixelator-->
       <!---->
-          <article class="project taggable hideable" langTags="c++" miscTags="sfml" id="pixelator">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml multi-threaded" id="pixelator">
             <div class="project-title pb-2">
               <h3>Pixelator</h3>
               <p class="date">September 2019</p>
@@ -127,10 +132,11 @@
               <div class="project-content"> 
                 <p>Converts images into a pixelated form.</p>
                 <p>The program works by taking the average colour around an area, and then filling that area with that colour.</p>
+                <p>Mulithreading was utilised for watching the image get pixelated while the algorithms ran on a seperate thread,</p>
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/pixelator.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -155,7 +161,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/spaceinvaders.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -176,7 +182,7 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/mallmap1.png"/><img class="img-primary" src="assets/img/projects/mallmap2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -198,7 +204,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/hackpompy.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -222,14 +228,14 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/sortvis.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
       <!---->
       <!--  BALIC-->
       <!---->
-          <article class="project taggable hideable" langTags="c++" miscTags="sfml" id="balic">
+          <article class="project taggable hideable" langTags="c++" miscTags="sfml multi-threaded" id="balic">
             <div class="project-title pb-2">
               <h3>BALIC</h3>
               <p class="date">October 2018</p>
@@ -243,7 +249,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/balic.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -264,7 +270,7 @@
                 <p>I found the current GL library kind of annoying to use, as you had to write unsafe {} for every single OpenGL command. Furthermore, the function called were not rust like, as the OpenGL API uses function names such as glBindBuffer. This library wraps every function into rust-like functions, so the call to glBindBuffer would become rgl::bind_buffer.</p>
               </div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -289,7 +295,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/asciimonrs.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -326,7 +332,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/wireworld.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -354,7 +360,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/brianbrain.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -377,7 +383,7 @@
                 <p>An example output can be found <a href="https://github.com/Hopson97/Conglomerate/blob/master/glom_output/out.cpp" target="_blank"></a></p>
               </div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -401,7 +407,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/ias.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -423,7 +429,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/hopbot.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -453,7 +459,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/androids.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -476,7 +482,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/slondaman.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -501,7 +507,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/lmc.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -526,7 +532,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/langtonsant.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -550,7 +556,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/empire.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -572,7 +578,7 @@
                 <p>Features state/Screen system, GUI system, animation, maths helpers, file stuff, and resource management.</p>
               </div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -601,7 +607,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/gameoflife.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -627,7 +633,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/predatorandprey.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -651,7 +657,7 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/mcweek1.png"/><img class="img-primary" src="assets/img/projects/mcweek2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -674,7 +680,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/hero.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -695,7 +701,7 @@
                 <p>From Wikipedia: "Brainf*ck is an esoteric programming language created in 1993 by Urban Müller. Notable for its extreme minimalism, the language consists of only eight simple commands and an instruction pointer. While it is fully Turing complete, it is not intended for practical use, but to challenge and amuse programmers. Brainf*ck simply requires one to break commands into microscopic steps."</p>
               </div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -720,7 +726,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/hopsoncraft.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -742,7 +748,7 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/3dcubes.png"/><img class="img-primary" src="assets/img/projects/3dcubes2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -764,7 +770,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/citygame1.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -788,7 +794,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/hopvm.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -811,7 +817,7 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/asciimonclassic1.png"/><img class="img-primary" src="assets/img/projects/asciimonclassic2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -835,7 +841,7 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/kingdom1.png"/><img class="img-primary" src="assets/img/projects/kingdom2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -858,7 +864,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/attack.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -880,7 +886,7 @@
               </div>
               <div class="project-images cent"><img class="img-secondary" src="assets/img/projects/ftw1.png"/><img class="img-primary" src="assets/img/projects/ftw2.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -905,7 +911,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/pyoro.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
@@ -926,7 +932,7 @@
               </div>
               <div class="project-images cent"><img class="img-primary" src="assets/img/projects/hopsonland.png"/></div>
             </div>
-              <div class="inline project-tags pl-2 pt-2">
+              <div class="d-flex flex-wrap project-tags pl-2 pt-2">
                 <h5>Tags:</h5>
               </div>
           </article>
