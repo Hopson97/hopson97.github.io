@@ -7,6 +7,10 @@ body {
     padding: 0;
 }
 
+h1 {
+    margin: 0;
+}
+
 header {
     padding: 1%;
     width: 60%;
@@ -16,6 +20,7 @@ header {
 nav {
     font-size: larger;
     border-bottom: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
 }
 
 nav img {
@@ -58,6 +63,10 @@ footer .fab {
     padding: 20px;
 }
 
+.back-to-top {
+    font-size: small;
+}
+
 /* 
     ============================
 
@@ -78,7 +87,7 @@ footer .fab {
     =================================
 */
 .project {
-    border-top: 5px solid rgb(50, 50, 50);
+    border-top: 2px solid rgb(50, 50, 50);
     padding-bottom: 2%;
     padding-top: 2%;
 }
@@ -92,60 +101,74 @@ footer .fab {
 }
 
 .project-link {
-    display: block;
+    width: 20%;
 }
 
 .project p {
     text-align: justify;
 }
 
-
 .project-title h3::after {
     content: " | ";
 }
 
+.project-single-image-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+}
 
-.project img {
+/*
+    Project images
+*/
+.project img, .project-single-image-container img {
     margin: 1%;
     transition: 1s;
-    max-height: 25vh;
-    width: auto;
+    width: 100%;
+    height: auto;
     border: 1px solid white;
 }
 
+.project-double-image-container img {
+    width: 45%;
+}
 
-.project img:hover {
-    max-height: 40vh;
-    display:block;
-    z-index:999;
+.project-single-image-container .project-images {
+    margin-left: 5%;
 }
 
 
-.project-tag:hover, .project-directory a:hover, .project-tag-filter:hover {
-    cursor: pointer;
-    text-decoration: underline;
+/*
+    P R O J E C T 
+    L I S T
+*/
+#project-list {
+    font-family: monospace, monospace, monospace;
 }
 
-.project-directory  {
-    font-family: monospace, monospace,monospace;
-}
-
-.project-directory a::before {
-    content: "-";
-}
-
-.project-directory a {
-    color: white;
+#project-list a {
+    color: rgb(32, 130, 241);
     text-decoration: none;
 }
 
+/*
+    P R O J E C T 
+    T A G S
+*/
 .selected-tag {
     text-decoration: underline;
     font-weight: bold;
 }
 
+.project-tag:hover,
+#project-list a:hover,
+.project-tag-filter:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .project-desktop {
-    display:inherit;
+    display: inherit;
 }
 
 .project-mobile {
@@ -185,37 +208,37 @@ canvas {
 }
 
 @media only screen and (max-width: 1600px) {
-    
+
     header {
         width: 80%;
     }
-    
+
     nav {
         font-size: large;
         border-bottom: 1px solid rgb(255, 255, 255);
     }
-    
+
     nav a {
         font-size: larger;
     }
 
     nav img {
-        display: none ;
+        display: none;
     }
-    
+
     main {
-        width: 80%;
+        width: 85%;
         margin: auto;
     }
-    
+
     footer {
         width: 80%;
     }
-    
+
     footer .fab {
         padding: 20px;
     }
-    
+
     /* 
         ============================
     
@@ -226,7 +249,47 @@ canvas {
     .common_link {
         padding-left: 1%;
     }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    header {
+        width: 85%;
+    }
+
+    nav {
+        font-size: large;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    nav a {
+        font-size: larger;
+    }
+
+    main {
+        width: 95%;
+        margin: auto;
+    }
+
+    footer {
+        width: 80%;
+    }
+
+    footer .fab {
+        padding: 20px;
+    }
+
+    /* 
+        ============================
     
+                LINKS PAGE
+    
+        ============================
+    */
+    .common_link {
+        padding-left: 1%;
+    }
+
     /* 
         =================================
     
@@ -234,116 +297,33 @@ canvas {
     
         =================================
     */
-    .project {
-        min-height: 35vh;
+    .project-link {
+        width: 33%;
+    }
+    .project .img-secondary {
+        display: none;
     }
 
-    .project img {
-        max-height: 30vh;
+    .project .img-primary {
+        width: 70%;
     }
-    
-    .project img:hover {
-        max-height: 35vh;
+
+    .project-single-image-container {
+        display: block;
     }
 }
 
-@media only screen and (max-width: 1280px) {
-    
-    header {
-        width: 85%;
-    }
-    
-    nav {
-        font-size: large;
-        border-bottom: 1px solid rgb(255, 255, 255);
-    }
-    
-    nav a {
-        font-size: larger;
-    }
-    
-    main {
-        width: 85%;
-        margin: auto;
-    }
-    
-    footer {
-        width: 80%;
-    }
-    
-    footer .fab {
-        padding: 20px;
-    }
-    
-    /* 
-        ============================
-    
-                LINKS PAGE
-    
-        ============================
-    */
-    .common_link {
-        padding-left: 1%;
-    }
-    
-    /* 
-        =================================
-    
-                PROJECTS PAGE
-    
-        =================================
-    */
-    .project {
-        min-height: 20vh;
+@media only screen and (max-width: 1024px) { 
+    .project-link {
+        width: 50%;
+        font-size: small;
     }
 
-    .project-desktop {
-        display:none;
-    }
-
-    .project-mobile {
-        display: inherit;
+    .project-tag {
+        font-size: small;
     }
 }
 
-@media only screen and (max-width: 768px) {
-    
-    header {
-        width: 95%;
-    }
-    
-    nav {
-        font-size: large;
-        border-bottom: 1px solid rgb(255, 255, 255);
-    }
-    
-    nav a {
-        font-size: larger;
-    }
-    
-    main {
-        width: 95%;
-    }
-    
-    footer {
-        width: 95%;
-    }
-    
-    footer .fab {
-        padding: 20px;
-    }
-    
-    /* 
-        ============================
-    
-                LINKS PAGE
-    
-        ============================
-    */
-    .common_link {
-        padding-left: 1%;
-    }
-}
 
 .hidden {
     display: none;

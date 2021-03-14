@@ -2,14 +2,15 @@ html(lang="en")
   include _partials/common.pug
    
   main
-    h1 Fun Stuff
-    p Bunch of mini-projects and tools that you can play via web browser
+    h2.cent Fun Stuff
+    p Here is a collection of stuff that I just put here for fun. Some are tools and games that can be used via your web browser, others could be ancient relics of distant past projects.
 
     .fun-section.pb-2 
       h3 Mini Circuit Maker 
       a(href="circuit.html") Access Here
-      .row 
-        .col-6
+
+      .project-single-image-container  
+        .project-content 
           p Simple circuit editor designed to create mini diagrams for the Node MCU microcontroller cause I was unfond of existing solutions 
           p Features several component types, eg wires, resistors, and LEDS; but is very much a work in progress.
           p While it is possible to make simple diagrams, the application is still very much a work in progress. 
@@ -18,10 +19,9 @@ html(lang="en")
             li Erasing 
             li Custom components 
             li Fix issues (Eg, wires are able to go directly into the node mcu)
-          
-        .col-6 
+        .project-images.cent
           a(href="circuit.html")
-            img(src="assets/img/circuit.png", width = 500 height = 300)
-          
+            img(src="assets/img/circuit.png")
+            
     
   include _partials/footer.pug

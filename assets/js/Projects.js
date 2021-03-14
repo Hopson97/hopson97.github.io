@@ -1,15 +1,42 @@
 "use strict"
 
-function unique(arr) {
-    const u = {};
-    const a = [];
-    for (let i = 0, l = arr.length; i < l; ++i) {
-        if (!u.hasOwnProperty(arr[i])) {
-            a.push(arr[i]);
-            u[arr[i]] = 1;
+function makeProjectLinkElement(project) {
+    const title = project.querySelector(".project-title h3").textContent;
+
+    const date = project.querySelector(".project-title .date").textContent.split(" ");
+    const month = date[0].substr(0, 3);
+    const year = date[1].substr(2, 2);
+
+    const projectLink = document.createElement("a");
+    projectLink.href = `#${project.id}`;
+    projectLink.textContent = `${title}`;
+    projectLink.classList.add("project-link");
+    projectLink.classList.add("hideable");
+    return projectLink;
+}
+
+function makeTagElement(tagName) {
+    const tagNode = document.createElement("div");
+    tagNode.textContent = tagName;
+
+
+    tagNode.classList.add("filter" + tagName.replaceAll("+", "p"));
+    tagNode.classList.add("project-tag");
+    tagNode.classList.add("ml-3");
+
+    return tagNode;
+}
+
+function unique(oldArray) {
+    const tracker = {};
+    const newArray = [];
+    for (let i = 0; i < oldArray.length; i++) {
+        if (!tracker.hasOwnProperty(oldArray[i])) {
+            newArray.push(oldArray[i]);
+            tracker[oldArray[i]] = 1;
         }
     }
-    return a;
+    return newArray;
 }
 
 function initTagEvent(tagbutton, projectLinks) {
@@ -23,9 +50,9 @@ function initTagEvent(tagbutton, projectLinks) {
                 item.classList.add("hidden");
             }
         });
-        updateLinks(projectLinks);
+        updateLinks(projectLinks, tag);
 
-        document.querySelectorAll(".project-tag-filter-all").forEach(tag => {
+        document.querySelectorAll(".project-tag").forEach(tag => {
             tag.classList.remove("selected-tag");
         });
         document.querySelectorAll(".filter" + tag).forEach(tag => {
@@ -34,36 +61,12 @@ function initTagEvent(tagbutton, projectLinks) {
     });
 }
 
-function updateLinks(projectLinks) {
-    let currColumn = 0;
-
-    const projectLists = [
-        document.getElementById("project-index-row0"),
-        document.getElementById("project-index-row1"),
-        document.getElementById("project-index-row2")
-    ];
-    for (const list of projectLists) {
-        list.innerHTML = "";
-    }
-
-    for (const projectLink of projectLinks) {
-        if (projectLink.classList.contains("hidden")) {
-            continue;
-        }
-        const currentList = projectLists[currColumn++];
-        currentList.appendChild(projectLink);
-        if (currColumn == 3) {
-            currColumn = 0;
-        }
-    }
-
-    for (const projectLink of projectLinks) {
-        if (projectLink.classList.contains("hidden")) {
-            const currentList = projectLists[currColumn++];
-            currentList.appendChild(projectLink);
-            if (currColumn == 3) {
-                currColumn = 0;
-            }
+function updateLinks(projectLinks, tagName) {
+    for (const link of projectLinks) {
+        if (link.classList.contains(tagName) || !tagName) {
+            link.classList.remove("hidden");
+        } else {
+            link.classList.add("hidden");
         }
     }
 }
@@ -74,17 +77,10 @@ window.addEventListener("load", _ => {
     projects.pop();
 
     const allTags = [];
+    const allLangTags = [];
+    const allMiscTags = [];
     const projectLinks = [];
 
-    function addTagClasses(tags, element) {
-        element.classList.add("taggable")
-        for (const tag of tags) {
-            allTags.push(tag);
-            element.classList.add(tag.replaceAll("+", "p"));
-        }
-    }
-
-    const cache = []
 
     for (const project of projects) {
         // Ensure it is actually an article
@@ -94,80 +90,47 @@ window.addEventListener("load", _ => {
 
         project.classList.add("hideable");
 
-        // Get the tag list
-        let tags = project.getAttribute("tags");
-        if (tags) {
-            tags = tags.split(" ");
-            addTagClasses(tags, project);
-            for (const tag of tags) {
-                const tagNode = document.createElement("div");
-                tagNode.textContent = tag;
-                tagNode.classList.add("project-tag");
-                tagNode.classList.add("project-tag-filter-all");
-                tagNode.classList.add("ml-3");
-
-                tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
-                project.querySelector(".project-tags").appendChild(tagNode);
-                initTagEvent(tagNode, projectLinks);
-            }
-        }
-
-        // Get the ID of the project from its name, and then add it to the project list
-        const title = project.querySelector(".project-title h3").textContent;
-        const id = title.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_");
-        project.id = id;
-
-        let found = false;
-        for (const p of cache) {
-            if (p === title) {
-                found = true;
-                break;
-            }
-        }
-        if (found) {
-            continue;
-        }
-        cache.push(title);
-
-        // Get the date of the project
-        const date = project.querySelector(".project-title .date").textContent.split(" ");
-        let month = date[0];
-        let year = date[1];
-        month = month[0] + month[1] + month[2];
-        year = year[2] + year[3];
-        const dateString = `${month} ${year}`;
-
-
-
-        const projectLink = document.createElement("a");
-        projectLink.href = `#${id}`;
-        projectLink.textContent = `${dateString}: ${title}`;
-        projectLink.classList.add("project-link");
-        projectLink.classList.add("hideable");
+        const projectList = document.getElementById("project-list");
+        const projectLink = makeProjectLinkElement(project);
         projectLinks.push(projectLink);
-        if (tags) {
-            addTagClasses(tags, projectLink);
+
+        // Get the tag list
+        const langTags = project.getAttribute("langTags");
+        const miscTags = project.getAttribute("miscTags");
+        const tags = `${langTags} ${miscTags}`.split(" ");
+
+        for (const tag of tags) {
+            allTags.push(tag);
+            project.classList.add(tag.replaceAll("+", "p"));
+            const tagNode = makeTagElement(tag);
+            project.querySelector(".project-tags").appendChild(tagNode);
+            initTagEvent(tagNode, projectLinks);
+
+            allTags.push(tag);
+            projectLink.classList.add(tag.replaceAll("+", "p"));
+            projectList.appendChild(projectLink);
         }
 
-
+        allLangTags.push(...langTags.split(" "));
+        allMiscTags.push(...miscTags.split(" "));
     }
 
-    const filteredTags = unique(allTags).sort();
+    function addTagsToFilter(tags, filterList) {
+        for (const tag of tags) {
+            const tagNode = makeTagElement(tag);
 
-    const tagFilters = document.getElementById("filters");
-    for (const tag of filteredTags) {
-        const tagNode = document.createElement("div");
-        tagNode.textContent = tag;
-        tagNode.classList.add("filter" + tagNode.textContent.replaceAll("+", "p"));
-
-        tagNode.classList.add("project-tag-filter-all");
-        tagNode.classList.add("project-tag-filter");
-        tagNode.classList.add("mr-3");
-        tagNode.classList.add("pl-2");
-        tagFilters.appendChild(tagNode);
-        initTagEvent(tagNode, projectLinks);
+            filterList.appendChild(tagNode);
+            initTagEvent(tagNode, projectLinks);
+        }
     }
-
+    const filteredLangTags = unique(allLangTags).sort();
+    const filteredMiscTags = unique(allMiscTags).sort();
+    //const langTagFilters = document.getElementById("lang-tags-filters");
+    //const miscTagFilters = document.getElementById("misc-tags-filters");
+    //addTagsToFilter(filteredLangTags, langTagFilters);
+    //addTagsToFilter(filteredMiscTags, miscTagFilters);
+    addTagsToFilter(filteredLangTags, document.getElementById("tags-filters"));
+    addTagsToFilter(filteredMiscTags, document.getElementById("tags-filters"));
     document.getElementById("reset-tags").addEventListener("click", () => {
         const items = document.querySelectorAll(".hideable");
         items.forEach(item => {
@@ -175,7 +138,7 @@ window.addEventListener("load", _ => {
             updateLinks(projectLinks);
 
         });
-        document.querySelectorAll(".project-tag-filter-all").forEach(tag => {
+        document.querySelectorAll(".project-tag").forEach(tag => {
             tag.classList.remove("selected-tag");
         });
     });

@@ -1,54 +1,44 @@
-mixin project_header(name, date, tags, github, youtube, kind)
-  article(tags=tags, class=`project project-${kind}`)
+mixin project_header(name, date, langTags, miscTags, github, youtube)
+  article(langTags=langTags, miscTags=miscTags class=`project taggable hideable` id=name.toLowerCase().split(" ").join("-").replace("*", "_").replace("'", "_"))
     .project-title.pb-2
         h3= name
         p.date= date
-        .inline.project-links
+    .project-links.pb-2
             if github
-                a.p-3(href=github, target="_blank")
+                a.p-1(href=github, target="_blank")
                     .fab.fa-github.fa-2x
             if youtube
-                a.p-3(href=youtube, target="_blank")
+                a.p-1(href=youtube, target="_blank")
                     .fab.fa-youtube.fa-2x 
     block 
 
 mixin project_footer()
-  .inline.project-tags.pl-2.pt-2
-    h5 Tags:
+    .d-flex.flex-wrap.project-tags.pl-2.pt-2
+        h5 Tags:
+    a.pl-2.back-to-top(href="#") Back to top
 
-mixin project(name, date, tags, imgurl, github, youtube)
-    +project_header(name, date, tags, github, youtube, "desktop")
-        .row 
-            .col-7
+mixin project(name, date, langTags, miscTags, imgurl, github, youtube)
+    +project_header(name, date, langTags, miscTags, github, youtube)
+        .project-single-image-container
+            .project-content 
                 block
-            .col-5     
-                    img(src=`assets/img/projects/${imgurl}.png`) 
-            +project_footer(github, youtube)
-    +project_mobile(name, date, tags, github, youtube, imgurl)
-        block
-        
-mixin project_multiimage(name, date, tags, imgurl1, imgurl2, github, youtube)
-    +project_header(name, date, tags, github, youtube, "desktop")
-        block
-        .row.d-flex.justify-content-center.pb-2
-            img(src=`assets/img/projects/${imgurl1}.png`) 
-            img(src=`assets/img/projects/${imgurl2}.png`) 
+            .project-images.cent
+                img.img-primary(src=`assets/img/projects/${imgurl}.png`) 
         +project_footer(github, youtube)
-    +project_mobile(name, date, tags, github, youtube, imgurl2)
-        block
+        
+mixin project_multiimage(name, date, langTags, miscTags, imgurl1, imgurl2, github, youtube)
+    +project_header(name, date, langTags, miscTags, github, youtube)
+        .project-double-image-container
+            .project-content
+                block
+            .project-images.cent
+                img.img-secondary(src=`assets/img/projects/${imgurl1}.png`) 
+                img.img-primary(src=`assets/img/projects/${imgurl2}.png`) 
+        +project_footer(github, youtube)
 
-mixin project_noimage(name, date, tags, github, youtube)
-    +project_header(name, date, tags, github, youtube, "desktop")
-            block
-            +project_footer(github, youtube)
-    +project_mobile(name, date, tags, github, youtube)
-        block
-
-
-mixin project_mobile(name, date, tags, github, youtube, imgurl)
-    +project_header(name, date, tags, github, youtube, "mobile")
-        block
-        .cent
-            if imgurl
-                img(src=src=`assets/img/projects/${imgurl}.png`)
-        +project_footer
+mixin project_noimage(name, date, langTags, miscTags, github, youtube)
+    +project_header(name, date, langTags, miscTags, github, youtube)
+        .project-double-image-container
+            .project-content
+                block
+        +project_footer(github, youtube)
