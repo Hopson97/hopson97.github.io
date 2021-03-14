@@ -15,6 +15,7 @@ mixin project_header(name, date, langTags, miscTags, github, youtube)
 mixin project_footer()
     .d-flex.flex-wrap.project-tags.pl-2.pt-2
         h5 Tags:
+    a.pl-2.back-to-top(href="#") Back to top
 
 mixin project(name, date, langTags, miscTags, imgurl, github, youtube)
     +project_header(name, date, langTags, miscTags, github, youtube)

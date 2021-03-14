@@ -63,6 +63,10 @@ footer .fab {
     padding: 20px;
 }
 
+.back-to-top {
+    font-size: small;
+}
+
 /* 
     ============================
 
@@ -117,7 +121,7 @@ footer .fab {
 /*
     Project images
 */
-.project img {
+.project img, .project-single-image-container img {
     margin: 1%;
     transition: 1s;
     width: 100%;
@@ -293,7 +297,9 @@ canvas {
     
         =================================
     */
-
+    .project-link {
+        width: 33%;
+    }
     .project .img-secondary {
         display: none;
     }
@@ -305,9 +311,16 @@ canvas {
     .project-single-image-container {
         display: block;
     }
+}
 
-    .project-tag-container{
-        display: none;
+@media only screen and (max-width: 1024px) { 
+    .project-link {
+        width: 50%;
+        font-size: small;
+    }
+
+    .project-tag {
+        font-size: small;
     }
 }
 
