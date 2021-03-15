@@ -4,7 +4,7 @@ html(lang="en")
   script(src="assets/js/Projects.js")
   main
     h2.pb-2.cent Projects
-    p This page shows most of my projects, right from where I got started in ~2015/2016 up to the present day. The projects can be filtered using the tag buttons buttons below, or under each project.
+    p This page shows most of my projects that I have created over the years, including personal and those as part of my university course. The filters below can be used to only display projects that relate to a particular tag.
 
     .inline.cent
       .font-weight-bold.cent Filters
@@ -45,7 +45,7 @@ html(lang="en")
       //
       // OpenBuilder
       //
-      +project_multiimage("Open Builder", "December 2019",  "C++ Lua", "OpenGL SFML Game Sockets Collab Minecraft Multi-Threaded", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
+      +project_multiimage("Open Builder", "December 2019",  "C++ Lua", "OpenGL SFML Game Sockets Collab Minecraft Multithreading", "openbuilder1", "openbuilder2", "https://github.com/Hopson97/Pixelator")
         p A voxel multiplayer game that allows players to play and build in the same world, which used the OpenGL API as a rendering backend and ENet for UDP socket communication. 
         p This created for the purpose of learning how to integrate Lua into a C++ application, as well how to create a multiplayer Game. Lua gives the ability to add biomes, block types, edit UI, and probably eventually.
         p The project was actively encouraged to have contributions from people on GitHub, and as a result of this it has over 25 contributors. 
@@ -54,7 +54,7 @@ html(lang="en")
       //
       // Pixelator
       //
-      +project("Pixelator", "September 2019",  "C++", "SFML Multi-Threaded", "pixelator", "https://github.com/Hopson97/Pixelator")
+      +project("Pixelator", "September 2019",  "C++", "SFML Multithreading", "pixelator", "https://github.com/Hopson97/Pixelator")
         p Converts images into a pixelated form.
         p The program works by taking the average colour around an area, and then filling that area with that colour.
         p Mulithreading was utilised for watching the image get pixelated while the algorithms ran on a seperate thread,
@@ -85,7 +85,7 @@ html(lang="en")
       //
       //  Sorting Visualiser
       //
-      +project("Sorting Visualiser", "September 2018",  "Java", "Swing Multi-Threaded", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
+      +project("Sorting Visualiser", "September 2018",  "Java", "Swing Multithreading", "sortvis", "https://github.com/Hopson97/Sort-Algorithm-Visualiser", "https://www.youtube.com/watch?v=tPtvKYinUzc")
         p A sorting algorithm visualiser which features a main menu to select which algorithms to run.
         p This utilises multi-threading, where one thread handles the updates (eg runs the sort algorithm), and the other thread handles the drawing and updating of the stair case.
         p It features bubble sort, counting sort, cycle sort, gnome sort, heap sort, insertion sort, iterative merge sort, merge sort, pancake sort, quick sort, radix sort, selection sort, and stooge sort. 
@@ -94,8 +94,8 @@ html(lang="en")
       //
       //  BALIC
       //
-      +project("BALIC", "October 2018",  "C++", "SFML Multi-Threaded", "balic", "https://github.com/Hopson97/Balic")
-        p BALIC stands for "Bad and Lossy Image Compressor". This takes an input image and then outputs a "lower quality image". 
+      +project("BALIC", "October 2018",  "C++", "SFML Multithreading", "balic", "https://github.com/Hopson97/Balic")
+        p BALIC stands for "Bad and Lossy Image Compressor", which takes an image as input and then outputs a more artistic representation of the same image.
         p This works by grouping similar colours together and then filling them with a single colour.
         p Furthermore, it is able to also show the process of how it works, by running the algorithm on a seperate thread to the rendering thread.
         p GIFs of this are avalaible on the #[a(href="https://github.com/Hopson97/Balic" target="_blank") GitHub repository].
@@ -265,7 +265,7 @@ html(lang="en")
       //
       //  Minecraft One Week Challenge
       //
-      +project_multiimage("Minecraft Challenge", "August 2017",  "C++", "SFML OpenGL Game Challenge Minecraft Multi-Threaded", "mcweek1", "mcweek2", "https://github.com/Hopson97/Minecraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
+      +project_multiimage("Minecraft Challenge", "August 2017",  "C++", "SFML OpenGL Game Challenge Minecraft Multithreading", "mcweek1", "mcweek2", "https://github.com/Hopson97/Minecraft-One-Week-Challenge", "https://www.youtube.com/watch?v=Xq3isov6mZ8")
         p Inspired by the Minecraft One Week Challenge In Unity 3D by Shane Beck, this project aimed to also attempt that, but instead from scratch using C++ and OpenGL.
         p This was created mostly for a video, where I describe what I am working on each day. For example, day 1 was setting up OpenGL boilerplate code, and day 2 was getting chunks to render etc.
         p Multithreading was used to run the terrain generation/ mesh generation seperate from the main rendering thread, as this was a bottleneck. 
@@ -288,7 +288,7 @@ html(lang="en")
       //
       //  HopsonCraft
       //
-      +project("HopsonCraft", "October 2016",  "C++", "OpenGL SFML Minecraft Game Multi-Threaded", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU")
+      +project("HopsonCraft", "October 2016",  "C++", "OpenGL SFML Minecraft Game Multithreading", "hopsoncraft", "https://github.com/Hopson97/HopsonCraft", "https://www.youtube.com/watch?v=GACpZp8oquU")
         p My first ever large(ish) OpenGL project, which was a Minecraft clone. When I started to learn programming, creating a clone of Minecraft was a mini-goal of mine, and a a year bit from starting to learn C++ I eventually did create what is basically "Minecraft classic" without a GUI.
         p This was mostly created an excersise for learning OpenGL, as before this everything was done very simple. The project itself went through multiple iterations as I was learning new things and wanted to structure the project differently. These iterations can be found on my YouTube channel.
         p It featured world generaiton using perlin noise, and world breaking and modelling. Certain features were added or removed at certain points in time. For example, some iterations had the "Minecraft-like" lighting models, others had infinite height, and others had world saving/ loading. 
